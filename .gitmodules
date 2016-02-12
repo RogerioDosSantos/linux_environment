@@ -1,0 +1,3 @@
+[submodule "dot_folders/vim/bundle/YouCompleteMe"]
+	path = dot_folders/vim/bundle/YouCompleteMe
+	url = git://github.com/Valloric/YouCompleteMe.git
