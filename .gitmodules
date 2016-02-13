@@ -4,3 +4,6 @@
 [submodule "dot_folders/vim/bundle/nerdtree"]
 	path = dot_folders/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "dot_folders/vim/bundle/nerdcommenter"]
+	path = dot_folders/vim/bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
