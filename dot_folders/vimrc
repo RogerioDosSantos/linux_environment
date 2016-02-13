@@ -1,4 +1,9 @@
+"Pathogen repository control configuration
 call  pathogen#infect()
 call pathogen#helptags()
 
+"Nerdcommenter configuration
 filetype plugin on
+
+"Enable Line
+set number
