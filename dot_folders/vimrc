@@ -128,8 +128,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-w> <C-w>w
 " <c-h> is interpreted as <bs> in neovim
-" " This is a bandaid fix until the team decides how
-" " they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
+" This is a bandaid fix until the team decides how they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
 nnoremap <silent> <bs> :TmuxNavigateLeft<cr>
 
 " Use tab to jump between blocks, because it's easier
@@ -138,12 +137,13 @@ vnoremap <tab> %
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
+"
 set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical
 
 " Load up all of our plugins
-"if filereadable(expand("~/.vimrc.bundles"))
-"  source ~/.vimrc.bundles
-"endif
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
