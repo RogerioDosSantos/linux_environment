@@ -18,7 +18,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive' 
 " Vim airline control the status bar formating
 Plug 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 ""
 
 """ Some ESSENTIAL IDE like plugins for Vim
