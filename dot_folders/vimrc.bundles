@@ -76,6 +76,8 @@ Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 
 Plug 'editorconfig/editorconfig-vim'
 
+" [11]
+Plug 'msanders/snipmate.vim'
 
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
