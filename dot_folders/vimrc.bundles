@@ -26,7 +26,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " [3]
 " Several plugins to help work with Tmux
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner.git'
+Plug 'christoomey/vim-tmux-runner'
 Plug 'christoomey/vim-run-interactive'
 
 " [4] search filesystem with ctrl+p
