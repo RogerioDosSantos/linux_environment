@@ -15,7 +15,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 " Awesome looking meta at bottom
 " Fugitive will help with git related stuff, and show branch on status
-Plug 'tpope/vim-fugitive' | Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive' 
+" Vim airline control the status bar formating
+Plug 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 ""
 
 """ Some ESSENTIAL IDE like plugins for Vim
