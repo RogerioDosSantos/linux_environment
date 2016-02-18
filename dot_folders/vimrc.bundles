@@ -70,14 +70,15 @@ Plug 'suan/vim-instant-markdown'
 Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
 
 " [10] supertab makes YCM compatible with ultisnips
-Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+"Plug 'ervandew/supertab'
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
 
 Plug 'editorconfig/editorconfig-vim'
 
 " [11]
 Plug 'msanders/snipmate.vim'
+Plug 'Rip-Rip/clang_complete'
 
 """ TODO / Plugins to evaluate
 " Figure out how to create / version control my own snippets
@@ -149,6 +150,8 @@ let g:gist_open_browser_after_post = 1
 
 " [8] Set Vim Wiki to my Dropbox directory
 let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" Solve conflict problem with another plugin (problably clang) when typing ';' 
+let g:AutoPairsMapCR = 0
 
 " [9]
 " Set ultisnips triggers
