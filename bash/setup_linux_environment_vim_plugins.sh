@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo Initializing getting sub modules
-git submodules init
-git submodules update --recursive
+git submodule init
+git submodule update --recursive
 
 
