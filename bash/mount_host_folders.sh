@@ -4,11 +4,11 @@ echo Creating and Mounting Temp
 mkdir -p ~/temp
 mount -t vboxsf Temp ~/temp
 
-echo Mounting TFS
+echo Creating and Mounting TFS
 mkdir -p ~/tfs
 mount -t vboxsf TFS ~/tfs
 
-echo Mounting Safe
+echo Creating and Mounting Safe
 mkdir -p ~/.safe ~/safe
 mount -t vboxsf Safe ~/.safe
 encfs ~/.safe ~/safe
