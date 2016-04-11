@@ -12,3 +12,9 @@ echo Creating and Mounting Safe
 mkdir -p ~/.safe ~/safe
 mount -t vboxsf Safe ~/.safe
 encfs ~/.safe ~/safe
+
+echo Creating and Mounting Leel
+mkdir -p ~/.leel ~/leel
+mount -t vboxsf Leel ~/.leel
+encfs ~/.leel ~/leel
+
