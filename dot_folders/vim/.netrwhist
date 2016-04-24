@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/roger/git/linux_environment/dot_folders/vim'
 let g:netrw_dirhist_2='/home/roger/git/linux_environment/dot_folders'
+let g:netrw_dirhist_3='/home/rogerio/leel/leel-instrument/source/main'
