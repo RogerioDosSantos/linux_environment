@@ -12,6 +12,10 @@ echo Creating and Mounting Leel
 mkdir -p ~/leel
 sudo mount -t vboxsf Leel ~/leel
 
+echo Creating and Mounting Wiki 
+mkdir -p ~/wiki
+sudo mount -t vboxsf Wiki ~/wiki
+
 echo Creating and Mounting Safe
 mkdir -p ~/.safe ~/safe
 sudo mount -t vboxsf Safe ~/.safe

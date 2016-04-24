@@ -149,8 +149,8 @@ let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automa
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" [8] Set Vim Wiki to my Dropbox directory
-let g:vimwiki_list = [{'path':'$HOME/Dropbox/vimwiki'}]
+" [8] Set Vim Wiki directory
+let g:vimwiki_list = [{'path':'$HOME/wiki/wiki'}]
 " Solve conflict problem with another plugin (problably clang) when typing ';' 
 let g:AutoPairsMapCR = 0
 
