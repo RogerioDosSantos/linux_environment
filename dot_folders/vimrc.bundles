@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 """
 " [1]
 Plug 'altercation/vim-colors-solarized'
+" Vim airline control the status bar formating
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 ""
@@ -20,14 +21,13 @@ Plug 'vim-airline/vim-airline-themes'
 """ Some ESSENTIAL IDE like plugins for Vim
 """
 " [2] File tree viewer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Awesome looking meta at bottom
 " Fugtive will help with git related stuff, and show branch on status
 Plug 'tpope/vim-fugitive' 
 
 " [3]
-" Vim airline control the status bar formating
 " Several plugins to help work with Tmux
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
@@ -102,8 +102,8 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 
 " [2]
-map <silent> <C-n> :NERDTreeToggle<cr>
-nnoremap <C-t> :call ToggleRelativeOn()<cr>
+"map <silent> <C-n> :NERDTreeToggle<cr>
+"nnoremap <C-t> :call ToggleRelativeOn()<cr>
 " Close vim if only NERDTree is open
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

@@ -1,18 +1,28 @@
 #!/bin/bash
 
-echo Getting Programs (You will need to run as super user)
+echo "Getting Programs (You will need to run as super user)"
 
-echo - Git
-sudo apt-get install git
+echo "- apt-get"
+sudo apt-get update
+sudo apt-get upgrade
 
-echo - Build Essentials
-sudo apt-get install build-essential cmake python-dev
+echo "- Git"
+sudo apt-get -y install git
 
-echo - NodeJS
-sudo apt-get install nodejs npm
-sudo npm install -g typescript
+echo "- Chryptography"
+sudo apt-get -y install encfs
 
-echo - Text Editors
-sudo apt-get install vim
+echo "- Build Essentials"
+sudo apt-get -y install build-essential cmake python-dev
+
+echo "- TMUX"
+sudo apt-get -y install tmux
+
+echo "- NodeJS"
+sudo apt-get -y install nodejs npm
+sudo npm -y install -g typescript
+
+echo "- Text Editors"
+sudo apt-get -y install vim
 
 

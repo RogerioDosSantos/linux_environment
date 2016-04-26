@@ -1,20 +1,8 @@
 #!/bin/bash
 
-echo Creating and Mounting Temp
-mkdir -p ~/temp
-sudo mount -t vboxsf Temp ~/temp
-
-echo Creating and Mounting TFS
-mkdir -p ~/tfs
-sudo mount -t vboxsf TFS ~/tfs
-
-echo Creating and Mounting Leel
-mkdir -p ~/leel
-sudo mount -t vboxsf Leel ~/leel
-
-echo Creating and Mounting Wiki 
-mkdir -p ~/wiki
-sudo mount -t vboxsf Wiki ~/wiki
+echo Creating and Mounting Host
+mkdir -p ~/host
+sudo mount -t vboxsf Host ~/host
 
 echo Creating and Mounting Safe
 mkdir -p ~/.safe ~/safe
