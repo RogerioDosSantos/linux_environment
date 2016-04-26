@@ -48,9 +48,10 @@ nnoremap <silent> <leader>, :noh<cr> " Stop highlight after searching
 set incsearch
 set showmatch
 
-" File Exmplorer
+" File Explorer
 nnoremap <silent><leader>e :Lexplore<cr> " Open the explorer on the left pane
-
+let g:netrw_liststyle=3 "Put the style similar to NERDTree 
+let g:netrw_banner=0    "Remove the header
 
 " Softtabs, 2 spaces
 set tabstop=2
@@ -169,14 +170,14 @@ map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
 "
 "
 " Run the q macro
-nnoremap <leader>q @q
+"nnoremap <leader>q @q
 
 " bind K to grep word under cursor
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
 "command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
+"nnoremap \ :Ag<SPACE>
 
 "Map Ctrl + S to save in any mode
 noremap <silent> <C-S>          :update<CR>
@@ -261,3 +262,6 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
+
+" Remove the .netrwhist file
+au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif
