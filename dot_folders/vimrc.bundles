@@ -53,6 +53,10 @@ Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
 Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
 ""
 
+" [7] Code Tagging and Navigation
+Plug 'rking/ag.vim'
+
+
 """ Utilities / Extras / Etc
 """
 " [7] Make gists of current buffer
