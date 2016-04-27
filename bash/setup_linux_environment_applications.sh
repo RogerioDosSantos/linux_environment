@@ -25,4 +25,5 @@ sudo npm -y install -g typescript
 echo "- Text Editors"
 sudo apt-get -y install vim
 
-
+echo " - Programming tools"
+sudo apt-get -y install silversearcher-ag
