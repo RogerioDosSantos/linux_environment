@@ -109,15 +109,22 @@ let g:airline_powerline_fonts = 1
 
 " [3]
 " Allow moving around between Tmux windows
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-let g:tmux_navigator_no_mappings = 1
-let g:tmux_navigator_save_on_switch = 1
 "
+let g:tmux_navigator_no_mappings = 1
+"let g:tmux_navigator_save_on_switch = 1
+"nnoremap <silent> <C-Left> :TmuxNavigateLeft<cr>
+"nnoremap <silent> <C-Down> :TmuxNavigateDown<cr>
+"nnoremap <silent> <C-Up> :TmuxNavigateUp<cr>
+"nnoremap <silent> <C-Right> :TmuxNavigateRight<cr>
+
+" Copy to buffer
+vmap <leader>y :w! ~/.vimbuffer<CR>
+nmap <leader>y :.w! ~/.vimbuffer<CR>
+" Paste from buffer
+map <leader>p :r ~/.vimbuffer<CR>"
+
 "Open a tmux pane with Node
-nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
+"nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
 
 " [4]
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
