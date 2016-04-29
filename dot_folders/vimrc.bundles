@@ -65,6 +65,7 @@ Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
 
 " [8] Diary, notes, whatever. It's amazing
 Plug 'vimwiki/vimwiki'
+Plug 'mattn/calendar-vim'
 
 " Opens a browser to preview markdown files
 " For this to work, you need to type npm install -g instant-markdown-d
@@ -179,6 +180,26 @@ let g:vimwiki_list = [{
   \ 'template_path': '$HOME/wiki/wiki/template',
   \ 'template_default': 'default',
   \ 'template_ext': '.html'}]
+
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+
+:autocmd FileType vimwiki nnoremap <silent><leader>wc :call ToggleCalendar()<CR>
+:autocmd FileType vimwiki nnoremap <silent><leader>wl :VimwikiDiaryGenerateLinks<CR>
+:autocmd FileType vimwiki nnoremap <silent><leader>wp :Vimwiki2HTML<cr> " Publish current VimWiki document to HTML
+:autocmd FileType vimwiki nnoremap <silent><leader>wpa :VimwikiAll2HTML<cr> " Publish all VimWiki document to HTML
+:autocmd FileType vimwiki nnoremap <leader>ws :VWS 
 
 " Solve conflict problem with another plugin (problably clang) when typing ';' 
 let g:AutoPairsMapCR = 0

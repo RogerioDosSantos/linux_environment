@@ -81,6 +81,9 @@ set splitright
 nnoremap <silent><leader>vv :vsplit<cr> " Vertical Split
 nnoremap <silent><leader>hh :split<cr> " Horizontal Split
 
+" Shortcut for lopen (Open a list to show the location list for current window)
+nnoremap <silent><leader>ll :lopen<cr> 
+
 " Auto resize Vim splits to active split
 set winwidth=84
 set winheight=5
