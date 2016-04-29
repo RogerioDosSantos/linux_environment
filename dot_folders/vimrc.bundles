@@ -41,7 +41,7 @@ Plug 'scrooloose/syntastic' "Syntax Highlighting
 Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
 Plug 'jimmyhchan/dustjs.vim' "Highlighting for dust
 
-" [6] Adds a ; at the end of a line by pressing <leader> ;
+" [6] Adds a ; at the end of a line by pressing <leader>;
 Plug 'lfilho/cosco.vim'
 
 Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
@@ -106,6 +106,19 @@ colorscheme solarized
 let g:airline_powerline_fonts = 1
 
 " [2]
+
+" Fugitive (Mapping Keys)
+nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
+nnoremap <silent><leader>gd :Gdiff<cr> " Git Diff (Non commit items vs Non added items)
+nnoremap <silent><leader>gdh :Gdiff origin/HEAD<cr> " Git Diff origin / HEAD (Commit items vs Non Commit items)
+nnoremap <silent><leader>gdm :Gdiff origin/master<cr> " Git Diff origin / master (Commit items vs Server)
+nnoremap <silent><leader>gc :Gcommit<cr> " Git Commit
+nnoremap <silent><leader>gp :Gpush<cr> " Git Push
+nnoremap <silent><leader>gpu :Gpull<cr> " Git Pull
+nnoremap <silent><leader>gb :Gblame<cr> " Git Brame (Verify the history of the file)
+nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execute undo before saving)
+
+
 "map <silent> <C-n> :NERDTreeToggle<cr>
 "nnoremap <C-t> :call ToggleRelativeOn()<cr>
 " Close vim if only NERDTree is open
@@ -185,9 +198,11 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " Not sure what the below code does...look into Tern docs etc and figure it out?
 " Found this snippet on a forum post that says it gets everything working
 " https://github.com/Valloric/YouCompleteMe/issues/570
+"
 " autocmd FileType javascript setlocal omnifunc=tern#Complete
 
 " " Run commands that require an interactive shell
 " nnoremap <Leader>r :RunInInteractiveShell<space>
 "
+
 
