@@ -226,5 +226,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " " Run commands that require an interactive shell
 " nnoremap <Leader>r :RunInInteractiveShell<space>
 "
+"[11] Clang configuration
 
+let g:clang_library_path='/usr/lib/i386-linux-gnu/libclang-3.5.so.1'
 

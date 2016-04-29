@@ -28,3 +28,4 @@ sudo apt-get -y install vim
 echo " - Programming tools"
 sudo apt-get -y install silversearcher-ag
 sudo apt-get -y install ctags
+sudo apt-get -y install libclang1-3.5
