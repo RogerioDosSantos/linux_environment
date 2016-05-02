@@ -81,6 +81,11 @@ set splitright
 nnoremap <silent><leader>vv :vsplit<cr> " Vertical Split
 nnoremap <silent><leader>hh :split<cr> " Horizontal Split
 
+" Shortcut for Tabs
+nnoremap <leader>tf :tabe " Open file in a new tab
+nnoremap <silent><leader>tn :tabn<cr> " Open next tab
+nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
+
 " Shortcut for lopen (Open a list to show the location list for current window)
 nnoremap <silent><leader>ll :lopen<cr> 
 
