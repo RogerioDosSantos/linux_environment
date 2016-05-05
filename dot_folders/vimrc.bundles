@@ -127,14 +127,23 @@ nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execu
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " [3]
+
 " Allow moving around between Tmux windows
-"
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent><C-h> :TmuxNavigateLeft<cr>
+nnoremap <silent><C-j> :TmuxNavigateDown<cr>
+nnoremap <silent><C-k> :TmuxNavigateUp<cr>
+nnoremap <silent><C-l> :TmuxNavigateRight<cr>
+
+" Tmux control from Vim
+nnoremap <silent><leader>to :VtrOpenRunner<cr>
+nnoremap <silent><leader>te :VtrClearRunner<cr>
+nnoremap <silent><leader>tk :VtrKillRunner<cr>
+nnoremap <silent><leader>td :VtrDetachRunner<cr>
+nnoremap <silent><leader>tc :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+nnoremap <silent><leader>tl :VtrSendLinesToRunner<cr>
+nnoremap <silent><leader>tf :VtrSendFile<cr>
 
 " Copy to buffer
 vmap <leader>y :w! ~/.vimbuffer<CR>
