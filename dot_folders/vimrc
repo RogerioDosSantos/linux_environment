@@ -89,6 +89,33 @@ nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
 " Shortcut for lopen (Open a list to show the location list for current window)
 nnoremap <silent><leader>ll :lopen<cr> 
 
+" Run Shell command and display the result into a temp window
+command! -complete=shellcmd -nargs=+ GetShell call s:RunShellCommand(<q-args>)
+
+function! s:RunShellCommand(cmdline)
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+
+    if part[0] =~ '\v[%#<]'
+      let expanded_part = fnameescape(expand(part))
+      let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+    endif
+
+  endfor
+
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:    ' . a:cmdline)
+  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
+endfunction
+
+nnoremap <leader>c :GetShell 
+
 " Auto resize Vim splits to active split
 set winwidth=84
 set winheight=5
