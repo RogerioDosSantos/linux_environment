@@ -9,6 +9,9 @@ sudo apt-get upgrade
 echo "- Git"
 sudo apt-get -y install git
 
+echo "- Sync and Backup"
+sudo apt-get -y install rsync
+
 echo "- Chryptography"
 sudo apt-get -y install encfs
 
