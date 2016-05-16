@@ -3,111 +3,160 @@
 " Type :PluginInstall to update
 "
 
+"###Disabled items (To evaluate)###
+
+"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' } "Tree explorer. I replaced it with the Explore vim functionality
+  "map <silent> <C-n> :NERDTreeToggle<cr>
+  "nnoremap <C-t> :call ToggleRelativeOn()<cr>
+  " Close vim if only NERDTree is open
+  "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" [5] highlighting for Javascript
+"Plug 'scrooloose/syntastic' "Syntax Highlighting
+"Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
+"Plug 'jimmyhchan/dustjs.vim' "Highlighting for dust
+  " [5] configure syntastic syntax checking to check on open as well as save
+  "let g:syntastic_check_on_open=1
+  "let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+  " Allow highlighting of HTML within Javascript (for React)
+  "let g:javascript_enable_domhtmlcss = 1
+  "let g:jsx_ext_required = 0
+
+
+" [6] Adds a ; at the end of a line by pressing <leader>;
+"Plug 'lfilho/cosco.vim'
+  " [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
+  "autocmd FileType javascript,css nnoremap <silent> <Leader>; :call cosco#commaOrSemiColon()<CR>
+  "autocmd FileType javascript,css inoremap <silent> <Leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
+
+" Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' " Make gists of current buffer - View (https://github.com/mattn/gist-vim) for setup instructions
+  " [7] Gist setup
+  " let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
+  " let g:gist_detect_filetype = 1
+  " let g:gist_open_browser_after_post = 1
+
+  " Solve conflict problem with another plugin (problably clang) when typing ';' 
+  " let g:AutoPairsMapCR = 0
+
+"Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
+  " [9]
+  " Set ultisnips triggers
+  "let g:UltiSnipsExpandTrigger="<tab>"
+  "let g:UltiSnipsJumpForwardTrigger="<tab>"
+  "let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+  "let g:UltiSnipsEditSplit="vertical"
+
+"Plug 'ervandew/supertab' " supertab makes YCM compatible with ultisnips
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+"Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
+"Plug 'editorconfig/editorconfig-vim'
+  " [10] make YCM compatible with UltiSnips (using supertab)
+  "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+  "let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+  "let g:SuperTabDefaultCompletionType = '<C-n>'
+
+  " Not sure what the below code does...look into Tern docs etc and figure it out?
+  " Found this snippet on a forum post that says it gets everything working
+  " https://github.com/Valloric/YouCompleteMe/issues/570
+  "
+  " autocmd FileType javascript setlocal omnifunc=tern#Complete
+
+  " " Run commands that require an interactive shell
+  " nnoremap <Leader>r :RunInInteractiveShell<space>
+
+" [11]
+"Plug 'msanders/snipmate.vim'
+"Plug 'Rip-Rip/clang_complete'
+  "[11] Clang configuration
+
+  " let g:clang_use_library=1
+  " let g:clang_debug = 1
+  " let g:clang_complete_auto = 1
+  " let g:clang_complete_copen = 1
+
+  "let g:clang_library_path='/usr/lib/i386-linux-gnu/libclang-3.5.so.1'
+  "let g:clang_user_options='"-I~/leel/leel-third-party/boost/"'
+
+
+" Plug 'suan/vim-instant-markdown' " Opens a browser to preview markdown files - For this to work, you need to type npm install -g instant-markdown-d
+"
+""" TODO / Plugins to evaluate
+" Figure out how to create / version control my own snippets
+" Figure out how to change matchit to ALSO use <tab>
+" Plug 'Valloric/YouCompleteMe'
+" Plug 'junegunn/vim-easy-align'
+
+" #### Plugin installation ####
+
 if &compatible
   set nocompatible
 end
 
 call plug#begin('~/.vim/plugged')
 
-""" Theme / Pretty stuff
-"""
-" [1]
-Plug 'altercation/vim-colors-solarized'
-" Vim airline control the status bar formating
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-""
+Plug 'altercation/vim-colors-solarized' "Text colors for C++
 
-""" Some ESSENTIAL IDE like plugins for Vim
-"""
-" [2] File tree viewer
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'bling/vim-airline' "Status bar
+Plug 'vim-airline/vim-airline-themes' "Status bar Themes
 
-" Awesome looking meta at bottom
-" Fugtive will help with git related stuff, and show branch on status
-Plug 'tpope/vim-fugitive' 
+Plug 'tpope/vim-fugitive' "Git wrapper
 
-" [3]
-" Several plugins to help work with Tmux
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'christoomey/vim-run-interactive'
+Plug 'christoomey/vim-tmux-navigator' "TMUX - Allow navigate among TMUX windows and vim
+Plug 'christoomey/vim-tmux-runner' "TMUX - Allow run commands on TMUX
 
-" [4] search filesystem with ctrl+p
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'christoomey/vim-run-interactive' "Run command into an interative shell
 
-" [5] highlighting for Javascript
-Plug 'scrooloose/syntastic' "Syntax Highlighting
-Plug 'pangloss/vim-javascript' | Plug 'mxw/vim-jsx'
-Plug 'jimmyhchan/dustjs.vim' "Highlighting for dust
-
-" [6] Adds a ; at the end of a line by pressing <leader>;
-Plug 'lfilho/cosco.vim'
+Plug 'ctrlpvim/ctrlp.vim' "Search filesystem with ctrl+p
 
 Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
 Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
-Plug 'vim-scripts/tComment' "Comment easily with gcc
-Plug 'tpope/vim-repeat' "allow plugins to utilize . command
 Plug 'tpope/vim-surround' "easily surround things...just read docs for info
+
+Plug 'vim-scripts/tComment' "Comment easily with gcc
+
+Plug 'tpope/vim-repeat' "allow plugins to utilize . command
+
 Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
+
 Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
-""
 
-" [7] Code Tagging and Navigation
-Plug 'rking/ag.vim'
+Plug 'rking/ag.vim' " Code Tagging and Navigation
 
+Plug 'vimwiki/vimwiki' " Diary, notes, whatever. It's amazing
+Plug 'mattn/calendar-vim' "Calendar for VimWiki
 
-""" Utilities / Extras / Etc
-"""
-" [7] Make gists of current buffer
-" View (https://github.com/mattn/gist-vim) for setup instructions
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim'
+Plug 'Shougo/neocomplete' "Complete with cache
+Plug 'Shougo/neosnippet' "Snipets
+Plug 'Shougo/neosnippet-snippets' "Snippets templates
 
-" [8] Diary, notes, whatever. It's amazing
-Plug 'vimwiki/vimwiki'
-Plug 'mattn/calendar-vim'
+Plug 'osyo-manga/vim-marching' "Complete with Clang
+"Ascyncronous execution library
+Plug 'Shougo/vimproc' , {
+      \ 'build' : {
+      \     'windows' : 'tools\\update-dll-mingw',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make',
+      \     'linux' : 'make',
+      \     'unix' : 'gmake',
+      \    },
+      \ }
 
-" Opens a browser to preview markdown files
-" For this to work, you need to type npm install -g instant-markdown-d
-Plug 'suan/vim-instant-markdown'
-""
+Plug 'osyo-manga/vim-reunions'
+" Plug 'osyo-manga/vim-snowdrop'
 
-" [9]
-Plug 'SirVer/ultisnips' | Plug 'justinj/vim-react-snippets' | Plug 'colbycheeze/vim-snippets'
+" Pull 'thinca/vim-quickrun'
 
-" [10] supertab makes YCM compatible with ultisnips
-"Plug 'ervandew/supertab'
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-Plug 'ternjs/tern_for_vim', {'do': 'npm install'}
-
-Plug 'editorconfig/editorconfig-vim'
-
-" [11]
-Plug 'msanders/snipmate.vim'
-Plug 'Rip-Rip/clang_complete'
-
-""" TODO / Plugins to evaluate
-" Figure out how to create / version control my own snippets
-" Figure out how to change matchit to ALSO use <tab>
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'junegunn/vim-easy-align'
 call plug#end()
 
-"""" PLUGIN RELATED TWEAKS
-""
-"
 
-" [1]
-" Color scheme
-syntax enable
-set t_Co=256
-"let g:solarized_termcolors=16
-set background=dark
-colorscheme solarized
-" Allow powerline symbols to show up
-let g:airline_powerline_fonts = 1
+"#### Plugins Configurations ####
 
-" [2]
+"Solarized (Configuration)
+syntax enable "Turn on the vim syntax highlight
+set t_Co=256 "Set the color supported to be 256. By default it is 16
+set background=dark "Set the background to be black
+colorscheme solarized "Define the solirized as the default color schema
+"let g:airline_powerline_fonts = 1 " Allow powerline symbols to show up
 
 " Fugitive (Mapping Keys)
 nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
@@ -120,15 +169,7 @@ nnoremap <silent><leader>gpu :Gpull<cr> " Git Pull
 nnoremap <silent><leader>gb :Gblame<cr> " Git Brame (Verify the history of the file)
 nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execute undo before saving)
 
-
-"map <silent> <C-n> :NERDTreeToggle<cr>
-"nnoremap <C-t> :call ToggleRelativeOn()<cr>
-" Close vim if only NERDTree is open
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" [3]
-
-" Allow moving around between Tmux windows
+" TMUX Navigator (Allow moving around between Tmux windows)
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
 nnoremap <silent><C-h> :TmuxNavigateLeft<cr>
@@ -136,7 +177,7 @@ nnoremap <silent><C-j> :TmuxNavigateDown<cr>
 nnoremap <silent><C-k> :TmuxNavigateUp<cr>
 nnoremap <silent><C-l> :TmuxNavigateRight<cr>
 
-" Tmux control from Vim
+" TMUX Runner (Control from Vim)
 nnoremap <silent><leader>to :VtrOpenRunner<cr>
 nnoremap <silent><leader>te :VtrClearRunner<cr>
 nnoremap <silent><leader>tk :VtrKillRunner<cr>
@@ -145,17 +186,15 @@ nnoremap <silent><leader>tc :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 nnoremap <silent><leader>tl :VtrSendLinesToRunner<cr>
 nnoremap <silent><leader>tf :VtrSendFile<cr>
 
-" Copy to buffer
+" TMUX Runner (Copy and Paste to/from buffer)
 vmap <leader>y :w! ~/.vimbuffer<CR>
 nmap <leader>y :.w! ~/.vimbuffer<CR>
-" Paste from buffer
 map <leader>p :r ~/.vimbuffer<CR>"
 
-"Open a tmux pane with Node
+" TMUX Runner (Open a tmux pane with Node)
 "nnoremap <leader>node :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'node'}<cr>
 
-" [4]
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+" Ctrl-P (Use The Silver Searcher https://github.com/ggreer/the_silver_searcher)
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
@@ -168,29 +207,14 @@ if executable('ag')
   "let g:ctrlp_use_caching = 0
 endif
 
-" [5] configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-" Allow highlighting of HTML within Javascript (for React)
-let g:javascript_enable_domhtmlcss = 1
-let g:jsx_ext_required = 0
-
-" [6] Key mapping for Cosco.vim - space + ; to add semicolon or comma in Javascript or CSS
-autocmd FileType javascript,css nnoremap <silent> <Leader>; :call cosco#commaOrSemiColon()<CR>
-autocmd FileType javascript,css inoremap <silent> <Leader>; <c-o>:call cosco#commaOrSemiColon()<CR>
-
-" [7] Gist setup
-let g:gist_clip_command = 'pbcopy' "Using Gist will copy URL to clipboard automatically
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" [8] Set Vim Wiki directory and format
+" VimWiki ( Set Vim Wiki directory and format )
 let g:vimwiki_list = [{
   \ 'path': '$HOME/wiki/wiki',
   \ 'template_path': '$HOME/wiki/wiki/template',
   \ 'template_default': 'default',
   \ 'template_ext': '.html'}]
 
+" VimWiki (Toggle Calendar)
 function! ToggleCalendar()
   execute ":Calendar"
   if exists("g:calendar_open")
@@ -205,37 +229,129 @@ function! ToggleCalendar()
   end
 endfunction
 
+" VimWiki (Key mapping)
 :autocmd FileType vimwiki nnoremap <silent><leader>wc :call ToggleCalendar()<CR>
 :autocmd FileType vimwiki nnoremap <silent><leader>wl :VimwikiDiaryGenerateLinks<CR>
 :autocmd FileType vimwiki nnoremap <silent><leader>wp :Vimwiki2HTML<cr> " Publish current VimWiki document to HTML
 :autocmd FileType vimwiki nnoremap <silent><leader>wpa :VimwikiAll2HTML<cr> " Publish all VimWiki document to HTML
 :autocmd FileType vimwiki nnoremap <leader>ws :VWS 
 
-" Solve conflict problem with another plugin (problably clang) when typing ';' 
-let g:AutoPairsMapCR = 0
 
-" [9]
-" Set ultisnips triggers
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
+" NoeComplete (Completition configuration)
 
-" [10] make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
+let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
+let g:neocomplete#enable_smart_case = 1 " Use smartcase.
+let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' "Define buffer pattern
 
-" Not sure what the below code does...look into Tern docs etc and figure it out?
-" Found this snippet on a forum post that says it gets everything working
-" https://github.com/Valloric/YouCompleteMe/issues/570
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+  \ }
+
+" NoeComplete (Define keyword)
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" NeoComplete (Plugin key-mappings)
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" NeoComplete (Recommended key-mappings)
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+endfunction
+
+" NeoComplete (<TAB>: completion)
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" NeoComplete (<C-h>, <BS>: close popup and delete backword char)
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" NeoComplete (Enable omni completion)
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" NeoComplete (Enable heavy omni completion)
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+
+" NeoSnippets (Configuration)
+
+" NeoSnippets (Plugin key-mappings)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" NeoSnippets (SuperTab like snippets behavior)
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" NeoSnippets (For conceal markers)
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif"
+
+" :neosnippet#snippets_directory
+
+
+" VimMarching (Configuration)
+
+let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
+
+let g:marching#clang_command#options = {
+      \   "cpp" : "-std=gnu++1y"
+  \}
+
+let g:marching_include_paths = [
+      \ "/usr/local/include",
+      \ "~/leel/leel-third-party/boost"
+  \]
+
+let g:marching_enable_neocomplete = 1
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.cpp =
+    \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
+set updatetime=200
+imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
+imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+
+" " VimSnowdrop (Configuration)
+" " set libclang directory path
+" let g:snowdrop#libclang_directory = "/usr/lib/i386-linux-gnu/libclang-3.5.so.1"
 "
-" autocmd FileType javascript setlocal omnifunc=tern#Complete
-
-" " Run commands that require an interactive shell
-" nnoremap <Leader>r :RunInInteractiveShell<space>
+" " set include directory path.
+" let g:snowdrop#include_paths = {
+"   \   "cpp" : [
+"         \ "/usr/local/include",
+"         \ "~/leel/leel-third-party/boost"
+"   \   ]
+"   \}
 "
-"[11] Clang configuration
+" " set clang command options.
+" let g:snowdrop#command_options = {
+"   \   "cpp" : "-std=c++1y"
+"   \}
+"
 
-let g:clang_library_path='/usr/lib/i386-linux-gnu/libclang-3.5.so.1'
+
+
+
+
 
