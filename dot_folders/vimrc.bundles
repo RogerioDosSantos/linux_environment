@@ -130,6 +130,7 @@ Plug 'Shougo/neosnippet' "Snipets
 Plug 'Shougo/neosnippet-snippets' "Snippets templates
 
 Plug 'osyo-manga/vim-marching' "Complete with Clang
+
 "Ascyncronous execution library
 Plug 'Shougo/vimproc' , {
       \ 'build' : {
@@ -145,6 +146,8 @@ Plug 'osyo-manga/vim-reunions'
 " Plug 'osyo-manga/vim-snowdrop'
 
 " Pull 'thinca/vim-quickrun'
+
+Plug 'scrooloose/syntastic' "Syntax Highlighting
 
 call plug#end()
 
@@ -228,6 +231,10 @@ function! ToggleCalendar()
     let g:calendar_open = 1
   end
 endfunction
+
+" VimWiki (Basic Configurations)
+filetype plugin on
+syntax on
 
 " VimWiki (Key mapping)
 :autocmd FileType vimwiki nnoremap <silent><leader>wc :call ToggleCalendar()<CR>
@@ -350,7 +357,15 @@ imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
 "   \}
 "
 
+" Syntastic (Configuration)
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 
