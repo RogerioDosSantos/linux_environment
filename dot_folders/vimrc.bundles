@@ -307,7 +307,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " NeoSnippets (For conceal markers)
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=2 
+  " set concealcursor=niv "The concealcursor enter in conflict with VimWiki Plugin.
 endif"
 
 " :neosnippet#snippets_directory
