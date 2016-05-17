@@ -316,7 +316,7 @@ endif"
 
 " VimMarching (Configuration)
 
-let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
+let g:marching_clang_command = "~/bin/clang" "Inform where Clang executable is.
 
 let g:marching#clang_command#options = {
       \   "cpp" : "-std=gnu++1y"
