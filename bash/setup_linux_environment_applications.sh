@@ -12,7 +12,7 @@ echo "User Directory: ${user_bin_dir}"
 echo ""
 echo "--- Getting Programs ---" 
 
-echo: "Note: You will need to run as super user)"
+echo "Note: You will need to run as super user)"
 
 echo ""
 echo "- apt-get -"
