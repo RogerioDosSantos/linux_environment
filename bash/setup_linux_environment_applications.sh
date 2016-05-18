@@ -12,7 +12,7 @@ echo "User Directory: ${user_bin_dir}"
 echo ""
 echo "--- Getting Programs ---" 
 
-echo "Note: You will need to run as super user)"
+echo: "Note: You will need to run as super user)"
 
 echo ""
 echo "- apt-get -"
@@ -52,20 +52,5 @@ echo ""
 echo " - Programming tools -"
 sudo apt-get -y install silversearcher-ag
 sudo apt-get -y install ctags
-# sudo apt-get -y install libclang1-3.5
-
-echo ""
-echo " - Clang"
-
-mkdir -p "${user_bin_dir}"
-cd ${user_bin_dir}
-mkdir -p "./temp"
-wget -O "./temp/clang_intaller.tar.xz" "http://llvm.org/releases/3.8.0/clang+llvm-3.8.0-x86_64-linux-gnu-ubuntu-14.04.tar.xz"
-tar xvfJ "./temp/clang_intaller.tar.xz" -C .
-mv "./clang+llvm-3.8.0-x86_64-linux-gnu-ubuntu-14.04" "./clang_3.8.0"
-rm -rf "./temp"
-ln -s "./clang_3.8.0/bin/clang" .
-ln -s "./clang_3.8.0/bin/clang-format" .
-
-
+sudo apt-get -y install clang clang-format-3.5 clang-modernize-3.5
 
