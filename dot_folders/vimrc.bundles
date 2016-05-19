@@ -321,6 +321,16 @@ endif"
 " Vim Clang Format (Configuration)
 
 let g:clang_format#command = "/usr/bin/clang-format-3.5" "Inform where Clang Format executable is.
+let g:clang_format#code_style = "google" "Inform the code style to be used.
+let g:clang_format#style_options = {
+    \ "BreakBeforeBraces": "Allman",
+    \ "AllowShortFunctionsOnASingleLine" : "false",
+    \ "AllowShortIfStatementsOnASingleLine" : "false",
+    \ "AllowShortLoopsOnASingleLine" : "false",
+    \ "BreakConstructorInitializersBeforeComma" : "true",
+    \ "ColumnLimit" : "120",
+    \ "NamespaceIndentation" : "All"
+  \}
 
 noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
 
