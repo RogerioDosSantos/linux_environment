@@ -387,6 +387,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_clang_check_config_file = ".syntastic_cpp_config"
 let g:syntastic_mode_map = {
         \ "mode": "passive",
         \ "active_filetypes": [],
@@ -394,6 +395,9 @@ let g:syntastic_mode_map = {
         \}
 
 " Syntastic (Mapping Keys)
-nnoremap <silent><leader>b :w<cr>:SyntasticCheck<cr> " Check the current file
+nnoremap <silent><leader>ba :w<cr>:SyntasticCheck gcc clang_check cppcheck<cr> " Check the current file
+nnoremap <silent><leader>bc :w<cr>:SyntasticCheck clang_check<cr> " Check the current file
+nnoremap <silent><leader>bg :w<cr>:SyntasticCheck gcc<cr> " Check the current file
+nnoremap <silent><leader>bp :w<cr>:SyntasticCheck cppcheck<cr> " Check the current file
 
 
