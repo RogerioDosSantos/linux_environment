@@ -318,6 +318,8 @@ endif"
 
 let g:clang_format#command = "/usr/bin/clang-format-3.5" "Inform where Clang Format executable is.
 
+noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
+
 " VimMarching (Configuration)
 
 let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
