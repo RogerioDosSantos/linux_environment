@@ -143,6 +143,7 @@ Plug 'Shougo/vimproc' , {
       \    },
       \ }
 
+" TODO(Roger) - Verify what this plugin does.
 Plug 'osyo-manga/vim-reunions'
 " Plug 'osyo-manga/vim-snowdrop'
 
@@ -172,6 +173,9 @@ nnoremap <silent><leader>gp :Gpush<cr> " Git Push
 nnoremap <silent><leader>gpu :Gpull<cr> " Git Pull
 nnoremap <silent><leader>gb :Gblame<cr> " Git Brame (Verify the history of the file)
 nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execute undo before saving)
+nnoremap <silent><leader>glo :Glog -10<cr>:copen<cr> " Load the 10 last log of a files into the buffer and display it
+nnoremap <silent><leader>gla :Glog<cr>:copen<cr> " Load the all log of a files into the buffer and display it
+nnoremap <silent><leader>gle :Gedit<cr> " Return to the current file being edited.
 
 " TMUX Navigator (Allow moving around between Tmux windows)
 let g:tmux_navigator_no_mappings = 1
