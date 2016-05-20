@@ -54,3 +54,4 @@ sudo apt-get -y install silversearcher-ag
 sudo apt-get -y install ctags
 sudo apt-get -y install clang clang-format-3.5 clang-modernize-3.5
 sudo apt-get -y install cppcheck
+sudo apt-get -y install doxygen
