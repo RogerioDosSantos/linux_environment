@@ -397,7 +397,7 @@ let g:syntastic_mode_map = {
         \}
 
 " Syntastic (Mapping Keys)
-nnoremap <silent><leader>ba :w<cr>:SyntasticCheck gcc clang_check cppcheck<cr> " Check the current file
+nnoremap <silent><leader>ba :w<cr>:SyntasticCheck gcc cppcheck<cr> " Check the current file
 nnoremap <silent><leader>bc :w<cr>:SyntasticCheck clang_check<cr> " Check the current file
 nnoremap <silent><leader>bg :w<cr>:SyntasticCheck gcc<cr> " Check the current file
 nnoremap <silent><leader>bp :w<cr>:SyntasticCheck cppcheck<cr> " Check the current file
