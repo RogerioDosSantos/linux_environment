@@ -301,3 +301,8 @@ endfunction
 
 " Remove the .netrwhist file
 au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif
+
+" Folding Configurations
+nnoremap <silent>zss :set foldmethod=syntax<cr> " Set the folding method to Syntax
+nnoremap <silent>zsm :set foldmethod=manual<cr> " Set the folding method to Manual
+nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Indent
