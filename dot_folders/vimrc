@@ -306,3 +306,12 @@ au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]
 nnoremap <silent>zss :set foldmethod=syntax<cr> " Set the folding method to Syntax
 nnoremap <silent>zsm :set foldmethod=manual<cr> " Set the folding method to Manual
 nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Indent
+
+" Buffer Navigation
+" List buffers
+nnoremap <leader>bl :buffers 
+nnoremap <silent><leader>bn :bnext<cr> " Go to the next buffer
+nnoremap <silent><leader>bp :bprevious<cr> " Go to the previous buffer
+nnoremap <silent><leader>bd :bdelete<cr> " Delete current Buffer
+
+

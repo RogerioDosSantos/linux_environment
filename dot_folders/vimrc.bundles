@@ -193,6 +193,7 @@ nnoremap <silent><leader>te :VtrClearRunner<cr>
 nnoremap <silent><leader>tk :VtrKillRunner<cr>
 nnoremap <silent><leader>td :VtrDetachRunner<cr>
 nnoremap <silent><leader>tc :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+nnoremap <silent><leader>tb :VtrFlushCommand<cr>:VtrSendCommandToRunner ./build_linux_debug.sh<cr>
 nnoremap <silent><leader>tl :VtrSendLinesToRunner<cr>
 nnoremap <silent><leader>tf :VtrSendFile<cr>
 
@@ -304,9 +305,9 @@ endif
 " NeoSnippets (Configuration)
 
 " NeoSnippets (Plugin key-mappings)
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-i>     <Plug>(neosnippet_expand_or_jump)
+smap <C-i>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-i>     <Plug>(neosnippet_expand_target)
 
 " NeoSnippets (SuperTab like snippets behavior)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
