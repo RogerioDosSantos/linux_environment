@@ -305,9 +305,9 @@ endif
 " NeoSnippets (Configuration)
 
 " NeoSnippets (Plugin key-mappings)
-imap <C-i>     <Plug>(neosnippet_expand_or_jump)
-smap <C-i>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-i>     <Plug>(neosnippet_expand_target)
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " NeoSnippets (SuperTab like snippets behavior)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
@@ -391,6 +391,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_clang_check_config_file = ".syntastic_cpp_config"
+" let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_mode_map = {
         \ "mode": "passive",
         \ "active_filetypes": [],
@@ -398,10 +399,11 @@ let g:syntastic_mode_map = {
         \}
 
 " Syntastic (Mapping Keys)
-nnoremap <silent><leader>ba :w<cr>:SyntasticCheck gcc clang_check cppcheck<cr> " Check the current file
+nnoremap <silent><leader>ba :w<cr>:SyntasticCheck gcc clang_check cppcheck cpplint<cr> " Check the current file
 nnoremap <silent><leader>bc :w<cr>:SyntasticCheck clang_check<cr> " Check the current file
 nnoremap <silent><leader>bg :w<cr>:SyntasticCheck gcc<cr> " Check the current file
 nnoremap <silent><leader>bp :w<cr>:SyntasticCheck cppcheck<cr> " Check the current file
+nnoremap <silent><leader>bl :w<cr>:SyntasticCheck cpplint<cr> " Check the current file
 
 " Doxigen ( Configuration )
 " set spell spelllang=en_us
