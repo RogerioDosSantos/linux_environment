@@ -153,6 +153,8 @@ Plug 'scrooloose/syntastic' "Syntax Highlighting
 
 Plug 'vim-scripts/DoxygenToolkit.vim' "Code Documentation
 
+" Plug 'vim-scripts/Conque-GDB' "C++ debugging
+
 call plug#end()
 
 
