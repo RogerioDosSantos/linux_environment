@@ -134,7 +134,7 @@ Plug 'osyo-manga/vim-marching' "Complete with Clang
 
 "Ascyncronous execution library
 Plug 'Shougo/vimproc' , {
-      \ 'build' : {
+  \ 'build' : {
       \     'windows' : 'tools\\update-dll-mingw',
       \     'cygwin' : 'make -f make_cygwin.mak',
       \     'mac' : 'make',
@@ -264,7 +264,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' "Define buffer pattern
 
 " Define dictionary.
 let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
+  \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
   \ }
@@ -327,16 +327,25 @@ endif"
 
 let g:clang_format#command = "/usr/bin/clang-format-3.5" "Inform where Clang Format executable is.
 let g:clang_format#code_style = "google" "Inform the code style to be used.
+" let g:clang_format#detect_style_file = 1 "vim-clang-format automatically detects the style file like .clang-format
 let g:clang_format#style_options = {
-    \ "BreakBeforeBraces": "Allman",
+  \ "BreakBeforeBraces" : "Allman",
     \ "AllowShortFunctionsOnASingleLine" : "false",
     \ "AllowShortIfStatementsOnASingleLine" : "false",
     \ "AllowShortLoopsOnASingleLine" : "false",
     \ "BreakConstructorInitializersBeforeComma" : "true",
-    \ "ColumnLimit" : "120",
-    \ "NamespaceIndentation" : "All"
+    \ "ColumnLimit" : "150",
+    \ "NamespaceIndentation" : "All",
+    \ "IndentWidth" : "4"
   \}
 
+
+    " \ "TabWidth" : "4"
+    " \ "ContinuationIndentWidth" : "4",
+    " \ "ObjCBlockIndentWidth" : "4",
+    " \ "ConstructorInitializerIndentWidth" : "4",
+ 
+  
 noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
 
 " VimMarching (Configuration)
@@ -344,12 +353,13 @@ noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
 let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
 
 let g:marching#clang_command#options = {
-      \   "cpp" : "-std=gnu++1y"
+  \ "cpp" : "-std=gnu++1y"
   \}
 
 let g:marching_include_paths = [
       \ "/usr/local/include",
-      \ "~/leel/leel-third-party/boost"
+      \ "~/leel/leel-third-party/boost",
+      \ "~/third-party/boost1.55"
   \]
 
 let g:marching_enable_neocomplete = 1
@@ -395,9 +405,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_clang_check_config_file = ".syntastic_cpp_config"
 " let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_mode_map = {
-        \ "mode": "passive",
-        \ "active_filetypes": [],
-        \ "passive_filetypes": [] 
+  \ "mode" : "passive",
+        \ "active_filetypes" : [],
+        \ "passive_filetypes" : [] 
         \}
 
 " Syntastic (Mapping Keys)
@@ -422,4 +432,3 @@ let g:DoxygenToolkit_licenseTag="This is a part of the LeeL Systems products \nC
 nnoremap <silent>gd :Dox<cr> 
 nnoremap <silent>gl gg :DoxLic<cr> " Document license.
 nnoremap <silent>gs :set spell!<cr> " Toggle document spell check
-
