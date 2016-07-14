@@ -344,6 +344,8 @@ let g:clang_format#style_options = {
       \"MacroBlockEnd" : "'END_ENUM'",
       \"NamespaceIndentation" : "All",
       \"ObjCBlockIndentWidth" : "4",
+      \"DerivePointerAlignment" : "false",
+      \"PointerAlignment" : "Left",
       \"TabWidth" : "4"
    \}
 
