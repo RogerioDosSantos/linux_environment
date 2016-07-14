@@ -325,25 +325,33 @@ endif"
 
 " Vim Clang Format (Configuration)
 
-let g:clang_format#command = "/usr/bin/clang-format-3.5" "Inform where Clang Format executable is.
+let g:clang_format#command = "/usr/bin/clang-format-3.8" "Inform where Clang Format executable is.
 let g:clang_format#code_style = "google" "Inform the code style to be used.
 " let g:clang_format#detect_style_file = 1 "vim-clang-format automatically detects the style file like .clang-format
 let g:clang_format#style_options = {
-  \ "BreakBeforeBraces" : "Allman",
-    \ "AllowShortFunctionsOnASingleLine" : "false",
-    \ "AllowShortIfStatementsOnASingleLine" : "false",
-    \ "AllowShortLoopsOnASingleLine" : "false",
-    \ "BreakConstructorInitializersBeforeComma" : "true",
-    \ "ColumnLimit" : "150",
-    \ "NamespaceIndentation" : "All",
-    \ "IndentWidth" : "4"
-  \}
+      \"AccessModifierOffset" : "-4",
+      \"AlignAfterOpenBracket" : "DontAlign",
+      \"AllowShortFunctionsOnASingleLine" : "None",
+      \"AllowShortIfStatementsOnASingleLine" : "false",
+      \"AllowShortLoopsOnASingleLine" : "false",
+      \"BreakBeforeBraces" : "Allman",
+      \"BreakConstructorInitializersBeforeComma" : "true",
+      \"ColumnLimit" : "150",
+      \"ConstructorInitializerAllOnOneLineOrOnePerLine" : "false",
+      \"IndentCaseLabels" : "false",
+      \"IndentWidth" : "4",
+      \"MacroBlockBegin" : "'DEFINE_ENUM'",
+      \"MacroBlockEnd" : "'END_ENUM'",
+      \"NamespaceIndentation" : "All",
+      \"ObjCBlockIndentWidth" : "4",
+      \"TabWidth" : "4"
+   \}
 
-
-    " \ "TabWidth" : "4"
-    " \ "ContinuationIndentWidth" : "4",
-    " \ "ObjCBlockIndentWidth" : "4",
-    " \ "ConstructorInitializerIndentWidth" : "4",
+" Original configuration.
+" \ "TabWidth" : "4"
+" \ "ContinuationIndentWidth" : "4",
+" \ "ObjCBlockIndentWidth" : "4",
+" \ "ConstructorInitializerIndentWidth" : "4",
  
   
 noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
