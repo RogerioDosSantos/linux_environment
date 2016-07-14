@@ -348,11 +348,13 @@ let g:clang_format#style_options = {
    \}
 
 " Original configuration.
-" \ "TabWidth" : "4"
-" \ "ContinuationIndentWidth" : "4",
-" \ "ObjCBlockIndentWidth" : "4",
-" \ "ConstructorInitializerIndentWidth" : "4",
- 
+    " \ "BreakBeforeBraces": "Allman",
+    " \ "AllowShortFunctionsOnASingleLine" : "false",
+    " \ "AllowShortIfStatementsOnASingleLine" : "false",
+    " \ "AllowShortLoopsOnASingleLine" : "false",
+    " \ "BreakConstructorInitializersBeforeComma" : "true",
+    " \ "ColumnLimit" : "120",
+    " \ "NamespaceIndentation" : "All"
   
 noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
 
