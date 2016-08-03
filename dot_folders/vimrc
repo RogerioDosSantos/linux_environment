@@ -242,6 +242,10 @@ inoremap <S-Tab> <c-n>
 " Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
+" Switch between .h, .cpp
+nnoremap <leader>fh :w<cr>:e %:r.h<cr>
+nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
+
 " AUTOCOMMANDS - Do stuff
 
 " Save whenever switching windows or leaving vim. This is useful when running
