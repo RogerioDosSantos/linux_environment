@@ -246,6 +246,9 @@ nnoremap <leader><leader> <c-^>
 nnoremap <leader>fh :w<cr>:e %:r.h<cr>
 nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
 
+" Search Visually selected text
+vnoremap // y/<c-r>"<cr>
+
 " AUTOCOMMANDS - Do stuff
 
 " Save whenever switching windows or leaving vim. This is useful when running
