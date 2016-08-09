@@ -371,7 +371,8 @@ let g:marching#clang_command#options = {
 let g:marching_include_paths = [
       \ "/usr/local/include",
       \ "~/leel/leel-third-party/boost",
-      \ "~/third-party/boost1.55"
+      \ "~/third-party/boost1.55",
+      \ "~/third-party/rapidjson/include"
   \]
 
 let g:marching_enable_neocomplete = 1
