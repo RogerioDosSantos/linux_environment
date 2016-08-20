@@ -174,9 +174,10 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Set spellfile to location that is guaranteed to exist, can be symlinked to
-" Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
-set spellfile=$HOME/.vim-spell-en.utf-8.add
+" Spell check 
+nnoremap <leader>se :setlocal spell spelllang=en_us<cr>:set spellfile=$HOME/.vim/spell-en.utf-8.add<cr>
+nnoremap <leader>sp :setlocal spell spelllang=pt_br<cr>:set spellfile=$HOME/.vim/spell-pt.utf-8.add<cr>
+nnoremap <leader>so :set nospell<cr>
 
 " Always use vertical diffs
 set diffopt+=vertical
