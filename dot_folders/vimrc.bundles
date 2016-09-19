@@ -445,3 +445,7 @@ let g:DoxygenToolkit_licenseTag="This is a part of the LeeL Systems products \nC
 nnoremap <silent>gd :Dox<cr> 
 nnoremap <silent>gl gg :DoxLic<cr> " Document license.
 nnoremap <silent>gs :set spell!<cr> " Toggle document spell check
+
+" Ag (Configuration)
+nnoremap <silent>\\ :Ag \(<c-r>=expand("<cword>")<cr>\)<cr>
+" vnoremap <silent>\\ y :Ag \(<c-r>"<cr>\)
