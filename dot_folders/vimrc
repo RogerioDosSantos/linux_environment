@@ -318,10 +318,10 @@ nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Inde
 
 " Buffer Navigation
 " List buffers
-nnoremap <leader>bb :buffers 
-nnoremap <silent><leader>bn :bnext<cr> " Go to the next buffer
-nnoremap <silent><leader>bp :bprevious<cr> " Go to the previous buffer
-nnoremap <silent><leader>bd :bdelete<cr> " Delete current Buffer
+nnoremap <leader>bbb :buffers 
+nnoremap <silent><leader>bbn :bnext<cr> " Go to the next buffer
+nnoremap <silent><leader>bbp :bprevious<cr> " Go to the previous buffer
+nnoremap <silent><leader>bbd :bdelete<cr> " Delete current Buffer
 
 " Macros
 " ifdef
