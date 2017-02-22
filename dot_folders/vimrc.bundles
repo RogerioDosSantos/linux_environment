@@ -368,6 +368,7 @@ let g:marching#clang_command#options = {
   \ "cpp" : "-std=gnu++1y"
   \}
 
+" Add include directory here that should be used intellisense is used
 let g:marching_include_paths = [
       \ "/usr/local/include",
       \ "~/leel/leel-third-party/boost",
