@@ -20,6 +20,8 @@ rm -f ~/.vimrc
 ln -s -n ~/.linux/vim/vimrc ~/.vimrc
 rm -f ~/.vimrc.bundles
 ln -s -n ~/.linux/vim/vimrc.bundles ~/.vimrc.bundles
+rm -f ~/.syntastic_cpp_config
+ln -s -n ~/.linux/syntastic/syntastic_cpp_config_schneider ~/.syntastic_cpp_config
 
 echo ""
 echo "- Shortcuts - "
@@ -31,3 +33,9 @@ rm -f ~/temp
 ln -s -n ~/host/temp ~/temp
 rm -f ~/wiki_indusoft
 ln -s -n ~/host/git/indusoft ~/wiki_indusoft
+rm -f ~/work
+ln -s -n ~/host/work ~/work
+rm -f ~/dev
+ln -s -n ~/host/work/PRODUCT/DEV ~/dev
+rm -f ~/third-party
+ln -s -n ~/host/work/PRODUCT/ThirdParty ~/third-party

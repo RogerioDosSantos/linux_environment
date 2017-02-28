@@ -1,0 +1,9 @@
+-DTESTFRAMEWORK_GOOGLE
+-D_GNUC
+-I/usr/local/include
+-Ithird-party/boost1.55
+-Ithird-party/gtest-1.7.0/include
+-Ithird-party/rapidjson_master/include
+-Ithird-party/OpenOpcUa/v1.0.4.6/include/OpenOpcUaClientSdk
+-Ithird-party/openssl-1.0.0m/include
+
