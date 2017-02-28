@@ -7,13 +7,13 @@ echo "### Vim Machine - Creating Schneider Links ###"
 
 echo ""
 echo "- Linux Environment - "
-rm -f ~/.linux
-ln -s -n ~/host/git/linux_environment ~/.linux
+#rm -f ~/.linux
+#ln -s -n ~/host/git/linux_environment ~/.linux
 
 echo ""
 echo "- Configuration Files - "
 rm -f ~/.tmux.conf
-ln -s -n ~/git/scripts/tmux/tmux.conf ~/.tmux.conf
+ln -s -n ~/.linux/tmux/tmux.conf ~/.tmux.conf
 rm -f ~/.vim
 ln -s -n ~/.linux/vim/vim ~/.vim
 rm -f ~/.vimrc
