@@ -25,6 +25,11 @@ echo ""
 echo "- Shortcuts - "
 rm -f ~/bash
 ln -s -n ~/.linux/bash ~/bash
+rm -f ~/wiki
+ln -s -n ~/host/git/wiki ~/wiki
+rm -f ~/temp
+ln -s -n ~/host/temp ~/temp
+
 
 
 
