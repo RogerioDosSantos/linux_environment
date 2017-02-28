@@ -29,7 +29,5 @@ rm -f ~/wiki
 ln -s -n ~/host/git/wiki ~/wiki
 rm -f ~/temp
 ln -s -n ~/host/temp ~/temp
-
-
-
-
+rm -f ~/wiki_indusoft
+ln -s -n ~/host/git/indusoft ~/wiki_indusoft
