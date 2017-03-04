@@ -13,3 +13,5 @@ ln -s -n ~/.linux/tmux/tmux.conf ~/.tmux.conf
 echo - Shortcuts
 rm -f ~/bash
 ln -s -n ~/.linux/bash ~/bash
+rm -f ~/docker
+ln -s -n ~/host/git/docker
