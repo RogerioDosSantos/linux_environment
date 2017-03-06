@@ -10,7 +10,7 @@ fi
 
 # Go to the directory where the bash file is
 cd "$(dirname "$0")"
-echo "Running from %dirname%"
+echo "Running from $(pwd)"
 
 mkdir /data
 mkdir /data/gogs
