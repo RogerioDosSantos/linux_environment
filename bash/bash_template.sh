@@ -4,7 +4,7 @@ echo "### Title ###"
 
 # Ensure that run as root
 if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+  then echo "This program must be run with administrator privileges.  Aborting"
   exit
 fi
 
