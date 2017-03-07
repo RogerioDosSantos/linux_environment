@@ -1,0 +1,7 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+# Proxy Configuration 
+http_proxy=http_proxy=http://gateway.zscaler.net:9480
+https_proxy=http_proxy=http://gateway.zscaler.net:9480
+ftp_proxy=http_proxy=http://gateway.zscaler.net:9480
+socks_proxy=http://gateway.zscaler.net:9480
