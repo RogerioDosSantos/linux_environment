@@ -2,7 +2,6 @@
 
 echo "### Docker Machine - Links Setup ###"
 
-
 # Ensure that run as root
 if [ "$EUID" -ne 0 ]
   then echo "This program must be run with administrator privileges. Aborting..."
@@ -45,7 +44,7 @@ else
 fi
 
 echo - /etc/systemd/system/docker.service.d
-if [ ! -d "/etc/systemd/system/docker.service.d"  ]; then
+if [[ ! -d "/etc/systemd/system/docker.service.d" ]]; then
   mkdir /etc/systemd/system/docker.service.d
 fi
 
