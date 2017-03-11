@@ -8,6 +8,9 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+# Load functions
+. ~/.linux/bash/bash_functions.sh
+
 # Go to the directory where the bash file is
 cd "$(dirname "$0")"
 echo "Running from: $(pwd)"
@@ -18,14 +21,22 @@ echo - Environment folder
 rm -f ~/.linux
 ln -s -n ~/git/linux_environment ~/.linux
 
+echo - Proxy Configuration
+proxy_url=$(ConfigureProxy)
+if [[ $proxy_url != "" ]]
+then
+  echo "Proxy $proxy_url configured."
+else
+  echo "No Proxy configured."
+fi
+
 echo - /etc/rc.local
 rm -f /etc/rc.local
 ln -s -n ~/.linux/linux/etc_rc.local_docker_machine /etc/rc.local
 
 echo - /etc/environment
 rm -f /etc/environment
-read -r -p "Would you like add proxy configuration? [y/N] " use_proxy
-if [[ "$use_proxy" =~ ^([yY][eE][sS]|[yY])+$ ]]
+if [[ $proxy_url != "" ]]
 then
   ln -s -n ~/.linux/linux/etc_environment_proxy_docker_machine /etc/environment
 else
@@ -33,7 +44,7 @@ else
 fi
 
 echo - /etc/systemd/system/docker.service.d
-if [ ! -d "/etc/systemd/system/docker.service.d"  ]; then
+if [[ ! -d "/etc/systemd/system/docker.service.d" ]]; then
   mkdir /etc/systemd/system/docker.service.d
 fi
 
@@ -42,7 +53,7 @@ rm -f /etc/systemd/system/docker.service.d/docker.conf
 ln -s -n ~/.linux/docker/etc_systemd_system_docker.service.d_docker.conf /etc/systemd/system/docker.service.d/docker.conf
 
 echo - /etc/systemd/system/docker.service.d/http-proxy.conf
-if [[ "$use_proxy" =~ ^([yY][eE][sS]|[yY])+$ ]]
+if [[ $proxy_url != "" ]]
 then
   rm -f /etc/systemd/system/docker.service.d/http-proxy.conf
   ln -s -n ~/.linux/docker/etc_systemd_system_docker.service.d_http-proxy.conf /etc/systemd/system/docker.service.d/http-proxy.conf
