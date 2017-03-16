@@ -1,13 +1,15 @@
 #!/bin/bash
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+echo "### Docker Machine - Application Installer ###"
+
+if [ "$EUID" -ne 0 ]; then 
+  echo "This program must be run with administrator privileges.  Aborting"
   exit
 fi
 
+#Go to the current file folder
 cd "$(dirname "$0")"
-
-echo "### Linux Environment Host Machine Application Setup ###"
+echo "- Running from $(pwd)"
 
 echo ""
 echo "- apt-get -"
@@ -32,7 +34,10 @@ add-apt-repository \
 echo ""
 echo "Installation" 
 apt-get update
-apt-get -y install docker-engine
+apt-get -y install \
+    docker-engine \
+    python-pip \
+    docker-compose
 echo "Verify that docker is installed correctly by running the hello-world image." 
 docker run hello-world
 
