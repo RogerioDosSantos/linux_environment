@@ -23,7 +23,7 @@ apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
     software-properties-common
-echo "Add Dockerâ€™s official GPG key:" 
+echo "Add DockerâOfficial GPG key]:" 
 curl -fsSL https://apt.dockerproject.org/gpg | apt-key add -
 echo ""
 echo "Use the following command to set up the stable repository." 
