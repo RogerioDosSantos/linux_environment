@@ -87,7 +87,8 @@ syntax enable "Turn on the vim syntax highlight
 set t_Co=256 "Set the color supported to be 256. By default it is 16
 set background=dark "Set the background to be black
 colorscheme solarized "Define the solirized as the default color schema
-"let g:airline_powerline_fonts = 1 " Allow powerline symbols to show up
+" let g:airline_powerline_fonts = 1 " Allow powerline symbols to show up
+" let g:solarized_termcolors=256
 
 " Fugitive (Mapping Keys)
 nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
