@@ -247,7 +247,9 @@ nnoremap <leader><leader> <c-^>
 
 "Shortcut for Switch between .h, .cpp
 nnoremap <leader>fh :w<cr>:e %:r.h<cr>
+nnoremap <leader>fhi :w<cr>:e ../include/%:r.h<cr>
 nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
+nnoremap <leader>fcs :w<cr>:e ../source/%:r.cpp<cr>
 
 " Search Visually selected text
 vnoremap // y/<c-r>"<cr>
