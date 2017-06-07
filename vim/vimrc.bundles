@@ -49,7 +49,7 @@ Plug 'mattn/calendar-vim' "Calendar for VimWiki
 
 Plug 'Shougo/neocomplete' "Complete with cache
 Plug 'Shougo/neosnippet' "Snipets
-Plug 'Shougo/neosnippet-snippets' "Snippets templates
+Plug 'RogerioDosSantos/neosnippet-snippets' "Snippets templates
 
 Plug 'rhysd/vim-clang-format' "Format with Clang
 Plug 'osyo-manga/vim-marching' "Complete with Clang
@@ -244,7 +244,7 @@ if has('conceal')
   " set concealcursor=niv "The concealcursor enter in conflict with VimWiki Plugin.
 endif"
 
-" :neosnippet#snippets_directory
+let g:neosnippet#snippets_directory='~/.linux/vim/vim/plugged/neosnippet-snippets/neosnippets'
 
 " Vim Clang Format (Configuration)
 
