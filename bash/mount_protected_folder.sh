@@ -17,7 +17,7 @@ trap 'exit' ERR
 set -E
 
 # Get User information
-file_dir="/root/host/safe"
+file_dir="/home/links/safe"
 read -e -p "Please enter the Safe file directory: " -i "$file_dir" file_dir
 
 name="safe00"
@@ -35,7 +35,7 @@ if [[ ! -f $file_path ]]; then
   exit
 fi
 
-echo " - Maping the container into a volume on the following path: $volume_dir"
+echo " - Mapping the container into a volume on the following path: $volume_dir"
 cryptsetup luksOpen $file_path $volume_name
   
 echo " - Mapping the new volume on the following folder: $safe_folder_dir"
