@@ -251,6 +251,9 @@ nnoremap <leader>fhi :w<cr>:e ../include/%:r.h<cr>
 nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
 nnoremap <leader>fcs :w<cr>:e ../source/%:r.cpp<cr>
 
+" Location List
+nnoremap <leader>ol :w<cr>:e ~/.location_list.wiki<cr>
+
 " Search Visually selected text
 vnoremap // y/<c-r>"<cr>
 
