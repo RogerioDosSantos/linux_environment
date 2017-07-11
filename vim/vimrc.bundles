@@ -77,6 +77,11 @@ Plug 'vim-scripts/DoxygenToolkit.vim' "Code Documentation
 
 " Plug 'vim-scripts/Conque-GDB' "C++ debugging
 
+Plug 'majutsushi/tagbar' "Display Tags in windows
+" Plug 'xolox/vim-easytags' "Create Tags automatically
+" Plug 'xolox/vim-misc' "Required by easytags
+Plug 'szw/vim-tags' "Tags Creation
+
 call plug#end()
 
 
@@ -116,8 +121,8 @@ nnoremap <silent><C-l> :TmuxNavigateRight<cr>
 nnoremap <silent><leader>to :VtrOpenRunner<cr>
 nnoremap <silent><leader>te :VtrClearRunner<cr>
 nnoremap <silent><leader>tk :VtrKillRunner<cr>
-nnoremap <silent><leader>td :VtrDetachRunner<cr>
-nnoremap <silent><leader>tc :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
+" nnoremap <silent><leader>td :VtrDetachRunner<cr>
+" nnoremap <silent><leader>tc :VtrFlushCommand<cr>:VtrSendCommandToRunner<cr>
 nnoremap <silent><leader>tb :w<cr>:VtrFlushCommand<cr>:VtrSendCommandToRunner ./build_linux_debug.sh<cr>
 nnoremap <silent><leader>tl :VtrSendLinesToRunner<cr>
 nnoremap <silent><leader>tf :VtrSendFile<cr>
@@ -379,3 +384,11 @@ nnoremap <silent>gs :set spell!<cr> " Toggle document spell check
 " Ag (Configuration)
 nnoremap <silent>\\ :Ag \(<c-r>=expand("<cword>")<cr>\)<cr>
 " vnoremap <silent>\\ y :Ag \(<c-r>"<cr>\)
+
+" tagbar
+nnoremap <silent><leader>tt :TagbarToggle<cr>
+let g:tagbar_show_linenumbers=2
+" let g:tagbar_left=1
+" let g:tagbar_vertical=1
+" let g:tagbar_autoclose=1
+let tagbar_autofocus=1

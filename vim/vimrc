@@ -301,6 +301,14 @@ augroup vimrcEx
   autocmd FileType css,scss,sass,less setlocal iskeyword+=-
 augroup END
 
+" Ctags
+set tags=./tags;/,tags;/
+" Create Custom Tags
+nnoremap <leader>tc :! ctags -R ~/
+" Append Custom Tags
+nnoremap <silent><leader>ta :! ctags -a -f ~/tags -R %:p:h<cr>
+" Remove Custom Tags
+nnoremap <silent><leader>tr :! rm ~/tags<cr>
 
 " Tab completion
 " will insert tab at beginning of line,
