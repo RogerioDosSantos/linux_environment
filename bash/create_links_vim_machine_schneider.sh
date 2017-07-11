@@ -9,6 +9,8 @@ echo "Running from $(pwd)"
 echo "- Configuration Files - "
 rm -f ~/.tmux.conf
 ln -s -n ~/.linux/tmux/tmux.conf ~/.tmux.conf
+rm -f ~/.tmux
+ln -s -n ~/.linux/tmux/tmux ~/.tmux
 rm -f ~/.vim
 ln -s -n ~/.linux/vim/vim ~/.vim
 rm -f ~/.vimrc
