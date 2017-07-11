@@ -4,4 +4,6 @@ vim/vim/bin/
 vim/vim/doc/
 vim/vim/plugin/
 vim/vim/.netrwbook
-
+tmux/tmux/plugins/*
+!tmux/tmux/plugins/tpm/
+/* tmux/tmux/resurrect */
