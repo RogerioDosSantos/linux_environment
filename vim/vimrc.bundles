@@ -82,6 +82,9 @@ Plug 'majutsushi/tagbar' "Display Tags in windows
 " Plug 'xolox/vim-misc' "Required by easytags
 Plug 'szw/vim-tags' "Tags Creation
 
+" Plug 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'} "Save VIM sessions
+" Plug 'tpope/vim-obsession' "Required by vim-prosession
+
 call plug#end()
 
 
