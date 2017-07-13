@@ -87,7 +87,14 @@ nnoremap <silent><leader>tn :tabn<cr> " Open next tab
 nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
 
 " Shortcut for lopen (Open a list to show the location list for current window)
-nnoremap <silent><leader>ll :lopen<cr> 
+nnoremap <silent><leader>lo :lopen<cr> 
+" Open Preview
+nnoremap <silent><leader>po :cw<cr> 
+" Preview tag.
+nnoremap <leader>pt :ptag <C-R><C-W> <CR>
+" Close Preview
+nnoremap <leader>pc :pc <CR>
+
 
 " Run Shell command and display the result into a temp window
 command! -complete=shellcmd -nargs=+ GetShell call s:RunShellCommand(<q-args>)
@@ -241,8 +248,8 @@ nnoremap <leader>x :x<cr>
 nnoremap <leader>X :q!<cr>
 
 "Shortcut for  zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
+" nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+" nnoremap <leader>= :wincmd =<cr>
 
 "Shortcut for  resize panes
 "nnoremap <silent> <Right> :vertical resize +5<cr>
@@ -262,11 +269,11 @@ nnoremap <leader>fhi :w<cr>:e ../include/%:r.h<cr>
 nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
 nnoremap <leader>fcs :w<cr>:e ../source/%:r.cpp<cr>
 
-" Location List
-nnoremap <leader>ol :w<cr>:e ~/.location_list.wiki<cr>
-
 " Search Visually selected text
 vnoremap // y/<C-R>"<cr>
+
+" Location List
+nnoremap <leader>ol :w<cr>:e ~/.location_list.wiki<cr>
 
 " AUTOCOMMANDS - Do stuff
 
