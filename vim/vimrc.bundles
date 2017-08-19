@@ -85,6 +85,13 @@ Plug 'szw/vim-tags' "Tags Creation
 " Plug 'dhruvasagar/vim-prosession', {'depends': 'tpope/vim-obsession'} "Save VIM sessions
 " Plug 'tpope/vim-obsession' "Required by vim-prosession
 
+" React JS
+Plug 'mxw/vim-jsx'
+
+" Pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
 call plug#end()
 
 
@@ -395,3 +402,44 @@ let g:tagbar_show_linenumbers=2
 " let g:tagbar_vertical=1
 " let g:tagbar_autoclose=1
 let tagbar_autofocus=1
+
+" React JS: {{{2 ---------------------------------------------------------------
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Pandoc: {{{2 ---------------------------------------------------------------
+
+let g:pandoc#modules#enabled = [
+            \"command",
+            \"formatting",
+            \"metadata",
+            \"keyboard" ,
+            \"toc",
+            \"completion",
+            \]
+
+let g:pandoc#formatting#mode = "h"
+let g:pandoc#formatting#textwidth = "79"
+
+let g:pandoc#keyboard#enabled_submodules = [
+            \"lists",
+            \"references",
+            \"styles",
+            \"sections",
+            \"links"]
+
+let g:pandoc#spell#enabled = 0
+
+let g:pandoc#syntax#codeblocks#embeds#langs = [
+            \"python",
+            \"cpp",
+            \"c",
+            \"cs",
+            \"sql",
+            \"xml",
+            \]
+
+nnoremap <silent><leader>dch :!mkdir -p ../html <cr> 
+nnoremap <silent><leader>deh :execute "Pandoc html5 --toc -c ../resources/style.css -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>dcw :!mkdir -p ../word <cr> 
+nnoremap <silent><leader>dew :execute "Pandoc docx --toc -o ../word/" . shellescape(expand('%:r')) . ".docx"<cr>
+

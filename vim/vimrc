@@ -7,6 +7,7 @@ set nocompatible
 
 " Leader - ( Spacebar )
 let mapleader = " "
+let maplocalleader = ","
 
 "Change the cursor from <block> to I on insert mode.
 let &t_ti.="\e[1 q"
