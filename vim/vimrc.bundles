@@ -439,7 +439,8 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
             \]
 
 nnoremap <silent><leader>dch :!mkdir -p ../html <cr> 
-nnoremap <silent><leader>deh :execute "Pandoc html5 --toc -c ../resources/style.css -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>deh :w<cr>:execute "Pandoc html5 --toc -c ../resources/style.css -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des :w<cr>:execute "Pandoc slidy -s --webtex --base-header-level=1 -i -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>dcw :!mkdir -p ../word <cr> 
-nnoremap <silent><leader>dew :execute "Pandoc docx --toc -o ../word/" . shellescape(expand('%:r')) . ".docx"<cr>
+nnoremap <silent><leader>dew :w<cr>:execute "Pandoc docx --toc -o ../word/" . shellescape(expand('%:r')) . ".docx"<cr>
 
