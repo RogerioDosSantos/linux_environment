@@ -92,6 +92,9 @@ Plug 'mxw/vim-jsx'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
+"Marvim Macro Manager
+Plug 'RogerioDosSantos/marvim'
+
 call plug#end()
 
 
