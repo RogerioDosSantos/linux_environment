@@ -91,6 +91,7 @@ Plug 'mxw/vim-jsx'
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'dhruvasagar/vim-table-mode'
 
 "Marvim Macro Manager
 Plug 'RogerioDosSantos/marvim'
