@@ -19,6 +19,8 @@ rm -f ~/.vimrc.bundles
 ln -s -n ~/.linux/vim/vimrc.bundles ~/.vimrc.bundles
 rm -f ~/.syntastic_cpp_config
 ln -s -n ~/.linux/syntastic/syntastic_cpp_config_schneider ~/.syntastic_cpp_config
+rm -f ~/.marvim
+ln -s -n ~/.linux/marvim
 
 echo "- Shortcuts - "
 rm -f ~/bash
