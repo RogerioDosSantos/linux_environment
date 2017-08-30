@@ -391,9 +391,10 @@ let g:DoxygenToolkit_blockFooter=""
 let g:DoxygenToolkit_authorName="Roger Santos"
 let g:DoxygenToolkit_licenseTag="This is a part of the LeeL Systems products \nCopyright (C) 2016 LeeL Systems \nAll rights reserved."  
 
-nnoremap <silent>gd :Dox<cr> 
-nnoremap <silent>gl gg :DoxLic<cr> " Document license.
-nnoremap <silent>gs :set spell!<cr> " Toggle document spell check
+"Doxygen Mapping
+nnoremap <silent><leader>dgd :Dox<cr> 
+nnoremap <silent><leader>dgl gg :DoxLic<cr> " Document license.
+nnoremap <silent><leader>dgs :set spell!<cr> " Toggle document spell check
 
 " Ag (Configuration)
 nnoremap <silent>\\ :Ag \(<c-r>=expand("<cword>")<cr>\)<cr>
