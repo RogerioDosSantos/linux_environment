@@ -274,7 +274,7 @@ nnoremap <leader>fcs :w<cr>:e ../source/%:r.cpp<cr>
 vnoremap // y/<C-R>"<cr>
 
 " Location List
-nnoremap <leader>ol :w<cr>:e ~/.location_list.wiki<cr>
+nnoremap <leader>ol :w<cr>:e ~/.location_list<cr>
 
 " Temp file
 nnoremap <leader>ot :w<cr>:e ~/.temp<cr>
