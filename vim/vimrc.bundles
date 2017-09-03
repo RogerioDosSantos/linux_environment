@@ -44,9 +44,6 @@ Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
 
 Plug 'rking/ag.vim' " Code Tagging and Navigation
 
-Plug 'vimwiki/vimwiki' " Diary, notes, whatever. It's amazing
-Plug 'mattn/calendar-vim' "Calendar for VimWiki
-
 Plug 'Shougo/neocomplete' "Complete with cache
 Plug 'Shougo/neosnippet' "Snipets
 Plug 'RogerioDosSantos/neosnippet-snippets' "Snippets templates
@@ -104,10 +101,10 @@ call plug#end()
 "Solarized (Configuration)
 syntax enable "Turn on the vim syntax highlight
 set t_Co=256 "Set the color supported to be 256. By default it is 16
-set background=dark "Set the background to be black
 colorscheme solarized "Define the solirized as the default color schema
 " let g:airline_powerline_fonts = 1 " Allow powerline symbols to show up
 let g:solarized_termcolors=256
+set background=dark "Set the background to be black
 
 " Fugitive (Mapping Keys)
 nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
@@ -161,40 +158,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   "let g:ctrlp_use_caching = 0
 endif
-
-" VimWiki ( Set Vim Wiki directory and format )
-let g:vimwiki_list = [{
-  \ 'path': '$HOME/wiki/wiki',
-  \ 'template_path': '$HOME/wiki/wiki/template',
-  \ 'template_default': 'default',
-  \ 'template_ext': '.html'}]
-
-" VimWiki (Toggle Calendar)
-function! ToggleCalendar()
-  execute ":Calendar"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
-
-" VimWiki (Basic Configurations)
-filetype plugin on
-syntax on
-
-" VimWiki (Key mapping)
-:autocmd FileType vimwiki nnoremap <silent><leader>wc :call ToggleCalendar()<CR>
-:autocmd FileType vimwiki nnoremap <silent><leader>wl :VimwikiDiaryGenerateLinks<CR>
-:autocmd FileType vimwiki nnoremap <silent><leader>wp :Vimwiki2HTML<cr> " Publish current VimWiki document to HTML
-:autocmd FileType vimwiki nnoremap <silent><leader>wpa :VimwikiAll2HTML<cr> " Publish all VimWiki document to HTML
-:autocmd FileType vimwiki nnoremap <leader>ws :VWS 
-
 
 " NoeComplete (Completition configuration)
 

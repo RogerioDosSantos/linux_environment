@@ -279,6 +279,9 @@ nnoremap <leader>ol :w<cr>:e ~/.location_list<cr>
 " Temp file
 nnoremap <leader>ot :w<cr>:e ~/.temp<cr>
 
+" Wiki
+nnoremap <leader>ow :w<cr>:e ~/wiki/docs/source/index.md<cr>
+
 " AUTOCOMMANDS - Do stuff
 
 " Save whenever switching windows or leaving vim. This is useful when running
