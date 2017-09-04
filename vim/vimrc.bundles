@@ -84,6 +84,8 @@ Plug 'szw/vim-tags' "Tags Creation
 
 " React JS
 Plug 'mxw/vim-jsx'
+Plug 'maksimr/vim-jsbeautify'
+" Plug 'neoclide/vim-jsx-improve'
 
 " Pandoc
 Plug 'vim-pandoc/vim-pandoc'
@@ -263,8 +265,9 @@ let g:clang_format#style_options = {
     " \ "BreakConstructorInitializersBeforeComma" : "true",
     " \ "ColumnLimit" : "120",
     " \ "NamespaceIndentation" : "All"
-  
-noremap <silent><leader>f :ClangFormat<cr> " Format Using ClangFormat
+
+" Format Using ClangFormat 
+noremap <silent><leader>fc :ClangFormat<cr> 
 
 " VimMarching (Configuration)
 
@@ -373,6 +376,7 @@ let tagbar_autofocus=1
 
 " React JS: {{{2 ---------------------------------------------------------------
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+noremap <silent><leader>fj :call JsxBeautify()<cr>
 
 " Pandoc: {{{2 ---------------------------------------------------------------
 
