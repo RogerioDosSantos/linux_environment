@@ -376,6 +376,4 @@ endfunction
 nnoremap <leader>qq :call TransferBufferToAnotherKey('q')<cr>
 nnoremap <leader>qc :call TransferBufferToAnotherKey('w')
 
-" Macros
-" ifdef
-let @d = '0:r !pwd$a/%_bbb€klr_db€klr_€kldbd€krdbb€klr_bd0f.r_viwUi €kl#indefwyiwo#defince€kb€kb€kbne "€kb"€ku0€kraf€kdo#endif //"ba€kl €kuo€kd€kd' 
+
