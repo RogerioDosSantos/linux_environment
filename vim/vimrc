@@ -264,20 +264,19 @@ inoremap <S-Tab> <c-n>
 "Shortcut for  Switch between the last two files
 nnoremap <leader><leader> <c-^>
 
-"Shortcut for Switch between .h, .cpp
-nnoremap <leader>fh :w<cr>:e %:r.h<cr>
-nnoremap <leader>fhi :w<cr>:e ../include/%:r.h<cr>
-nnoremap <leader>fc :w<cr>:e %:r.cpp<cr>
-nnoremap <leader>fcs :w<cr>:e ../source/%:r.cpp<cr>
-
 " Search Visually selected text
 vnoremap // y/<C-R>"<cr>
 
+" Open files:
 " Location List
 nnoremap <leader>ol :w<cr>:e ~/.location_list<cr>
-
 " Temp file
 nnoremap <leader>ot :w<cr>:e ~/.temp<cr>
+"Shortcut for Switch between .h, .cpp
+nnoremap <leader>oh :w<cr>:e %:r.h<cr>
+nnoremap <leader>ohi :w<cr>:e ../include/%:r.h<cr>
+nnoremap <leader>oc :w<cr>:e %:r.cpp<cr>
+nnoremap <leader>ocs :w<cr>:e ../source/%:r.cpp<cr>
 
 " Wiki
 nnoremap <leader>ow :w<cr>:e ~/wiki/docs/source/index.md<cr>
