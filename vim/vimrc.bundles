@@ -410,9 +410,52 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
             \"xml",
             \]
 
-nnoremap <silent><leader>dch :!mkdir -p ../html <cr> 
-nnoremap <silent><leader>deh :w<cr>:execute "Pandoc html5 --toc -c ../resources/style.css -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des :w<cr>:execute "Pandoc slidy -s --webtex --base-header-level=1 -i -o ../html/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>dcw :!mkdir -p ../word <cr> 
-nnoremap <silent><leader>dew :w<cr>:execute "Pandoc docx --toc -o ../word/" . shellescape(expand('%:r')) . ".docx"<cr>
+"Create stage folder
+nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr> 
+"HTML
+nnoremap <silent><leader>deh :w<cr>:execute "Pandoc html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>deht :w<cr>:execute "Pandoc html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des1 :w<cr>:execute "Pandoc slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des2 :w<cr>:execute "Pandoc dzslides -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des3 :w<cr>:execute "Pandoc revealjs -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des4 :w<cr>:execute "Pandoc slideous -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des5 :w<cr>:execute "Pandoc s5 -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des6 :w<cr>:execute "Pandoc haddock -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+"Word
+nnoremap <silent><leader>dew :w<cr>:execute "Pandoc docx --toc -o ../stage/" . shellescape(expand('%:r')) . ".docx"<cr>
+nnoremap <silent><leader>dewr :w<cr>:execute "Pandoc rtf -o ../stage/" . shellescape(expand('%:r')) . ".rtf"<cr>
+"PDF
+nnoremap <silent><leader>dep :w<cr>:execute "Pandoc --latex-engine=xelatex -o ../stage/" . shellescape(expand('%:r')) . ".pdf"<cr>
+nnoremap <silent><leader>dept :w<cr>:execute "Pandoc --latex-engine=xelatex --toc -o ../stage/" . shellescape(expand('%:r')) . ".pdf"<cr>
+"Text
+nnoremap <silent><leader>det :w<cr>:execute "Pandoc plain -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>detm :w<cr>:execute "Pandoc man -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>deta :w<cr>:execute "Pandoc asciidoc -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>detl :w<cr>:execute "Pandoc latex -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>detc :w<cr>:execute "Pandoc context -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>deto :w<cr>:execute "Pandoc org -o ../stage/" . shellescape(expand('%:r')) . ".org"<cr>
+nnoremap <silent><leader>detr :w<cr>:execute "Pandoc rst -o ../stage/" . shellescape(expand('%:r')) . ".text"<cr>
+nnoremap <silent><leader>deti :w<cr>:execute "Pandoc texinfo -o ../stage/" . shellescape(expand('%:r')) . ".texi"<cr>
+nnoremap <silent><leader>detn :w<cr>:execute "Pandoc native -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
+nnoremap <silent><leader>dett :w<cr>:execute "Pandoc textile -o ../stage/" . shellescape(expand('%:r')) . ".textile"<cr>
+nnoremap <silent><leader>detw :w<cr>:execute "Pandoc mediawiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
+nnoremap <silent><leader>detd :w<cr>:execute "Pandoc dokuwiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
+"XML 
+nnoremap <silent><leader>dex :w<cr>:execute "Pandoc opendocument -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
+nnoremap <silent><leader>dexo :w<cr>:execute "Pandoc opml -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
+nnoremap <silent><leader>dexd :w<cr>:execute "Pandoc docbook -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
+nnoremap <silent><leader>dexi :w<cr>:execute "Pandoc icml -o ../stage/" . shellescape(expand('%:r')) . ".icml"<cr>
+"Markdown
+nnoremap <silent><leader>dem :w<cr>:execute "Pandoc markdown -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
+nnoremap <silent><leader>demg :w<cr>:execute "Pandoc markdown_github -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>demm :w<cr>:execute "Pandoc markdown_mmd -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
+nnoremap <silent><leader>demp :w<cr>:execute "Pandoc markdown_phpextra  -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
+nnoremap <silent><leader>demc :w<cr>:execute "Pandoc commonmark -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
+nnoremap <silent><leader>dems :w<cr>:execute "Pandoc markdown_strict -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
+"README.md
+nnoremap <silent><leader>demr :w<cr>:execute "Pandoc markdown_github -o ../../README.md"<cr>
+"Ebook
+nnoremap <silent><leader>deb :w<cr>:execute "Pandoc epub3 -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
+nnoremap <silent><leader>deb1 :w<cr>:execute "Pandoc epub -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
+"Wiki
 
