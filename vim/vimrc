@@ -373,7 +373,14 @@ function! TransferBufferToAnotherKey(name)
 	exe "let value = @".a:name
 	call SetRegister(destination_key, value)
 endfunction
-nnoremap <leader>qq :call TransferBufferToAnotherKey('q')<cr>
-nnoremap <leader>qc :call TransferBufferToAnotherKey('w')
+nnoremap <leader>qq :call TransferBufferToAnotherKey('q')
+nnoremap <leader>qqq :call TransferBufferToAnotherKey('q')<cr>
 
+function! PutUserInputIntoBuffer(name) 
+  let message = "Please enter the content to be stored on the buffer ".a:name.": "
+  let user_input = input(message)
+	call SetRegister(a:name, user_input)
+endfunction
+nnoremap <leader>qb :call PutUserInputIntoBuffer('b')
+nnoremap <leader>qbb :call PutUserInputIntoBuffer('b')<cr>
 
