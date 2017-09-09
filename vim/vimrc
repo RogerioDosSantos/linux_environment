@@ -384,3 +384,6 @@ endfunction
 nnoremap <leader>qb :call PutUserInputIntoBuffer('b')
 nnoremap <leader>qbb :call PutUserInputIntoBuffer('b')<cr>
 
+" Allow the . and macros to b executed once for each line of a visual selection
+vnoremap . :normal .<cr>
+vnoremap @ :normal @q
