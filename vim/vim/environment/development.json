@@ -1,0 +1,12 @@
+{
+    "macros": [{
+        "key": "o",
+        "macro": "open_current_file_on_explorer"
+    }, {
+        "key": "c",
+        "macro": "open_current_file_on_chrome"
+    }, {
+        "key": "e",
+        "macro": "open_cursor_linux_path_on_explorer"
+    }]
+}
