@@ -377,6 +377,8 @@ let tagbar_autofocus=1
 " React JS: {{{2 ---------------------------------------------------------------
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 noremap <silent><leader>fj :call JsxBeautify()<cr>
+noremap <silent><leader>fjs :call JsonBeautify()<cr>
+noremap <silent><leader>fh :call HtmlBeautify()<cr>
 
 " Pandoc: {{{2 ---------------------------------------------------------------
 
