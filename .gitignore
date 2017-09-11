@@ -8,3 +8,4 @@ tmux/tmux/plugins/*
 !tmux/tmux/plugins/tpm/
 tmux/tmux/resurrect
 marvim/.mv7
+marvim/.mvt
