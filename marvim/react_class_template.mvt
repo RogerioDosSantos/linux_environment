@@ -1,0 +1,29 @@
+import React, {
+    Component
+} from 'react';
+
+import Log from './react_compponents/log/log.js';
+
+class ClassName extends Component {
+
+    constructor() {
+        super();
+        this.state = {};
+    };
+
+    FunctionName = (props) => {
+      return (
+        ##HTML Content##
+          );
+    }
+
+    render() {
+        return (
+            <div>
+              <FunctionName />
+            </div>
+        );
+    }
+}
+
+export default ClassName;
