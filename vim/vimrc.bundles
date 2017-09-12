@@ -95,6 +95,9 @@ Plug 'dhruvasagar/vim-table-mode'
 "Marvim Macro Manager
 Plug 'RogerioDosSantos/marvim'
 
+"VimTextObjectUser -  Allow creation of text objects
+Plug 'kana/vim-textobj-user'
+
 call plug#end()
 
 
@@ -417,7 +420,7 @@ nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr>
 "HTML
 nnoremap <silent><leader>deh :w<cr>:execute "Pandoc html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>deht :w<cr>:execute "Pandoc html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des1 :w<cr>:execute "Pandoc slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>des :w<cr>:execute "Pandoc slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des2 :w<cr>:execute "Pandoc dzslides -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des3 :w<cr>:execute "Pandoc revealjs -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des4 :w<cr>:execute "Pandoc slideous -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
@@ -461,3 +464,9 @@ nnoremap <silent><leader>deb :w<cr>:execute "Pandoc epub3 -o ../stage/" . shelle
 nnoremap <silent><leader>deb1 :w<cr>:execute "Pandoc epub -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
 "Wiki
 
+" VimTextObjectUser: {{{2 ---------------------------------------------------------------
+call textobj#user#plugin('file', {
+      \ 'file': {
+      \ 'pattern': '\f\+', 'select': ['af', 'if']
+      \ }
+      \ })
