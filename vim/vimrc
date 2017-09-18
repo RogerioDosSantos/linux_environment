@@ -221,7 +221,7 @@ set pastetoggle=<F2> "F2 before pasting to preserve indentation
 
 "Shortcut for  bind K to grep word under cursor
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,cs,js,ini} -rnwi . -e \"text\"") 
+nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini} -rnwi . -e \"text\"") 
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b'<CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
 nnoremap <leader>g2 :grep! '\b<C-R><C-W>\b' ../<CR>:cw<CR>
