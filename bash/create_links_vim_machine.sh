@@ -21,6 +21,8 @@ rm -f ~/.syntastic_cpp_config
 ln -s -n ~/.linux/syntastic/syntastic_cpp_config_schneider ~/.syntastic_cpp_config
 rm -f ~/.marvim
 ln -s -n ~/.linux/marvim
+rm -f ~/.editorconfig
+ln -s -n ~/.linux/editorconfig/editorconfig
 
 echo "- Shortcuts - "
 rm -f ~/bash
