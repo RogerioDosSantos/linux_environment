@@ -98,6 +98,9 @@ Plug 'RogerioDosSantos/marvim'
 "VimTextObjectUser -  Allow creation of text objects
 Plug 'kana/vim-textobj-user'
 
+"EditorConfig
+Plug 'editorconfig/editorconfig-vim'
+
 "Plugins to try
 
 " "  Features
