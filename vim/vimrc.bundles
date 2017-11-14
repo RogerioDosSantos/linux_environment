@@ -101,6 +101,10 @@ Plug 'kana/vim-textobj-user'
 "EditorConfig
 Plug 'editorconfig/editorconfig-vim'
 
+" FZF
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }    " Install fzf for user
+Plug 'junegunn/fzf.vim'                                              " Fzf vim plugin
+
 "Plugins to try
 
 " "  Features
@@ -109,8 +113,6 @@ Plug 'editorconfig/editorconfig-vim'
 "   Plug 'Xuyuanp/nerdtree-git-plugin'                                   " Git for NerdTree
 "   Plug 'jistr/vim-nerdtree-tabs'                                       " NerdTree independent of tabs
 "   Plug 'jreybert/vimagit'                                              " Interactive git staging
-"   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }    " Install fzf for user
-"   Plug 'junegunn/fzf.vim'                                              " Fzf vim plugin
 "
 "   " Small utilities
 "   Plug 'bag-man/copypath.vim'                                          " copy path of file
@@ -538,3 +540,24 @@ call textobj#user#plugin('file', {
       \ 'pattern': '\f\+', 'select': ['af', 'if']
       \ }
       \ })
+
+" FZF
+nnoremap <silent><leader>sf :w<cr>:Files<cr>
+nnoremap <silent><leader>sgf :w<cr>:GFiles<cr>
+nnoremap <silent><leader>sgs :w<cr>:GFiles?<cr>
+nnoremap <silent><leader>sgc :w<cr>:Commits<cr>
+nnoremap <silent><leader>sb :w<cr>:Buffers<cr>
+nnoremap <silent><leader>sc :w<cr>:Colors<cr>
+nnoremap <silent><leader>sag :w<cr>:Ag 
+nnoremap <silent><leader>sl :w<cr>:Lines<cr>
+nnoremap <silent><leader>sbl :w<cr>:BLines<cr>
+nnoremap <silent><leader>st :w<cr>:Tags<cr>
+nnoremap <silent><leader>sbt :w<cr>:BTags<cr>
+nnoremap <silent><leader>sm :w<cr>:Marks<cr>
+nnoremap <silent><leader>sw :w<cr>:Windows<cr>
+nnoremap <silent><leader>slo :w<cr>:Locate 
+nnoremap <silent><leader>sh :w<cr>:History<cr>
+nnoremap <silent><leader>shc :w<cr>:History:<cr>
+nnoremap <silent><leader>shs :w<cr>:History/<cr>
+nnoremap <silent><leader>ss :w<cr>:Snippets<cr>
+
