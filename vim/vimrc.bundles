@@ -445,7 +445,7 @@ nnoremap <silent>\\ :Ag \(<c-r>=expand("<cword>")<cr>\)<cr>
 " vnoremap <silent>\\ y :Ag \(<c-r>"<cr>\)
 
 " tagbar
-nnoremap <silent><leader>tt :TagbarToggle<cr>
+nnoremap <silent><leader>tgt :TagbarToggle<cr>
 let g:tagbar_show_linenumbers=2
 " let g:tagbar_left=1
 " let g:tagbar_vertical=1
