@@ -105,6 +105,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }    " Install fzf for user
 Plug 'junegunn/fzf.vim'                                              " Fzf vim plugin
 
+" Identation Lines
+Plug 'Yggdroot/indentLine'
+
 "Plugins to try
 
 " "  Features
