@@ -568,3 +568,5 @@ nnoremap <silent><leader>shc :w<cr>:History:<cr>
 nnoremap <silent><leader>shs :w<cr>:History/<cr>
 nnoremap <silent><leader>ss :w<cr>:Snippets<cr>
 
+" Identation Lines
+let g:indentLine_fileType = ['c', 'cpp', 'h', 'hpp', 'js', 'jsx']
