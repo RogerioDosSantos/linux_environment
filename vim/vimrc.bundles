@@ -21,8 +21,6 @@ Plug 'altercation/vim-colors-solarized' "Text colors for C++
 Plug 'bling/vim-airline' "Status bar
 Plug 'vim-airline/vim-airline-themes' "Status bar Themes
 
-Plug 'tpope/vim-fugitive' "Git wrapper
-
 Plug 'christoomey/vim-tmux-navigator' "TMUX - Allow navigate among TMUX windows and vim
 Plug 'christoomey/vim-tmux-runner' "TMUX - Allow run commands on TMUX
 
@@ -107,6 +105,10 @@ Plug 'junegunn/fzf.vim'                                              " Fzf vim p
 
 " Identation Lines
 Plug 'Yggdroot/indentLine'
+
+" Git / Github
+Plug 'tpope/vim-fugitive' "Git wrapper
+Plug 'airblade/vim-gitgutter' "Show changes on files
 
 "Plugins to try
 
