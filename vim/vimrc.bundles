@@ -48,6 +48,7 @@ Plug 'RogerioDosSantos/neosnippet-snippets' "Snippets templates
 
 Plug 'rhysd/vim-clang-format' "Format with Clang
 Plug 'osyo-manga/vim-marching' "Complete with Clang
+"TODO(Roger) - Plug 'uplus/vim-clang-rename' "Renaming with Clang
 
 "Ascyncronous execution library
 Plug 'Shougo/vimproc' , {
