@@ -1,6 +1,18 @@
 #!/bin/bash
 
-echo "### Title ###"
+# Configuration
+echo "* $(basename "$0")"
+echo "- Configuration:"
+# config_xxx="$1"
+# echo "1- config_xxx: ${config_xxx}"
+
+# Setup - Go to the directory where the bash file is
+call_dir=$(pwd)
+cd "$(dirname "$0")"
+bash_dir=$(pwd)
+echo "- Called from ${call_dir}"
+echo "- Running from ${bash_dir}"
+cd "$(dirname "$0")"
 
 # Ensure that run as root
 if [ "$EUID" -ne 0 ]
@@ -8,12 +20,13 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# Go to the directory where the bash file is
-cd "$(dirname "$0")"
-echo "- Running from $(pwd)"
-
 # Exit on any non-zero status.
 trap 'exit' ERR
 set -E
 
-echo "#############"
+# Instructions
+echo "TODO: Add Instructions here"
+
+# Setup - Return to the called directory
+cd "${call_dir}"
+
