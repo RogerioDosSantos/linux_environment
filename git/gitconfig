@@ -1,5 +1,12 @@
+# This is Git's per-user configuration file.
 [user]
+# Please adapt and uncomment the following lines:
+#	name = "Roger Santos"
+#	email = roger.santos.main@gmail.com
+[user]
+	name = Roger
 	email = roger.santos.main@gmail.com
-	name = Roger Santos
 [push]
-	default = simple
+	default = matching
+[credential "https://github.com"]
+  username = roger.santos.main@gmail.com

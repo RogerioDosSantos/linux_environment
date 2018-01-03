@@ -1,2 +1,3 @@
-# scripts
-Bat, Bash and Application configuration files
+# Linux Environment
+
+Application configuration files
