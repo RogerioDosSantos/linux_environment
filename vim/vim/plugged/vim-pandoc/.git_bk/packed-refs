@@ -1,0 +1,7 @@
+# pack-refs with: peeled fully-peeled 
+bb72d0c734d269e792d765a4728717c89f93d8a1 refs/remotes/origin/autoformat
+fc209c66e937172efdd6db39ee64fcb3980ce329 refs/remotes/origin/master
+cdf99270852571345aa441264ff17d12b0803a8d refs/remotes/origin/next-biblio
+26064486dd504af830718b7df88494f2538cacba refs/tags/feature-parity
+^bc9526f32ac7ba8d9c509807d0eaf8425fede0c8
+66b7931f42bc43c1733c70bce06d7bff76302082 refs/tags/v2.0

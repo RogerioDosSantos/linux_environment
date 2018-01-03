@@ -1,4 +1,9 @@
-vim/vim/plugged/
+vim/vim/plugged/*
+
+# There is a bug on the pandoc project that will no longer generate the pandoc, I am source controling it to be able to recover the file that works
+!vim/vim/plugged/vim-pandoc/
+!vim/vim/plugged/vim-pandoc-syntax/
+
 vim/vim/.netrwhist
 vim/vim/bin/
 vim/vim/doc/
