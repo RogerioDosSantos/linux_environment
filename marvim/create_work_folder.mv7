@@ -1,0 +1,1 @@
+:new:!~/roger/productivity/scripts/ask_user_and_save_into_file.sh "Please enter the work directory name:" ~/work_dir_name.tmp:r ~/work_dir_name.tmpy$:rm€kb€kb!rm ~/work_dir_name.tmp:!~/roger/productivity/scripts/create_work_folder.sh ":!~/roger/productivity/scripts/create_work_folder.sh """:q!:e ./"/README.md
