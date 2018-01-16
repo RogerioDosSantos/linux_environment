@@ -123,13 +123,13 @@ export DOCKER_TLS_VERIFY=1
 
 # configure Schneider Proxy
 # Schneider Proxy Configuration
-http_proxy=http_proxy=http://gateway.zscaler.net:9480
+http_proxy=http://gateway.zscaler.net:9480
 # http_proxy=
 export http_proxy
-https_proxy=http_proxy=http://gateway.zscaler.net:9480
+https_proxy=http://gateway.zscaler.net:9480
 # https_proxy=
 export https_proxy
-ftp_proxy=http_proxy=http://gateway.zscaler.net:9480
+ftp_proxy=http://gateway.zscaler.net:9480
 # ftp_proxy=
 export ftp_proxy
 socks_proxy=http://gateway.zscaler.net:9480
