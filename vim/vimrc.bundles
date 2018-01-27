@@ -549,7 +549,7 @@ call textobj#user#plugin('file', {
 
 " FZF
 " autocmd VimEnter * History | edit %
-autocmd VimEnter * edit ~/.location_list
+" autocmd VimEnter * edit ~/.location_list
 nnoremap <silent><leader>sf :w<cr>:Files<cr>
 nnoremap <silent><leader>sgf :w<cr>:GFiles<cr>
 nnoremap <silent><leader>sgs :w<cr>:GFiles?<cr>
