@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 OData
 ASIO
 IoTView
@@ -10,11 +9,9 @@ CSV
 Wonderware
 metadata
 Invensys
-=======
 QEMU
 DockerHub
 x86
->>>>>>> 8be82360f8325809ec560e3ddc106ae5f1101093
 Serverless
 IoT
 breakpoint
