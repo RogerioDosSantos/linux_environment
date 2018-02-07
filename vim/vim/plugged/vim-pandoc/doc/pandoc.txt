@@ -46,7 +46,7 @@ REQUIREMENTS			                      *vim-pandoc-requirements*
   Note: On vim versions < 7.4, some modules are automatically disabled (see
   |g:pandoc#modules#disabled|, but vim-vim-pandoc is able to run in a degraded
   mode.
-* python support.
+* python 3 support.
   Note: If python is not available, the features that require it are
   automatically disabled, allowing vim-pandoc to run in a degraded mode.
   However, vim-pandoc uses the new python API, so in versions under 7.4,
@@ -54,7 +54,7 @@ REQUIREMENTS			                      *vim-pandoc-requirements*
 
 To check if the requirements are satisfied, check if
 
-    :echo v:version >= 704 && has("python")
+    :echo v:version >= 704 && has("python3")
 
 outputs "1".
 
@@ -288,7 +288,9 @@ it can be checked using |:messages|.
 
 If you write a bang ('!') after the command, vim-pandoc will try to open
 the created file in its associated program. This behavior can be customized
-through the |g:pandoc#command#custom_open| variable.
+through the |g:pandoc#command#custom_open| variable. The
+ |g:pandoc#command#prefer_pdf| variable controls whether to prefer pdf files,
+ if they exist.
 
 Note: The pandoc execution is performed asynchronously if vim supports the
 |clientserver| feature and the running instance is a valid server (this is the
@@ -674,6 +676,12 @@ A description of the available configuration variables follows:
 
   As |g:pandoc#command#latex_engine|, but for the current file.
 
+- *g:pandoc#command#path*
+  default = "pandoc"
+
+  The name of the pandoc command. Can also be an absolute path if the program
+  is not located in the $PATH.
+
 - *g:pandoc#command#custom_open*
   default = ""
 
@@ -686,6 +694,11 @@ A description of the available configuration variables follows:
     function! MyPandocOpen(file)
         return 'xdg-open ' . shellescape(expand(a:file,':p'))
     endfunction
+
+- *g:pandoc#command#prefer_pdf*
+   default = 0
+
+   Open a pdf file preferrably, if it exists.
 
 - *g:pandoc#command#autoexec_on_writes*
   default = 0
@@ -707,6 +720,25 @@ A description of the available configuration variables follows:
   default = split(&runtimepath, ",")[0]."/vim-pandoc-templates"
 
   Where to save and retrieve command templates.
+
+- *g:pandoc#compiler#command*
+  default = "{g:pandoc#command#path}"
+
+  The name of the command invoked in |:Pandoc|. Can also be an absolute path
+  if the program is not located in the $PATH.
+
+  The difference to |g:pandoc#command#path| is that the latter is used for
+  internal purposes. For example, if you want to use Panzer:
+
+    let g:pandoc#compiler#command = "panzer"
+
+- *g:pandoc#compiler#arguments*
+  default = ''
+
+  Additional arguments for the command invoked in |:Pandoc|.
+  For example, if you're using Panzer this setting is recommended:
+
+    let g:pandoc#compiler#arguments = "---quiet ---strict"
 
 - *g:pandoc#biblio#sources*
   default = "bcg"
