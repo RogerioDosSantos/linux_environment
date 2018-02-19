@@ -8,6 +8,11 @@ case $- in
       *) return;;
 esac
 
+# Git Branch
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -45,19 +50,19 @@ esac
 # should be on the output of commands, not on the prompt
 #force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
+# if [ -n "$force_color_prompt" ]; then
+#     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+# 	# We have color support; assume it's compliant with Ecma-48
+# 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+# 	# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
-    else
-	color_prompt=
-    fi
-fi
+#     else
+# 	color_prompt=
+#     fi
+# fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+		PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -116,6 +121,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 # configure docker
 export DOCKER_HOST=tcp://192.168.99.100:2376
 export DOCKER_CERT_PATH=/mnt/c/Users/roger.santos/.docker/machine/certs
@@ -135,7 +142,7 @@ export ftp_proxy
 socks_proxy=http://gateway.zscaler.net:9480
 # socks_proxy=
 export socks_proxy
-no_proxy=127.0.0.1
+no_proxy=127.0.0.1,swtfsiws
 export no_proxy
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
