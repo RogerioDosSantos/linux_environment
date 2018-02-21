@@ -436,6 +436,7 @@ let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 noremap <silent><leader>fj :call JsxBeautify()<cr>
 noremap <silent><leader>fjs :call JsonBeautify()<cr>
 noremap <silent><leader>fh :call HtmlBeautify()<cr>
+noremap <silent><leader>fcss :call CSSBeautify()<cr>
 
 " Pandoc: 
 let g:pandoc#modules#enabled = [
