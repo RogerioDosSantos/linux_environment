@@ -12,3 +12,5 @@
   username = roger.santos.main@gmail.com
 [credential "http://tfs15swapp01.dev.wonderware.com:8080"]
   username = roger.santos
+[credential "https://leelsystems.visualstudio.com"]
+  username = roger.santos.main@gmail.com
