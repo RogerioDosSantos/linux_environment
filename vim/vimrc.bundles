@@ -481,7 +481,7 @@ nnoremap <silent><leader>des4 :w<cr>:execute "!pandoc -s %:p -t slideous -o ../s
 nnoremap <silent><leader>des5 :w<cr>:execute "!pandoc -s %:p -t s5 -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des6 :w<cr>:execute "!pandoc -s %:p -t haddock -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 "Word
-nnoremap <silent><leader>dew :w<cr>:execute "!echo pandoc -s %:p -t docx --toc -o ../stage/" . shellescape(expand('%:r')) . ".docx"<cr>
+nnoremap <silent><leader>dew :w<cr>:execute "!pandoc -s %:p -t docx --toc -o ../stage/" . shellescape(expand('%:r')) . ".docx"<cr>
 nnoremap <silent><leader>dewr :w<cr>:execute "!pandoc -s %:p -t rtf -o ../stage/" . shellescape(expand('%:r')) . ".rtf"<cr>
 "PDF
 nnoremap <silent><leader>dep :w<cr>:execute "!pandoc -s %:p -t --latex-engine=xelatex -o ../stage/" . shellescape(expand('%:r')) . ".pdf"<cr>
