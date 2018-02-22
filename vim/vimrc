@@ -51,7 +51,7 @@ set showmatch
 
 " File Explorer
 nnoremap <silent><leader>e :Lexplore<cr> " Open the explorer on the left pane
-let g:netrw_liststyle=3 "Put the style similar to NERDTree 
+let g:netrw_liststyle=3 "Put the style similar to NERDTree
 let g:netrw_banner=0    "Remove the header
 
 " Softtabs, 2 spaces
@@ -88,9 +88,9 @@ nnoremap <silent><leader>tn :tabn<cr> " Open next tab
 nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
 
 " Shortcut for lopen (Open a list to show the location list for current window)
-nnoremap <silent><leader>lo :lopen<cr> 
+nnoremap <silent><leader>lo :lopen<cr>
 " Open Preview
-nnoremap <silent><leader>po :cw<cr> 
+nnoremap <silent><leader>po :cw<cr>
 " Preview tag.
 nnoremap <leader>pt :ptag <C-R><C-W> <CR>
 " Close Preview
@@ -123,7 +123,7 @@ function! s:RunShellCommand(cmdline)
 endfunction
 
 " Shortcut for Shell commands
-nnoremap <leader>c :GetShell 
+nnoremap <leader>c :GetShell
 
 " Auto resize Vim splits to active split
 set winwidth=84
@@ -183,7 +183,7 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Shortcut for Spell check 
+" Shortcut for Spell check
 nnoremap <leader>se :setlocal spell spelllang=en_us<cr>:set spellfile=$HOME/.vim/spell-en.utf-8.add<cr>
 nnoremap <leader>sp :setlocal spell spelllang=pt_br<cr>:set spellfile=$HOME/.vim/spell-pt.utf-8.add<cr>
 nnoremap <leader>so :set nospell<cr>
@@ -221,7 +221,7 @@ set pastetoggle=<F2> "F2 before pasting to preserve indentation
 
 "Shortcut for  bind K to grep word under cursor
 "nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md} -rnwi . -e \"text\"") 
+nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md} -rnwi . -e \"text\"")
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b'<CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
 nnoremap <leader>g2 :grep! '\b<C-R><C-W>\b' ../<CR>:cw<CR>
@@ -356,7 +356,7 @@ nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Inde
 
 " Buffer Navigation
 " List buffers
-nnoremap <leader>bbb :buffers 
+nnoremap <leader>bbb :buffers
 nnoremap <silent><leader>bbn :bnext<cr> " Go to the next buffer
 nnoremap <silent><leader>bbp :bprevious<cr> " Go to the previous buffer
 nnoremap <silent><leader>bbd :bdelete<cr> " Delete current Buffer
@@ -367,7 +367,7 @@ function! SetRegister(name, value)
 endfunction
 
 " Buffer Functions
-function! TransferBufferToAnotherKey(name) 
+function! TransferBufferToAnotherKey(name)
   let message = "Please enter the destination key for the buffer ".a:name.": "
   let destination_key = input(message)
 	exe "let value = @".a:name
@@ -376,7 +376,7 @@ endfunction
 nnoremap <leader>qq :call TransferBufferToAnotherKey('q')
 nnoremap <leader>qqq :call TransferBufferToAnotherKey('q')<cr>
 
-function! PutUserInputIntoBuffer(name) 
+function! PutUserInputIntoBuffer(name)
   let message = "Please enter the content to be stored on the buffer ".a:name.": "
   let user_input = input(message)
 	call SetRegister(a:name, user_input)
