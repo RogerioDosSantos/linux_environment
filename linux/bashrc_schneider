@@ -124,9 +124,13 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # configure docker
-export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_CERT_PATH=/mnt/c/Users/roger.santos/.docker/machine/certs
-export DOCKER_TLS_VERIFY=1
+# export DOCKER_HOST=tcp://192.168.99.100:2376
+# export DOCKER_CERT_PATH=/mnt/c/Users/roger.santos/.docker/machine/certs
+# export DOCKER_TLS_VERIFY=1
+# export DOCKER_HOST='tcp://0.0.0.0:2375'
+export DOCKER_HOST='tcp://127.0.0.1:2375'
+# PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+# PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
 
 # configure Schneider Proxy
 # Schneider Proxy Configuration
@@ -147,3 +151,11 @@ export no_proxy
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# IotEdge Nestle demo
+export IOTHUB_CONNECTIONSTRING='HostName=iotedgeexample.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=C5h93KWLcrrnvxi41+7Ay8OlSFlCAdvCRdnLVDOTVp8='
+export DEVICE_CONNECTIONSTRING='HostName=iotedgeexample.azure-devices.net;DeviceId=nestle;SharedAccessKey=yAv23NhxUkF064XrGBDaaLVjMGTtIqTqEMcbJiY70H8='
+export IOTHUB_DEVICEID=nestle
+export CONTAINER_REGISTRY_SERVER=edgehackfestregistry.azurecr.io
+export CONTAINER_REGISTRY_USERNAME=EdgeHackfestRegistry
+export CONTAINER_REGISTRY_PASSWORD=3BhuM=UcTOATGA9MfEBNShDcQ29ATSJ0
+export MODULES=sensor-module,state-module
