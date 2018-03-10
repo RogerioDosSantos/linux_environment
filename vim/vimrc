@@ -224,14 +224,14 @@ set pastetoggle=<F2> "F2 before pasting to preserve indentation
 nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md} -rnwi . -e \"text\"")
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b'<CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
-nnoremap <leader>g2 :grep! '\b<C-R><C-W>\b' ../<CR>:cw<CR>
-vnoremap <leader>g2 :grep! '<C-R>"' ../<CR>:cw<CR>
-nnoremap <leader>g3 :grep! '\b<C-R><C-W>\b' ../../<CR>:cw<CR>
-vnoremap <leader>g3 :grep! '<C-R>"' ../../<CR>:cw<CR>
-nnoremap <leader>g4 :grep! '\b<C-R><C-W>\b' ../../../<CR>:cw<CR>
-vnoremap <leader>g4 :grep! '<C-R>"' ../../../<CR>:cw<CR>
-nnoremap <leader>g5 :grep! '\b<C-R><C-W>\b' ../../../../<CR>:cw<CR>
-vnoremap <leader>g5 :grep! '<C-R>"' ../../../../<CR>:cw<CR>
+nnoremap <leader>g2 :grep! '\b<C-R><C-W>\b' ../*<CR>:cw<CR>
+vnoremap <leader>g2 y:grep! '<C-R>"' ../*<CR>:cw<CR>
+nnoremap <leader>g3 :grep! '\b<C-R><C-W>\b' ../../*<CR>:cw<CR>
+vnoremap <leader>g3 y:grep! '<C-R>"' ../../*<CR>:cw<CR>
+nnoremap <leader>g4 :grep! '\b<C-R><C-W>\b' ../../../*<CR>:cw<CR>
+vnoremap <leader>g4 y:grep! '<C-R>"' ../../../*<CR>:cw<CR>
+nnoremap <leader>g5 :grep! '\b<C-R><C-W>\b' ../../../../*<CR>:cw<CR>
+vnoremap <leader>g5 y:grep! '<C-R>"' ../../../../*<CR>:cw<CR>
 
 "Shortcut for  bind \ (backward slash) to grep shortcut
 "command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
