@@ -125,6 +125,16 @@ fi
 
 # Docker Configuration
 export DOCKER_HOST=tcp://192.168.99.100:2376
-export DOCKER_CERT_PATH=/mnt/c/Users/roger/.docker/machine/certs
+# export DOCKER_CERT_PATH=/mnt/c/Users/roger/.docker/machine/certs
+export DOCKER_CERT_PATH=/mnt/c/Users/roger/.docker/machine/machines/default
 export DOCKER_TLS_VERIFY=1
+DOCKER_MACHINE_NAME=default
 
+
+# IoTEdge Nestle Demo
+# export IOTHUB_CONNECTIONSTRING='HostName=EdgeHackFestIoTHub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=rMhLksTMxy1qp2eUwoTs5frbQzT9KdRvlNaYHnA39XQ='
+export IOTHUB_CONNECTIONSTRING='HostName=iotedgeexample.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=C5h93KWLcrrnvxi41+7Ay8OlSFlCAdvCRdnLVDOTVp8='
+export DEVICE_CONNECTIONSTRING='HostName=iotedgeexample.azure-devices.net;DeviceId=iot_edge_device_example;SharedAccessKey=5CiOHu2MJWVxHgPcue6dHaz91FF3410tnvzpUmjX4s4='
+export IOTHUB_DEVICEID=iot_edge_device_example
+export CONTAINER_REGISTRY_SERVER=edgehackfestregistry.azurecr.io
+export MODULES=sensor-module,state-module
