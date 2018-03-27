@@ -269,17 +269,17 @@ vnoremap // y/<C-R>"<cr>
 
 " Open files:
 " Location List
-nnoremap <leader>ol :w<cr>:e ~/.location_list<cr>
+nnoremap <leader>ol :up<cr>:e ~/.location_list<cr>
 " Temp file
-nnoremap <leader>ot :w<cr>:e ~/.temp<cr>
+nnoremap <leader>ot :up<cr>:e ~/.temp<cr>
 "Shortcut for Switch between .h, .cpp
-nnoremap <leader>oh :w<cr>:e %:r.h<cr>
-nnoremap <leader>ohi :w<cr>:e ../include/%:r.h<cr>
-nnoremap <leader>oc :w<cr>:e %:r.cpp<cr>
-nnoremap <leader>ocs :w<cr>:e ../source/%:r.cpp<cr>
+nnoremap <leader>oh :up<cr>:e %:r.h<cr>
+nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
+nnoremap <leader>oc :up<cr>:e %:r.cpp<cr>
+nnoremap <leader>ocs :up<cr>:e ../source/%:r.cpp<cr>
 
 " Wiki
-nnoremap <leader>ow :w<cr>:e ~/wiki/docs/source/index.md<cr>
+nnoremap <leader>ow :up<cr>:e ~/wiki/docs/source/index.md<cr>
 
 " AUTOCOMMANDS - Do stuff
 
