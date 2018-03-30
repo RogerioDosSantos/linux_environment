@@ -6,4 +6,5 @@
 -Ithird-party/rapidjson_master/include
 -Ithird-party/OpenOpcUa/v1.0.4.6/include/OpenOpcUaClientSdk
 -Ithird-party/openssl-1.0.0m/include
+-Iindusoft/projects/stage/
 
