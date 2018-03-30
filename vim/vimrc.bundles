@@ -202,6 +202,9 @@ nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execu
 nnoremap <silent><leader>glo :Glog -10<cr>:copen<cr> " Load the 10 last log of a files into the buffer and display it
 nnoremap <silent><leader>gla :Glog<cr>:copen<cr> " Load the all log of a files into the buffer and display it
 nnoremap <silent><leader>gle :Gedit<cr> " Return to the current file being edited.
+nnoremap <silent><leader>gpc :r !git log -1 --pretty=\%B<cr> " Paste the last commit
+nnoremap <silent><leader>gpc2 :r !git log -2 --pretty=\%B<cr> " Paste the second last commit
+nnoremap <silent><leader>gpc3 :r !git log -3 --pretty=\%B<cr> " Paste the third last commit
 
 " TMUX Navigator (Allow moving around between Tmux windows)
 let g:tmux_navigator_no_mappings = 1
