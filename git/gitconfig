@@ -18,3 +18,5 @@
   username = roger.santos.main@gmail.com
 [credential "http://swtfsiws.dev.wonderware.com:8080"]
   username = roger.santos
+[credential]
+	helper = cache
