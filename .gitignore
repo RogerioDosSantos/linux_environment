@@ -1,16 +1,16 @@
-vim/vim/plugged/*
+src/environment/vim/vim/plugged/*
 
 # There is a bug on the pandoc project that will no longer generate the pandoc, I am source controling it to be able to recover the file that works
-!vim/vim/plugged/vim-pandoc/
-!vim/vim/plugged/vim-pandoc-syntax/
+!src/environment/vim/vim/plugged/vim-pandoc/
+!src/environment/vim/vim/plugged/vim-pandoc-syntax/
 
-vim/vim/.netrwhist
-vim/vim/bin/
-vim/vim/doc/
-vim/vim/plugin/
-vim/vim/.netrwbook
-tmux/tmux/plugins/*
-!tmux/tmux/plugins/tpm/
-tmux/tmux/resurrect
-marvim/.mv7
-marvim/.mvt
+src/environment/vim/vim/.netrwhist
+src/environment/vim/vim/bin/
+src/environment/vim/vim/doc/
+src/environment/vim/vim/plugin/
+src/environment/vim/vim/.netrwbook
+src/environment/tmux/tmux/plugins/*
+!src/environment/tmux/tmux/plugins/tpm/
+src/environment/tmux/tmux/resurrect
+src/environment/marvim/.mv7
+src/environment/marvim/.mvt
