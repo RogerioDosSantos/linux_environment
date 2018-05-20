@@ -279,7 +279,7 @@ nnoremap <leader>oc :up<cr>:e %:r.cpp<cr>
 nnoremap <leader>ocs :up<cr>:e ../source/%:r.cpp<cr>
 
 " Wiki
-nnoremap <leader>ow :up<cr>:e ~/wiki/docs/source/index.md<cr>
+nnoremap <leader>ow :up<cr>:e ~/wiki/docs/src/index.md<cr>
 
 " AUTOCOMMANDS - Do stuff
 
