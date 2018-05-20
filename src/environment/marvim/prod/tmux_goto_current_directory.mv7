@@ -1,0 +1,1 @@
+:silent !~/roger/productivity/scripts/tmux_send_command_to_pane.sh -c "pushd $(pwd)":new:q
