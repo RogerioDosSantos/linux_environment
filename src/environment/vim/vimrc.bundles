@@ -113,6 +113,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive' "Git wrapper
 Plug 'airblade/vim-gitgutter' "Show changes on files
 
+" Grammar checker
+Plug 'rhysd/vim-grammarous'
+
 "Plugins to try
 
 " "  Features
@@ -538,7 +541,7 @@ nnoremap <silent><leader>sgf :up<cr>:GFiles<cr>
 nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
 nnoremap <silent><leader>sgc :up<cr>:Commits<cr>
 nnoremap <silent><leader>sb :up<cr>:Buffers<cr>
-nnoremap <silent><leader>sc :up<cr>:Colors<cr>
+nnoremap <silent><leader>sco :up<cr>:Colors<cr>
 nnoremap <silent><leader>sag :up<cr>:Ag 
 nnoremap <silent><leader>sl :up<cr>:Lines<cr>
 nnoremap <silent><leader>sbl :up<cr>:BLines<cr>
@@ -555,4 +558,27 @@ nnoremap <silent><leader>ss :up<cr>:Snippets<cr>
 " Identation Lines
 let g:indentLine_fileType = ['c', 'cpp', 'h', 'hpp', 'js', 'jsx']
 
+" Grammar checker
+let g:grammarous#disabled_rules = {
+			\ 'markdown' : ['DASH_RULE', 'COMMA_PARENTHESIS_WHITESPACE', 'SENTENCE_WHITESPACE', 'EN_QUOTES'],
+			\ }
+
+nnoremap <silent><leader>sc :GrammarousCheck<cr>
+
+let g:grammarous#hooks = {}
+function! g:grammarous#hooks.on_check(errs) abort
+    nmap <buffer><C-n> <Plug>(grammarous-move-to-next-error)
+    nmap <buffer><C-p> <Plug>(grammarous-move-to-previous-error)
+    nmap <buffer><C-f> <Plug>(grammarous-fixit)
+    nmap <buffer><C-a> <Plug>(grammarous-fixall)
+    nmap <buffer><C-i> <Plug>(grammarous-remove-error)
+endfunction
+
+function! g:grammarous#hooks.on_reset(errs) abort
+    nunmap <buffer><C-n>
+    nunmap <buffer><C-p>
+    nunmap <buffer><C-f>
+    nunmap <buffer><C-a>
+    nunmap <buffer><C-i>
+endfunction
 
