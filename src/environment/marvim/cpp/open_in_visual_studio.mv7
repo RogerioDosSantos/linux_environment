@@ -1,0 +1,1 @@
+:let @z = expand('%'):new:r !pwd$a bf ac$/z. \ 0v$:s/\\ / dtca:0v$:s/\//\\\\$F.d$0d$:q!:!cmd.exe /C "start explorer ""$0
