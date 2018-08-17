@@ -560,7 +560,7 @@ let g:indentLine_fileType = ['c', 'cpp', 'h', 'hpp', 'js', 'jsx']
 
 " Grammar checker
 let g:grammarous#disabled_rules = {
-			\ 'markdown' : ['DASH_RULE', 'COMMA_PARENTHESIS_WHITESPACE', 'SENTENCE_WHITESPACE', 'EN_QUOTES'],
+			\ 'markdown' : ['DASH_RULE', 'COMMA_PARENTHESIS_WHITESPACE', 'SENTENCE_WHITESPACE', 'EN_QUOTES', 'WHITESPACE_RULE', 'DOUBLE_PUNCTUATION'],
 			\ }
 
 nnoremap <silent><leader>sc :GrammarousCheck<cr>
