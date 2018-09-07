@@ -1,1 +1,1 @@
-:let @z = expand('%:p'):! ~/roger/productivity/scripts/tfs.sh -co z
+:let @z = expand('%:p'):! ~/roger/productivity/scripts/tfs.sh -o€kbco "z"
