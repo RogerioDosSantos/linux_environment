@@ -1,6 +1,6 @@
 log_enabled=false
 show_log=false
-log_level=1
+log_level=5
 builder_image=devindusoft.azurecr.io/builder_linux_x86:gcc_4_9
 builder_container_name=builder_linux_x86
 builder_workspace_volume=/c/Users/roger.santos/git/roger/projects
