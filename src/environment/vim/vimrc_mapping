@@ -159,7 +159,10 @@ nnoremap <silent><leader>gpc3 :r !git log -3 --pretty=\%B<cr> " Paste the third 
 " Build and Format
 " ***************************************************************
 
-" Format Using ClangFormat 
+"" Go to the definition usin FZF and CTags
+nnoremap <leader>d :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
+
+"" Format Using ClangFormat 
 noremap <silent><leader>fc :ClangFormat<cr> 
 
 "" Syntastic (Mapping Keys)
