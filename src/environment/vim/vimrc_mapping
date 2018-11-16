@@ -29,14 +29,14 @@ nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Inde
 " nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
 
 "" Vim Windows (To evaluate)
-" """ Open location list
-" nnoremap <silent><leader>lo :lopen<cr>
-" """ Open preview
-" nnoremap <silent><leader>po :cw<cr>
-" """ Preview tag.
-" nnoremap <leader>pt :ptag <C-R><C-W> <CR>
-" """ Close preview
-" nnoremap <leader>pc :pc <CR>
+""" Open location list
+nnoremap <silent><leader>lo :lopen<cr>
+""" Open preview
+nnoremap <silent><leader>po :cw<cr>
+""" Preview tag.
+nnoremap <leader>pt :ptag <C-R><C-W> <CR>
+""" Close preview
+nnoremap <leader>pc :pc <CR>
 
 " ***************************************************************
 " Shell
@@ -73,7 +73,7 @@ nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
 nnoremap <silent><leader>sgc :up<cr>:Commits<cr>
 nnoremap <silent><leader>sb :up<cr>:Buffers<cr>
 nnoremap <silent><leader>sco :up<cr>:Colors<cr>
-nnoremap <silent><leader>sag :up<cr>:Ag 
+nnoremap <silent><leader>sg :up<cr>:Ag 
 nnoremap <silent><leader>sl :up<cr>:Lines<cr>
 nnoremap <silent><leader>sbl :up<cr>:BLines<cr>
 nnoremap <silent><leader>st :up<cr>:Tags<cr>
