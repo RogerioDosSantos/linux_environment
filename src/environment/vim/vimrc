@@ -78,25 +78,6 @@ set numberwidth=5
 set splitbelow
 set splitright
 
-" Shortcut for splits
-nnoremap <silent><leader>vv :vsplit<cr> " Vertical Split
-nnoremap <silent><leader>hh :split<cr> " Horizontal Split
-
-" Shortcut for Tabs
-nnoremap <leader>tf :tabe " Open file in a new tab
-nnoremap <silent><leader>tn :tabn<cr> " Open next tab
-nnoremap <silent><leader>tp :tabp<cr> " Open previous tab
-
-" Shortcut for lopen (Open a list to show the location list for current window)
-nnoremap <silent><leader>lo :lopen<cr>
-" Open Preview
-nnoremap <silent><leader>po :cw<cr>
-" Preview tag.
-nnoremap <leader>pt :ptag <C-R><C-W> <CR>
-" Close Preview
-nnoremap <leader>pc :pc <CR>
-
-
 " Run Shell command and display the result into a temp window
 command! -complete=shellcmd -nargs=+ GetShell call s:RunShellCommand(<q-args>)
 
@@ -121,9 +102,6 @@ function! s:RunShellCommand(cmdline)
   setlocal nomodifiable
   1
 endfunction
-
-" Shortcut for Shell commands
-nnoremap <leader>c :GetShell
 
 " Auto resize Vim splits to active split
 set winwidth=84
@@ -165,11 +143,11 @@ autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-w> <C-w>w
+nnoremap <C-j> <C-w>j 
+nnoremap <C-k> <C-w>k 
+nnoremap <C-h> <C-w>h 
+nnoremap <C-l> <C-w>l 
+nnoremap <C-w> <C-w>w 
 " <c-h> is interpreted as <bs> in neovim
 " This is a bandaid fix until the team decides how
 " they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
@@ -183,12 +161,6 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Shortcut for Spell check
-nnoremap <leader>se :setlocal spell spelllang=en_us<cr>:set spellfile=$HOME/.vim/spell-en.utf-8.add<cr>
-nnoremap <leader>sp :setlocal spell spelllang=pt_br<cr>:set spellfile=$HOME/.vim/spell-pt.utf-8.add<cr>
-nnoremap <leader>so :set nospell<cr>
-nnoremap <leader>sa :spellrepall<cr>
-
 " Always use vertical diffs
 set diffopt+=vertical
 
@@ -199,8 +171,8 @@ set diffopt+=vertical
 "endif
 
 " Load up all of our plugins
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/.vimrc_plugins"))
+  source ~/.vimrc_plugins
 endif
 
 filetype plugin indent on
@@ -212,74 +184,6 @@ set pastetoggle=<F2> "F2 before pasting to preserve indentation
 "vnoremap <C-c> "*y
 "map <silent><Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 "map <silent><Leader><S-p> :set paste<CR>O<esc>"*]p:set nopaste<cr>"
-
-""" MORE AWESOME HOTKEYS
-"
-"
-"Shortcut for  Run the q macro
-"nnoremap <leader>q @q
-
-"Shortcut for  bind K to grep word under cursor
-"nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md,docker,sh} -rnwi . -e \"text\"")
-nnoremap <leader>g1 :!echo grep! '\b<C-R><C-W>\b' <CR>:cw<CR>
-vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
-nnoremap <leader>g2 :grep! '\b<C-R><C-W>\b' ../*<CR>:cw<CR>
-vnoremap <leader>g2 y:grep! '<C-R>"' ../*<CR>:cw<CR>
-nnoremap <leader>g3 :grep! '\b<C-R><C-W>\b' ../../*<CR>:cw<CR>
-vnoremap <leader>g3 y:grep! '<C-R>"' ../../*<CR>:cw<CR>
-nnoremap <leader>g4 :grep! '\b<C-R><C-W>\b' ../../../*<CR>:cw<CR>
-vnoremap <leader>g4 y:grep! '<C-R>"' ../../../*<CR>:cw<CR>
-nnoremap <leader>g5 :grep! '\b<C-R><C-W>\b' ../../../../*<CR>:cw<CR>
-vnoremap <leader>g5 y:grep! '<C-R>"' ../../../../*<CR>:cw<CR>
-
-"Shortcut for  bind \ (backward slash) to grep shortcut
-"command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-"nnoremap \ :Ag<SPACE>
-
-"Shortcut for Map Ctrl + S to save in any mode
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
-" Also map leader + s
-map <leader>s <C-S>
-
-"Shortcut for  Quickly close windows
-nnoremap <leader>x :x<cr>
-nnoremap <leader>X :q!<cr>
-
-"Shortcut for  zoom a vim pane, <C-w>= to re-balance
-" nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-" nnoremap <leader>= :wincmd =<cr>
-
-"Shortcut for  resize panes
-"nnoremap <silent> <Right> :vertical resize +5<cr>
-"nnoremap <silent> <Left> :vertical resize -5<cr>
-"nnoremap <silent> <Up> :resize +5<cr>
-"nnoremap <silent> <Down> :resize -5<cr>
-
-inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <S-Tab> <c-n>
-
-"Shortcut for  Switch between the last two files
-nnoremap <leader><leader> <c-^>
-
-" Search Visually selected text
-vnoremap // y/<C-R>"<cr>
-
-" Open files:
-" Location List
-nnoremap <leader>ol :up<cr>:e ~/.location_list<cr>
-" Temp file
-nnoremap <leader>ot :up<cr>:e ~/.temp<cr>
-"Shortcut for Switch between .h, .cpp
-nnoremap <leader>oh :up<cr>:e %:r.h<cr>
-nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
-nnoremap <leader>oc :up<cr>:e %:r.cpp<cr>
-nnoremap <leader>ocs :up<cr>:e ../source/%:r.cpp<cr>
-
-" Wiki
-nnoremap <leader>ow :up<cr>:e ~/wiki/docs/src/index.md<cr>
 
 " AUTOCOMMANDS - Do stuff
 
@@ -327,12 +231,6 @@ augroup END
 
 " Ctags
 set tags=./tags;/,tags;/
-" Create Custom Tags
-nnoremap <leader>tc :! ctags -R ~/
-" Append Custom Tags
-nnoremap <silent><leader>ta :! ctags -a -f ~/tags -R %:p:h<cr>
-" Remove Custom Tags
-nnoremap <silent><leader>tr :! rm ~/tags<cr>
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -345,21 +243,11 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
+inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <S-Tab> <c-n>
 
 " Remove the .netrwhist file
 au VimLeave * if filereadable("[path here]/.netrwhist")|call delete("[path here]/.netrwhist")|endif
-
-" Folding Configurations
-nnoremap <silent>zss :set foldmethod=syntax<cr> " Set the folding method to Syntax
-nnoremap <silent>zsm :set foldmethod=manual<cr> " Set the folding method to Manual
-nnoremap <silent>zsi :set foldmethod=indent<cr> " Set the folding method to Indent
-
-" Buffer Navigation
-" List buffers
-nnoremap <leader>bbb :buffers
-nnoremap <silent><leader>bbn :bnext<cr> " Go to the next buffer
-nnoremap <silent><leader>bbp :bprevious<cr> " Go to the previous buffer
-nnoremap <silent><leader>bbd :bdelete<cr> " Delete current Buffer
 
 "Set Registers
 function! SetRegister(name, value)
@@ -387,3 +275,8 @@ nnoremap <leader>qbb :call PutUserInputIntoBuffer('b')<cr>
 " Allow the . and macros to b executed once for each line of a visual selection
 vnoremap . :normal .<cr>
 vnoremap @ :normal @q
+
+" Configure Mappings
+if filereadable(expand("~/.vimrc_mapping"))
+  source ~/.vimrc_mapping
+endif

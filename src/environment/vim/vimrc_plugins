@@ -1,4 +1,4 @@
-" vimrc.bundles
+" Vim Plugins Configuration (~/.vimrc_plugins)
 
 " Type :so % to refresh .vimrc after making changes
 " Type :PluginInstall to update
@@ -192,23 +192,6 @@ colorscheme solarized "Define the solirized as the default color schema
 let g:solarized_termcolors=256
 set background=dark "Set the background to be black
 
-" Fugitive (Mapping Keys)
-nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
-nnoremap <silent><leader>gd :Gdiff<cr> " Git Diff (Non commit items vs Non added items)
-nnoremap <silent><leader>gdh :Gdiff origin/HEAD<cr> " Git Diff origin / HEAD (Commit items vs Non Commit items)
-nnoremap <silent><leader>gdm :Gdiff origin/master<cr> " Git Diff origin / master (Commit items vs Server)
-nnoremap <silent><leader>gc :Gcommit<cr> " Git Commit
-nnoremap <silent><leader>gp :Gpush<cr> " Git Push
-nnoremap <silent><leader>gpu :Gpull<cr> " Git Pull
-nnoremap <silent><leader>gb :Gblame<cr> " Git Brame (Verify the history of the file)
-nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execute undo before saving)
-nnoremap <silent><leader>glo :Glog -10<cr>:copen<cr> " Load the 10 last log of a files into the buffer and display it
-nnoremap <silent><leader>gla :Glog<cr>:copen<cr> " Load the all log of a files into the buffer and display it
-nnoremap <silent><leader>gle :Gedit<cr> " Return to the current file being edited.
-nnoremap <silent><leader>gpc :r !git log -1 --pretty=\%B<cr> " Paste the last commit
-nnoremap <silent><leader>gpc2 :r !git log -2 --pretty=\%B<cr> " Paste the second last commit
-nnoremap <silent><leader>gpc3 :r !git log -3 --pretty=\%B<cr> " Paste the third last commit
-
 " TMUX Navigator (Allow moving around between Tmux windows)
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 1
@@ -346,17 +329,14 @@ let g:clang_format#style_options = {
     " \ "BreakConstructorInitializersBeforeComma" : "true",
     " \ "ColumnLimit" : "120",
     " \ "NamespaceIndentation" : "All"
-
-" Format Using ClangFormat 
-noremap <silent><leader>fc :ClangFormat<cr> 
-
+    "
 " VimMarching (Configuration)
 
 let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
 
 let g:marching#clang_command#options = {
   \ "cpp" : "-std=gnu++1y"
-  \}
+  \}          
 
 " Add include directory here that should be used intellisense is used
 let g:marching_include_paths = [
@@ -401,12 +381,6 @@ let g:syntastic_mode_map = {
         \ "passive_filetypes" : [] 
         \}
 
-" Syntastic (Mapping Keys)
-nnoremap <silent><leader>ba :up<cr>:SyntasticCheck gcc clang_check cppcheck cpplint<cr> " Check the current file
-nnoremap <silent><leader>bc :up<cr>:SyntasticCheck clang_check<cr> " Check the current file
-nnoremap <silent><leader>bg :up<cr>:SyntasticCheck gcc<cr> " Check the current file
-nnoremap <silent><leader>bp :up<cr>:SyntasticCheck cppcheck<cr> " Check the current file
-nnoremap <silent><leader>bl :up<cr>:SyntasticCheck cpplint<cr> " Check the current file
 
 " Doxigen ( Configuration )
 " set spell spelllang=en_us
@@ -475,85 +449,12 @@ let g:pandoc#syntax#codeblocks#embeds#langs = [
             \"xml",
             \]
 
-"Create stage folder
-nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr> 
-"HTML
-nnoremap <silent><leader>deh :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>deht :up<cr>:execute "!pandoc -s %:p -t html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des :up<cr>:execute "!pandoc -s %:p -t slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des2 :up<cr>:execute "!pandoc -s %:p -t dzslides -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des3 :up<cr>:execute "!pandoc -s %:p -t revealjs -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des4 :up<cr>:execute "!pandoc -s %:p -t slideous -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des5 :up<cr>:execute "!pandoc -s %:p -t s5 -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>des6 :up<cr>:execute "!pandoc -s %:p -t haddock -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-"Word
-nnoremap <silent><leader>dew :up<cr>:execute "!pandoc -s %:p -t docx --toc -o ../stage/" . shellescape(expand('%:r')) . ".docx"<cr>
-nnoremap <silent><leader>dewr :up<cr>:execute "!pandoc -s %:p -t rtf -o ../stage/" . shellescape(expand('%:r')) . ".rtf"<cr>
-"PDF
-nnoremap <silent><leader>dep :up<cr>:execute "!pandoc -s %:p -t --latex-engine=xelatex -o ../stage/" . shellescape(expand('%:r')) . ".pdf"<cr>
-nnoremap <silent><leader>dept :up<cr>:execute "!pandoc -s %:p -t --latex-engine=xelatex --toc -o ../stage/" . shellescape(expand('%:r')) . ".pdf"<cr>
-"Text
-nnoremap <silent><leader>det :up<cr>:execute "!pandoc -s %:p -t plain -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>detm :up<cr>:execute "!pandoc -s %:p -t man -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>deta :up<cr>:execute "!pandoc -s %:p -t asciidoc -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>detl :up<cr>:execute "!pandoc -s %:p -t latex -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>detc :up<cr>:execute "!pandoc -s %:p -t context -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>deto :up<cr>:execute "!pandoc -s %:p -t org -o ../stage/" . shellescape(expand('%:r')) . ".org"<cr>
-nnoremap <silent><leader>detr :up<cr>:execute "!pandoc -s %:p -t rst -o ../stage/" . shellescape(expand('%:r')) . ".text"<cr>
-nnoremap <silent><leader>deti :up<cr>:execute "!pandoc -s %:p -t texinfo -o ../stage/" . shellescape(expand('%:r')) . ".texi"<cr>
-nnoremap <silent><leader>detn :up<cr>:execute "!pandoc -s %:p -t native -o ../stage/" . shellescape(expand('%:r')) . ".txt"<cr>
-nnoremap <silent><leader>dett :up<cr>:execute "!pandoc -s %:p -t textile -o ../stage/" . shellescape(expand('%:r')) . ".textile"<cr>
-nnoremap <silent><leader>detw :up<cr>:execute "!pandoc -s %:p -t mediawiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
-nnoremap <silent><leader>detd :up<cr>:execute "!pandoc -s %:p -t dokuwiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
-"XML 
-nnoremap <silent><leader>dex :up<cr>:execute "!pandoc -s %:p -t opendocument -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
-nnoremap <silent><leader>dexo :up<cr>:execute "!pandoc -s %:p -t opml -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
-nnoremap <silent><leader>dexd :up<cr>:execute "!pandoc -s %:p -t docbook -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
-nnoremap <silent><leader>dexi :up<cr>:execute "!pandoc -s %:p -t icml -o ../stage/" . shellescape(expand('%:r')) . ".icml"<cr>
-"Markdown
-nnoremap <silent><leader>dem :up<cr>:execute "!pandoc -s %:p -t markdown -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
-nnoremap <silent><leader>demg :up<cr>:execute "!pandoc -s %:p -t markdown_github -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>demm :up<cr>:execute "!pandoc -s %:p -t markdown_mmd -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
-nnoremap <silent><leader>demp :up<cr>:execute "!pandoc -s %:p -t markdown_phpextra  -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
-nnoremap <silent><leader>demc :up<cr>:execute "!pandoc -s %:p -t commonmark -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
-nnoremap <silent><leader>dems :up<cr>:execute "!pandoc -s %:p -t markdown_strict -o ../stage/" . shellescape(expand('%:r')) . ".md"<cr>
-"README.md
-nnoremap <silent><leader>demr :up<cr>:execute "!pandoc -s %:p -t markdown_github -o ../../README.md"<cr>
-"Ebook
-nnoremap <silent><leader>deb :up<cr>:execute "!pandoc -s %:p -t epub3 -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
-nnoremap <silent><leader>deb1 :up<cr>:execute "!pandoc -s %:p -t epub -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
-"Export All
-nnoremap <silent><leader>deah :up<cr>:execute "!find . -name \'*.md\' -exec basename {} .md \\; \| xargs -n1 -I XXX pandoc -s XXX.md -t html5 -c ../resources/style.css -o ../stage/XXX.html"<cr>
-
-
 " VimTextObjectUser  (Configuration)
 call textobj#user#plugin('file', {
       \ 'file': {
       \ 'pattern': '\f\+', 'select': ['af', 'if']
       \ }
       \ })
-
-" FZF
-" autocmd VimEnter * History | edit %
-" autocmd VimEnter * edit ~/.location_list
-nnoremap <silent><leader>sf :up<cr>:Files<cr>
-nnoremap <silent><leader>sgf :up<cr>:GFiles<cr>
-nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
-nnoremap <silent><leader>sgc :up<cr>:Commits<cr>
-nnoremap <silent><leader>sb :up<cr>:Buffers<cr>
-nnoremap <silent><leader>sco :up<cr>:Colors<cr>
-nnoremap <silent><leader>sag :up<cr>:Ag 
-nnoremap <silent><leader>sl :up<cr>:Lines<cr>
-nnoremap <silent><leader>sbl :up<cr>:BLines<cr>
-nnoremap <silent><leader>st :up<cr>:Tags<cr>
-nnoremap <silent><leader>sbt :up<cr>:BTags<cr>
-nnoremap <silent><leader>sm :up<cr>:Marks<cr>
-nnoremap <silent><leader>sw :up<cr>:Windows<cr>
-nnoremap <silent><leader>slo :up<cr>:Locate 
-nnoremap <silent><leader>sh :up<cr>:History<cr>
-nnoremap <silent><leader>shc :up<cr>:History:<cr>
-nnoremap <silent><leader>shs :up<cr>:History/<cr>
-nnoremap <silent><leader>ss :up<cr>:Snippets<cr>
 
 " Identation Lines
 let g:indentLine_fileType = ['c', 'cpp', 'h', 'hpp', 'js', 'jsx']
@@ -570,7 +471,6 @@ let g:grammarous#disabled_rules = {
       \              'EN_CONTRACTION_SPELLING'],
 			\ }
 
-nnoremap <silent><leader>sc :GrammarousCheck<cr>
 
 let g:grammarous#hooks = {}
 function! g:grammarous#hooks.on_check(errs) abort
