@@ -145,6 +145,7 @@ Plug 'rhysd/vim-grammarous'
 "   Plug 'digitaltoad/vim-pug'                                           " Syntax for pug
 "   Plug 'lervag/vimtex'                                                 " Build LaTeX files
 "   Plug 'josudoey/vim-eslint-fix'                                       " Eslint fixamajig
+"   Plug 'mattn/emmet-vim'                                               " HTML expand abreviation
 "
 "   " Snippets
 "   Plug 'SirVer/ultisnips'                                              " Snippet engine
@@ -152,7 +153,7 @@ Plug 'rhysd/vim-grammarous'
 "   Plug 'bag-man/snipmate-mocha'                                        " Snippets for Mocha tests
 "
 "   " tpope
-"   Plug 'tpope/vim-surround'                                            " Operate on surrounding 
+"   Plug 'tpope/vim-surround'                                            " Operate on surrounding
 "   Plug 'tpope/vim-speeddating'                                         " Increment dates
 "   Plug 'tpope/vim-repeat'                                              " Repeat plugins
 "   Plug 'tpope/vim-commentary'                                          " Comment out blocks
@@ -169,7 +170,7 @@ Plug 'rhysd/vim-grammarous'
 "   Plug 'unblevable/quick-scope'                                        " Highlight jump characters
 "
 "   " Text objects
-"   Plug 'wellle/targets.vim'                                            " Additional text objects                   
+"   Plug 'wellle/targets.vim'                                            " Additional text objects
 "   Plug 'michaeljsmith/vim-indent-object'                               " Indented text object
 "   Plug 'kana/vim-textobj-user'                                         " Add additional text objects
 "   Plug 'jceb/vim-textobj-uri'                                          " URL objects
@@ -213,7 +214,7 @@ nnoremap <silent><leader>tb :up<cr>:VtrFlushCommand<cr>:VtrSendCommandToRunner .
 nnoremap <silent><leader>tl :VtrSendLinesToRunner<cr>
 nnoremap <silent><leader>tf :VtrSendFile<cr>
 
-" Ctrl-P 
+" Ctrl-P
 
 " (Use The Silver Searcher https://github.com/ggreer/the_silver_searcher)
 if executable('ag')
@@ -292,7 +293,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 " NeoSnippets (For conceal markers)
 if has('conceal')
-  set conceallevel=2 
+  set conceallevel=2
   " set concealcursor=niv "The concealcursor enter in conflict with VimWiki Plugin.
 endif"
 
@@ -339,7 +340,7 @@ let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable i
 
 let g:marching#clang_command#options = {
   \ "cpp" : "-std=gnu++1y"
-  \}          
+  \}
 
 " Add include directory here that should be used intellisense is used
 let g:marching_include_paths = [
@@ -381,7 +382,7 @@ let g:syntastic_cpp_cpplint_args = '--filter=-whitespace/braces,-whitespace/pare
 let g:syntastic_mode_map = {
   \ "mode" : "passive",
         \ "active_filetypes" : [],
-        \ "passive_filetypes" : [] 
+        \ "passive_filetypes" : []
         \}
 
 
@@ -395,10 +396,10 @@ let g:DoxygenToolkit_returnTag="@Return "
 let g:DoxygenToolkit_blockHeader=""
 let g:DoxygenToolkit_blockFooter=""
 let g:DoxygenToolkit_authorName="Roger Santos"
-let g:DoxygenToolkit_licenseTag="This is a part of the LeeL Systems products \nCopyright (C) 2016 LeeL Systems \nAll rights reserved."  
+let g:DoxygenToolkit_licenseTag="This is a part of the LeeL Systems products \nCopyright (C) 2016 LeeL Systems \nAll rights reserved."
 
 "Doxygen Mapping
-nnoremap <silent><leader>dgd :Dox<cr> 
+nnoremap <silent><leader>dgd :Dox<cr>
 nnoremap <silent><leader>dgl gg :DoxLic<cr> " Document license.
 nnoremap <silent><leader>dgs :set spell!<cr> " Toggle document spell check
 
@@ -414,14 +415,14 @@ let g:tagbar_show_linenumbers=2
 " let g:tagbar_autoclose=1
 let tagbar_autofocus=1
 
-" React JS: 
+" React JS:
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 noremap <silent><leader>fj :call JsxBeautify()<cr>
 noremap <silent><leader>fjs :call JsonBeautify()<cr>
 noremap <silent><leader>fh :call HtmlBeautify()<cr>
 noremap <silent><leader>fcss :call CSSBeautify()<cr>
 
-" Pandoc: 
+" Pandoc:
 let g:pandoc#modules#enabled = [
             \"command",
             \"formatting",
