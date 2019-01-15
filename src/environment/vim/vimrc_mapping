@@ -179,7 +179,7 @@ nnoremap <silent><leader>bl :up<cr>:SyntasticCheck cpplint<cr> " Check the curre
 nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr>
 "HTML
 nnoremap <silent><leader>deh :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
-nnoremap <silent><leader>dehr :up<cr>:execute "!pandoc -s %:p -t html5 -c ./resources/style.css -o ./stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>dehr :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ./doc/stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>deht :up<cr>:execute "!pandoc -s %:p -t html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des :up<cr>:execute "!pandoc -s %:p -t slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des2 :up<cr>:execute "!pandoc -s %:p -t dzslides -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
