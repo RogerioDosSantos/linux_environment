@@ -9,12 +9,12 @@
 " Window Manipulation
 " ***************************************************************
 
-"" Open and Close 
+"" Open and Close
 """ Close current windows
 nnoremap <leader>x :x<cr>
 nnoremap <leader>X :q!<cr>
 
-"" Splits 
+"" Splits
 nnoremap <silent><leader>vv :vsplit<cr> " Vertical Split
 nnoremap <silent><leader>hh :split<cr> " Horizontal Split
 
@@ -73,14 +73,14 @@ nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
 nnoremap <silent><leader>sgc :up<cr>:Commits<cr>
 nnoremap <silent><leader>sb :up<cr>:Buffers<cr>
 nnoremap <silent><leader>sco :up<cr>:Colors<cr>
-nnoremap <silent><leader>sg :up<cr>:Ag 
+nnoremap <silent><leader>sg :up<cr>:Ag
 nnoremap <silent><leader>sl :up<cr>:Lines<cr>
 nnoremap <silent><leader>sbl :up<cr>:BLines<cr>
 nnoremap <silent><leader>st :up<cr>:Tags<cr>
 nnoremap <silent><leader>sbt :up<cr>:BTags<cr>
 nnoremap <silent><leader>sm :up<cr>:Marks<cr>
 nnoremap <silent><leader>sw :up<cr>:Windows<cr>
-nnoremap <silent><leader>slo :up<cr>:Locate 
+nnoremap <silent><leader>slo :up<cr>:Locate
 nnoremap <silent><leader>sh :up<cr>:History<cr>
 nnoremap <silent><leader>shc :up<cr>:History:<cr>
 nnoremap <silent><leader>shs :up<cr>:History/<cr>
@@ -162,8 +162,8 @@ nnoremap <silent><leader>gpc3 :r !git log -3 --pretty=\%B<cr> " Paste the third 
 "" Go to the definition usin FZF and CTags
 nnoremap <leader>d :call fzf#vim#tags(expand('<cword>'), {'options': '--exact --select-1 --exit-0'})<CR>
 
-"" Format Using ClangFormat 
-noremap <silent><leader>fc :ClangFormat<cr> 
+"" Format Using ClangFormat
+noremap <silent><leader>fc :ClangFormat<cr>
 
 "" Syntastic (Mapping Keys)
 nnoremap <silent><leader>ba :up<cr>:SyntasticCheck gcc clang_check cppcheck cpplint<cr> " Check the current file
@@ -176,9 +176,10 @@ nnoremap <silent><leader>bl :up<cr>:SyntasticCheck cpplint<cr> " Check the curre
 " Documentation (Pandoc)
 " ***************************************************************
 "Create stage folder
-nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr> 
+nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr>
 "HTML
 nnoremap <silent><leader>deh :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
+nnoremap <silent><leader>dehr :up<cr>:execute "!pandoc -s %:p -t html5 -c ./resources/style.css -o ./stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>deht :up<cr>:execute "!pandoc -s %:p -t html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des :up<cr>:execute "!pandoc -s %:p -t slidy -s --webtex --base-header-level=1 -i -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>des2 :up<cr>:execute "!pandoc -s %:p -t dzslides -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
@@ -205,7 +206,7 @@ nnoremap <silent><leader>detn :up<cr>:execute "!pandoc -s %:p -t native -o ../st
 nnoremap <silent><leader>dett :up<cr>:execute "!pandoc -s %:p -t textile -o ../stage/" . shellescape(expand('%:r')) . ".textile"<cr>
 nnoremap <silent><leader>detw :up<cr>:execute "!pandoc -s %:p -t mediawiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
 nnoremap <silent><leader>detd :up<cr>:execute "!pandoc -s %:p -t dokuwiki -o ../stage/" . shellescape(expand('%:r')) . ".wiki"<cr>
-"XML 
+"XML
 nnoremap <silent><leader>dex :up<cr>:execute "!pandoc -s %:p -t opendocument -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
 nnoremap <silent><leader>dexo :up<cr>:execute "!pandoc -s %:p -t opml -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
 nnoremap <silent><leader>dexd :up<cr>:execute "!pandoc -s %:p -t docbook -o ../stage/" . shellescape(expand('%:r')) . ".xml"<cr>
