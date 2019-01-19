@@ -129,6 +129,8 @@ nnoremap <leader>ovp :up<cr>:e ~/roger/devops/linux_environment/src/environment/
 nnoremap <leader>ovm :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc_mapping<cr> 
 "" Open Indusoft
 nnoremap <leader>oi :up<cr>:e ~/indusoft/README.md<cr> 
+"" Open Roger 
+nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
 "" Switch between .h, .cpp
 nnoremap <leader>oh :up<cr>:e %:r.h<cr>
 nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
