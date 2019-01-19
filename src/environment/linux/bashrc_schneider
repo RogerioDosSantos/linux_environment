@@ -142,7 +142,7 @@ export ftp_proxy
 socks_proxy=http://gateway.zscaler.net:9480
 # socks_proxy=
 export socks_proxy
-no_proxy=127.0.0.1,192.168.99.100,10.229.206.135,swtfsiws,dev.wonderware.com
+no_proxy=127.0.0.1,192.168.99.100,10.229.206.{1..255},swtfsiws,dev.wonderware.com
 export no_proxy
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
