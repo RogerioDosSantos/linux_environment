@@ -502,3 +502,5 @@ endfunction
 
 " FZF Configuration
 let g:fzf_tags_command = 'ctags -R'
+"" Fix Tags with spaces
+command! -nargs=* -bang Tags call fzf#vim#tags(<q-args>, {'options': '--nth 1..5'}, <bang>0)
