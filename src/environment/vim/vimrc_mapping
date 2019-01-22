@@ -119,14 +119,12 @@ nnoremap <silent><leader>tr :! rm ~/tags<cr>
 nnoremap <leader><leader> <c-^>
 "" Open Wiki
 nnoremap <leader>ow :up<cr>:e ~/wiki/docs/src/index.md<cr>
-"" Location List File
-nnoremap <leader>ol :up<cr>:e ~/.location_list<cr>
+"" Open Linux Configuration
+nnoremap <leader>ol :up<cr>:e ~/roger/devops/linux_environment/README.md<cr>
 "" Open Temp file
-nnoremap <leader>ot :up<cr>:e ~/.temp<cr>
+nnoremap <leader>ot :up<cr>:e ~/roger/temp/.temp<cr>
 "" Open Vim config File
 nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc<cr> 
-nnoremap <leader>ovp :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc_plugins<cr> 
-nnoremap <leader>ovm :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc_mapping<cr> 
 "" Open Indusoft
 nnoremap <leader>oi :up<cr>:e ~/indusoft/README.md<cr> 
 "" Open Roger 
@@ -233,4 +231,11 @@ nnoremap <silent><leader>deb :up<cr>:execute "!pandoc -s %:p -t epub3 -o ../stag
 nnoremap <silent><leader>deb1 :up<cr>:execute "!pandoc -s %:p -t epub -o ../stage/" . shellescape(expand('%:r')) . ".epub"<cr>
 "Export All
 nnoremap <silent><leader>deah :up<cr>:execute "!find . -name \'*.md\' -exec basename {} .md \\; \| xargs -n1 -I XXX pandoc -s XXX.md -t html5 -c ../resources/style.css -o ../stage/XXX.html"<cr>
+
+"Macros (Marvim)
+"" Open Current Directory
+nnoremap <leader>od :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('prod:explorer_open_current_dir'))<cr> 
+""" Docker Compose
+nnoremap <leader>cu :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
+nnoremap <leader>cd :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
 

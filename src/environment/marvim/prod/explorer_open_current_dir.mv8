@@ -1,0 +1,1 @@
+:!devops -we "powershell explorer (Get-Item -Path .).FullName":redraw!
