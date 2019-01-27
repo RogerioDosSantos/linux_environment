@@ -129,6 +129,8 @@ nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/v
 nnoremap <leader>oi :up<cr>:e ~/indusoft/README.md<cr> 
 "" Open Roger 
 nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
+"" Open Leel 
+nnoremap <leader>ol :up<cr>:e ~/leel/README.md<cr> 
 "" Switch between .h, .cpp
 nnoremap <leader>oh :up<cr>:e %:r.h<cr>
 nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
