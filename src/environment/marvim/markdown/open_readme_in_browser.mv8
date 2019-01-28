@@ -1,0 +1,1 @@
+:let @n=expand('%:t'):new:e ./doc/stage/n€kb€kbhtml:! devops -we "powershell explorer.exe n€kb€kbhtml":q:redraw!
