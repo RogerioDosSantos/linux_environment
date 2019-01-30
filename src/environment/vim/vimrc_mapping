@@ -127,6 +127,7 @@ nnoremap <leader>ot :up<cr>:e ~/roger/temp/.temp<cr>
 nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc<cr> 
 "" Open Indusoft
 nnoremap <leader>oi :up<cr>:e ~/indusoft/README.md<cr> 
+nnoremap <leader>oid :up<cr>:e ~/work/PRODUCT/DEV/README.md<cr> 
 "" Open Roger 
 nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
 "" Open Leel 
