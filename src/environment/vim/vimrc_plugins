@@ -119,6 +119,9 @@ Plug 'airblade/vim-gitgutter' "Show changes on files
 " Grammar checker
 Plug 'rhysd/vim-grammarous'
 
+" Python
+Plug 'davidhalter/jedi-vim'
+
 "Plugins to try
 
 " "  Features
@@ -272,7 +275,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " NeoComplete (Enable heavy omni completion)
