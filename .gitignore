@@ -14,3 +14,5 @@ src/environment/tmux/tmux/plugins/*
 src/environment/tmux/tmux/resurrect
 src/environment/marvim/.mv7
 src/environment/marvim/.mvt
+
+tags
