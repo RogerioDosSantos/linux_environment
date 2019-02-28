@@ -1,1 +1,1 @@
-:let @n=expand('%:t'):!devops -we docker-compose.exe -f n start:redraw
+:let @n=expand('%:t'):!devops -we docker-compose.exe -f n start:redraw!
