@@ -44,12 +44,9 @@ Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
 
 Plug 'rking/ag.vim' " Code Tagging and Navigation
 
-Plug 'Shougo/neocomplete' "Complete with cache
-Plug 'Shougo/neosnippet' "Snipets
-Plug 'RogerioDosSantos/neosnippet-snippets' "Snippets templates
 
 Plug 'rhysd/vim-clang-format' "Format with Clang
-Plug 'osyo-manga/vim-marching' "Complete with Clang
+" Plug 'osyo-manga/vim-marching' "Complete with Clang
 "TODO(Roger) - Plug 'uplus/vim-clang-rename' "Renaming with Clang
 
 "Ascyncronous execution library
@@ -118,6 +115,34 @@ Plug 'airblade/vim-gitgutter' "Show changes on files
 
 " Grammar checker
 Plug 'rhysd/vim-grammarous'
+
+" Python
+" Plug 'davidhalter/jedi-vim'
+
+" intellisense (Auto-completion)
+"" Core Auto Completion
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+"" Vim Buffer
+Plug 'prabirshrestha/asyncomplete-buffer.vim'
+"" File Names and Directories
+Plug 'prabirshrestha/asyncomplete-file.vim'
+"" Includes
+Plug 'Shougo/neoinclude.vim'
+Plug 'kyouryuukunn/asyncomplete-neoinclude.vim'
+"" Snippets
+" Plug 'Shougo/neocomplete' "Complete with cache
+Plug 'Shougo/neosnippet.vim' "Snipets
+Plug 'RogerioDosSantos/neosnippet-snippets' "Snippets templates
+Plug 'prabirshrestha/asyncomplete-neosnippet.vim'
+"" TMUX (Words from other TMUX panes)
+Plug 'wellle/tmux-complete.vim'
+"" Tags 
+Plug 'prabirshrestha/asyncomplete-tags.vim'
+Plug 'ludovicchabant/vim-gutentags'
+"" Language Server Protocol
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 "Plugins to try
 
@@ -188,6 +213,100 @@ call plug#end()
 
 "#### Plugins Configurations ####
 
+" Intellisense (Auto-Completion) ************************************************************8
+"" Auto Complete Vim Buffer
+call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'whitelist': ['*'],
+    \ 'blacklist': ['go'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+
+"" Files and Directories
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'whitelist': ['*'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#file#completor')
+    \ }))
+
+"" Includes
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neoinclude#get_source_options({
+    \ 'name': 'neoinclude',
+    \ 'whitelist': ['cpp'],
+    \ 'refresh_pattern': '\(<\|"\|/\)$',
+    \ 'completor': function('asyncomplete#sources#neoinclude#completor'),
+    \ }))
+
+"" Snippets
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+    \ 'name': 'neosnippet',
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+    \ }))
+
+"" TMUX (Words from other TMUX panes)
+let g:tmuxcomplete#asyncomplete_source_options = {
+            \ 'name':      'tmuxcomplete',
+            \ 'whitelist': ['*'],
+            \ 'config': {
+            \     'splitmode':      'words',
+            \     'filter_prefix':   1,
+            \     'show_incomplete': 1,
+            \     'sort_candidates': 0,
+            \     'scrollback':      0,
+            \     'truncate':        0
+            \     }
+            \ }
+
+"" Tags 
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#tags#get_source_options({
+    \ 'name': 'tags',
+    \ 'whitelist': ['c'],
+    \ 'completor': function('asyncomplete#sources#tags#completor'),
+    \ 'config': {
+    \    'max_file_size': 50000000,
+    \  },
+    \ }))
+
+"" Language Server Protocol
+if executable('clangd')
+    augroup lsp_clangd
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+                    \ 'name': 'clangd',
+                    \ 'cmd': {server_info->['clangd']},
+                    \ 'priority': 11,
+                    \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+                    \ })
+        autocmd FileType c setlocal omnifunc=lsp#complete
+        autocmd FileType cpp setlocal omnifunc=lsp#complete
+        autocmd FileType objc setlocal omnifunc=lsp#complete
+        autocmd FileType objcpp setlocal omnifunc=lsp#complete
+    augroup end
+endif
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'priority': 11,
+        \ 'whitelist': ['python'],
+        \ })
+endif
+if executable('typescript-language-server')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'typescript-language-server',
+        \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+        \ 'whitelist': ['typescript'],
+        \ 'priority': 11,
+        \ })
+endif
+
+
+"************************************************************************************************************************
+
 "Solarized (Configuration)
 syntax enable "Turn on the vim syntax highlight
 set t_Co=256 "Set the color supported to be 256. By default it is 16
@@ -229,56 +348,56 @@ if executable('ag')
   "let g:ctrlp_use_caching = 0
 endif
 
-" NoeComplete (Completition configuration)
-
-let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
-let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
-let g:neocomplete#enable_smart_case = 1 " Use smartcase.
-let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' "Define buffer pattern
-let g:neocomplcache_temporary_dir = '$HOME/.vim/tmp/neocomplcache'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-  \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-  \ }
-
-" NoeComplete (Define keyword)
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" NeoComplete (Plugin key-mappings)
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" NeoComplete (Recommended key-mappings)
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-
-" NeoComplete (<TAB>: completion)
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" NeoComplete (<C-h>, <BS>: close popup and delete backword char)
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-
-" NeoComplete (Enable omni completion)
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" NeoComplete (Enable heavy omni completion)
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
+" " NoeComplete (Completition configuration)
+"
+" let g:acp_enableAtStartup = 0 " Disable AutoComplPop.
+" let g:neocomplete#enable_at_startup = 1 " Use neocomplete.
+" let g:neocomplete#enable_smart_case = 1 " Use smartcase.
+" let g:neocomplete#sources#syntax#min_keyword_length = 3 " Set minimum syntax keyword length.
+" let g:neocomplete#lock_buffer_name_pattern = '\*ku\*' "Define buffer pattern
+" let g:neocomplcache_temporary_dir = '$HOME/.vim/tmp/neocomplcache'
+"
+" " Define dictionary.
+" let g:neocomplete#sources#dictionary#dictionaries = {
+"   \ 'default' : '',
+"     \ 'vimshell' : $HOME.'/.vimshell_hist',
+"     \ 'scheme' : $HOME.'/.gosh_completions'
+"   \ }
+"
+" " NoeComplete (Define keyword)
+" if !exists('g:neocomplete#keyword_patterns')
+"     let g:neocomplete#keyword_patterns = {}
+" endif
+"     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+"
+" " NeoComplete (Plugin key-mappings)
+" inoremap <expr><C-g>     neocomplete#undo_completion()
+" inoremap <expr><C-l>     neocomplete#complete_common_string()
+"
+" " NeoComplete (Recommended key-mappings)
+" " <CR>: close popup and save indent.
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
+"   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+" endfunction
+"
+" " NeoComplete (<TAB>: completion)
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" " NeoComplete (<C-h>, <BS>: close popup and delete backword char)
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"
+" " NeoComplete (Enable omni completion)
+" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+" " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"
+" " NeoComplete (Enable heavy omni completion)
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"   let g:neocomplete#sources#omni#input_patterns = {}
+" endif
 
 " NeoSnippets (Configuration)
 
@@ -334,34 +453,34 @@ let g:clang_format#style_options = {
     " \ "ColumnLimit" : "120",
     " \ "NamespaceIndentation" : "All"
     "
-" VimMarching (Configuration)
-
-let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
-
-let g:marching#clang_command#options = {
-  \ "cpp" : "-std=gnu++1y"
-  \}
-
-" Add include directory here that should be used intellisense is used
-let g:marching_include_paths = [
-      \ "/usr/local/include",
-      \ "~/leel/leel-third-party/boost",
-      \ "~/third-party/boost1.55",
-      \ "~/third-party/rapidjson/include"
-  \]
-
-let g:marching_enable_neocomplete = 1
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
-
-let g:neocomplete#force_omni_input_patterns.cpp =
-    \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
-set updatetime=200
-imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
-imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+" " VimMarching (Configuration)
+"
+" let g:marching_clang_command = "/usr/bin/clang" "Inform where Clang executable is.
+"
+" let g:marching#clang_command#options = {
+"   \ "cpp" : "-std=gnu++1y"
+"   \}
+"
+" " Add include directory here that should be used intellisense is used
+" let g:marching_include_paths = [
+"       \ "/usr/local/include",
+"       \ "~/leel/leel-third-party/boost",
+"       \ "~/third-party/boost1.55",
+"       \ "~/third-party/rapidjson/include"
+"   \]
+"
+" let g:marching_enable_neocomplete = 1
+"
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"     let g:neocomplete#force_omni_input_patterns = {}
+" endif
+"
+" let g:neocomplete#force_omni_input_patterns.cpp =
+"     \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+"
+" set updatetime=200
+" imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
+" imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
 
 " Syntastic (Configuration)
 set statusline+=%#warningmsg#
