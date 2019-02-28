@@ -1,1 +1,1 @@
-:!devops -we "docker-compose down":!devops -we "docker-compu€kbose"€kb build":redraw!
+:let @n=expand('%:t'):!devops -we docker-compose.exe -f n build:redraw

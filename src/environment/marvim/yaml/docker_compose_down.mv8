@@ -1,1 +1,1 @@
-:!devops -we "docker-compose down":redraw!
+:let @n=expand('%:t'):!devops -we docker-compose.exe -f n down:redraw
