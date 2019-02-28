@@ -1,0 +1,1 @@
+:1€kb!docker rmi $(docker images -f dangling=true -q):reda€kbraw!
