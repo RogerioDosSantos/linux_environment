@@ -495,7 +495,7 @@ let g:syntastic_clang_check_config_file = ".syntastic_cpp_config"
 " let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_clang_check_exec = '/usr/bin/clang-check-3.8'
 " let g:syntastic_cpp_cpplint_exec = ''
-let g:syntastic_cpp_cppcheck_exec = '/usr/bin/cppcheck'
+let g:syntastic_cpp_cppcheck_exec = '/usr/bin/cppcheck --std'
 let g:syntastic_cpp_cpplint_exec = '~/.linux/cpplint/cpplint.py'
 let g:syntastic_cpp_cpplint_args = '--filter=-whitespace/braces,-whitespace/parens $(ItemPath)'
 let g:syntastic_mode_map = {
