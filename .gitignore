@@ -16,3 +16,5 @@ src/environment/marvim/.mv7
 src/environment/marvim/.mvt
 
 tags
+tags.lock
+tags.temp
