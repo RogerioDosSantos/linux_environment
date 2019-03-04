@@ -26,12 +26,13 @@ Plug 'vim-airline/vim-airline-themes' "Status bar Themes
 Plug 'christoomey/vim-tmux-navigator' "TMUX - Allow navigate among TMUX windows and vim
 Plug 'christoomey/vim-tmux-runner' "TMUX - Allow run commands on TMUX
 
-Plug 'christoomey/vim-run-interactive' "Run command into an interative shell
+" Plug 'christoomey/vim-run-interactive' "Run command into an interative shell
+" Plug 'ctrlpvim/ctrlp.vim' "Search filesystem with ctrl+p
 
-Plug 'ctrlpvim/ctrlp.vim' "Search filesystem with ctrl+p
+"Problematic"
+" Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
+" Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
 
-Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
-Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
 Plug 'tpope/vim-surround' "easily surround things...just read docs for info
 
 Plug 'vim-scripts/tComment' "Comment easily with gcc
@@ -43,7 +44,6 @@ Plug 'vim-scripts/matchit.zip' " % also matches HTML tags / words / etc
 Plug 'duff/vim-scratch' "Open a throwaway scratch buffer
 
 Plug 'rking/ag.vim' " Code Tagging and Navigation
-
 
 Plug 'rhysd/vim-clang-format' "Format with Clang
 " Plug 'osyo-manga/vim-marching' "Complete with Clang
@@ -67,6 +67,7 @@ Plug 'osyo-manga/vim-reunions'
 " Pull 'thinca/vim-quickrun'
 
 Plug 'scrooloose/syntastic' "Syntax Highlighting
+" Plug 'w0rp/ale' "Syntax Highlighting (Asynchronous)
 
 Plug 'vim-scripts/DoxygenToolkit.vim' "Code Documentation
 
@@ -481,6 +482,16 @@ let g:clang_format#style_options = {
 " set updatetime=200
 " imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
 " imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+
+" " ALE configuration 
+" let g:ale_completion_enabled = 1
+" let g:airline#extensions#ale#enabled = 1
+" nnoremap <silent><leader>agd :ALEGoToDefinition<cr> " Go to definition
+" nnoremap <silent><leader>afr :ALEFindReferences<cr> " Finding references
+" nnoremap <silent><leader>ass :ALESymbolSearch<cr> " Symbol search
+" nnoremap <silent><leader>aif :ALEInfo<cr> " Display current lynt information
+" nnoremap <silent><leader>agp <Plug>(ale_previous_wrap) " Go to previous error
+" nnoremap <silent><leader>agn <Plug>(ale_next_wrap) " Go to previous error
 
 " Syntastic (Configuration)
 set statusline+=%#warningmsg#
