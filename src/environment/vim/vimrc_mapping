@@ -122,7 +122,7 @@ nnoremap <leader>ow :up<cr>:e ~/wiki/docs/src/index.md<cr>
 "" Open Linux Configuration
 nnoremap <leader>ol :up<cr>:e ~/roger/devops/linux_environment/README.md<cr>
 "" Open Temp file
-nnoremap <leader>ot :up<cr>:e ~/roger/temp/.temp<cr>
+nnoremap <leader>ott :up<cr>:e ~/roger/temp/.temp<cr>
 "" Open Vim config File
 nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc<cr> 
 "" Open Indusoft
@@ -133,6 +133,10 @@ nnoremap <leader>oia :up<cr>:e ~/iws_apps/README.md<cr>
 nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
 "" Open Leel 
 nnoremap <leader>ol :up<cr>:e ~/leel/README.md<cr> 
+"" Open Templates 
+nnoremap <leader>ot :up<cr>:e ~/roger/project/templates/README.md<cr> 
+"" Open Scripts 
+nnoremap <leader>os :up<cr>:e ~/roger/productivity/scripts/README.md<cr> 
 "" Switch between .h, .cpp
 nnoremap <leader>oh :up<cr>:e %:r.h<cr>
 nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
