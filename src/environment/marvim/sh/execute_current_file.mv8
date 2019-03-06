@@ -1,1 +1,1 @@
-:let @p=expand('%:p'):new:w:new:r !bash p
+:let @p=expand('%:p'):new:r !bash p:reda€kbraw
