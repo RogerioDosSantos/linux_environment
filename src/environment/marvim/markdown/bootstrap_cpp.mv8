@@ -1,0 +1,1 @@
+:w:let @d=expand('%:p:h'):!devops -bo cpp d:redraw!
