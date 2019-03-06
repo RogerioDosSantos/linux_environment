@@ -1,0 +1,1 @@
+:w:let @p=expand('%:p'):new:r !bash p:redraw
