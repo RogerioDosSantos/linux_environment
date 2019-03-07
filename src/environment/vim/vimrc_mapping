@@ -192,6 +192,7 @@ nnoremap <silent><leader>bl :up<cr>:SyntasticCheck cpplint<cr> " Check the curre
 "Create stage folder
 nnoremap <silent><leader>dcs :!mkdir -p ../stage <cr>
 "HTML
+nnoremap <silent><leader>der :up<cr>:!cp ~/roger/productivity/code_collection/css/wiki_style.css ./style.css<cr>:execute "!pandoc -s %:p -t html5 -c ./style.css -o " shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>deh :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>dehr :up<cr>:execute "!pandoc -s %:p -t html5 -c ../resources/style.css -o ./doc/stage/" . shellescape(expand('%:r')) . ".html"<cr>
 nnoremap <silent><leader>deht :up<cr>:execute "!pandoc -s %:p -t html5 --toc -c ../resources/style.css -o ../stage/" . shellescape(expand('%:r')) . ".html"<cr>
