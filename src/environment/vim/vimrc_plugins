@@ -32,6 +32,7 @@ Plug 'christoomey/vim-tmux-runner' "TMUX - Allow run commands on TMUX
 "Problematic"
 " Plug 'jiangmiao/auto-pairs' "MANY features, but mostly closes ([{' etc
 " Plug 'vim-scripts/HTML-AutoCloseTag' "close tags after >
+Plug 'Raimondi/delimitMate'
 
 Plug 'tpope/vim-surround' "easily surround things...just read docs for info
 
