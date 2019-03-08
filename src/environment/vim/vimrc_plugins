@@ -632,7 +632,23 @@ function! g:grammarous#hooks.on_reset(errs) abort
     nunmap <buffer><C-i>
 endfunction
 
+" Marvim Configuration
+"" Marvim Exec - Exec Marvim macro given the macro file
+command! -nargs=1 MarvimExec call Marvim_file_run(<f-args>)
+
 " FZF Configuration
 let g:fzf_tags_command = 'ctags -R'
 "" Fix Tags with spaces
 command! -nargs=* -bang Tags call fzf#vim#tags(<q-args>, {'options': '--nth 1..5'}, <bang>0)
+"" Code Collection - Read the code collection file into the current buffer
+command! -bang FZFGetCodeCollection call fzf#run(fzf#wrap({
+            \ 'sink'  : 'read',
+            \ 'dir'  : '~/roger/productivity/code_collection',
+            \ 'options' : '-m --prompt "Get Code Collection> "'
+            \ }))
+"" MarvimExec
+command! -bang FZFMarvimExec call fzf#run(fzf#wrap({
+            \ 'sink'  : 'MarvimExec',
+            \ 'dir'  : '~/roger/devops/linux_environment/src/environment/marvim',
+            \ 'options' : '-m --prompt "Run Marvin> "'
+            \ }))

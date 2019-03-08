@@ -86,6 +86,10 @@ nnoremap <silent><leader>shc :up<cr>:History:<cr>
 nnoremap <silent><leader>shs :up<cr>:History/<cr>
 nnoremap <silent><leader>ss :up<cr>:Snippets<cr>
 
+"" FZF (Commands)
+nnoremap <silent><leader>rm :up<cr>:FZFMarvimExec<cr>
+nnoremap <silent><leader>rcc :up<cr>:FZFGetCodeCollection<cr>
+
 "" Grep
 nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md,docker,sh} -rnwi . -e \"text\"")
 nnoremap <leader>g1 :!echo grep! '\b<C-R><C-W>\b' <CR>:cw<CR>
