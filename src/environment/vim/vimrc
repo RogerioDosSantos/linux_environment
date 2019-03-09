@@ -143,11 +143,11 @@ autocmd CmdwinEnter * nnoremap <CR> <CR>
 autocmd BufReadPost quickfix nnoremap <CR> <CR>
 
 " Quicker window movement
-nnoremap <C-j> <C-w>j 
-nnoremap <C-k> <C-w>k 
-nnoremap <C-h> <C-w>h 
-nnoremap <C-l> <C-w>l 
-nnoremap <C-w> <C-w>w 
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-w> <C-w>w
 " <c-h> is interpreted as <bs> in neovim
 " This is a bandaid fix until the team decides how
 " they want to handle fixing it...(https://github.com/neovim/neovim/issues/2048)
@@ -276,7 +276,13 @@ nnoremap <leader>qbb :call PutUserInputIntoBuffer('b')<cr>
 vnoremap . :normal .<cr>
 vnoremap @ :normal @q
 
+" Configure Commands
+if filereadable(expand("~/.vimrc_commands"))
+  source ~/.vimrc_commands
+endif
+
 " Configure Mappings
 if filereadable(expand("~/.vimrc_mapping"))
   source ~/.vimrc_mapping
 endif
+

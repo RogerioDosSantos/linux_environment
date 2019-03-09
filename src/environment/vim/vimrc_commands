@@ -1,0 +1,29 @@
+
+" Marvim 
+
+"" Marvim Exec - Exec Marvim macro given the macro file
+command! -nargs=1 MarvimExec call Marvim_file_run(<f-args>)
+
+" FZF
+
+"" Code Collection - Read the code collection file into the current buffer
+command! -bang FZFGetCodeCollection call fzf#run(fzf#wrap({
+            \ 'sink'  : 'read',
+            \ 'dir'  : '~/roger/productivity/code_collection',
+            \ 'options' : '-m --prompt "Get Code Collection> "'
+            \ }))
+
+"" Code Collection - Open the code collection file into the current buffer
+command! -bang FZFOpenCodeCollection call fzf#run(fzf#wrap({
+            \ 'sink'  : 'e',
+            \ 'dir'  : '~/roger/productivity/code_collection',
+            \ 'options' : '-m --prompt "Open Code Collection> "'
+            \ }))
+
+"" Marvin - Execute a Marvin Macro
+command! -bang FZFMarvimExec call fzf#run(fzf#wrap({
+            \ 'sink'  : 'MarvimExec',
+            \ 'dir'  : '~/roger/devops/linux_environment/src/environment/marvim',
+            \ 'options' : '-m --prompt "Run Marvin> "'
+            \ }))
+

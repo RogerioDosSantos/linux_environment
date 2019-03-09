@@ -138,7 +138,7 @@ nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr>
 "" Open Leel 
 nnoremap <leader>ol :up<cr>:e ~/leel/README.md<cr> 
 "" Open Code Collection 
-nnoremap <leader>occ :up<cr>:e ~/roger/productivity/code_collection/README.md<cr> 
+nnoremap <silent><leader>occ :up<cr>:FZFOpenCodeCollection<cr>
 "" Open Scripts 
 nnoremap <leader>os :up<cr>:e ~/roger/productivity/scripts/README.md<cr> 
 "" Switch between .h, .cpp
