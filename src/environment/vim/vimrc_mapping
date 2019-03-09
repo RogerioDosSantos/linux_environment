@@ -248,6 +248,8 @@ nnoremap <silent><leader>deah :up<cr>:execute "!find . -name \'*.md\' -exec base
 "Macros (Marvim)
 "" Open Current Directory
 nnoremap <leader>od :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('prod:explorer_open_current_dir'))<cr> 
+"" Copy File Content to Clipboard
+nnoremap <leader>cc :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('file::copy_current_file_content_to_clipboard'))<cr> 
 """ Docker Compose
 nnoremap <leader>cu :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
 nnoremap <leader>cd :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
