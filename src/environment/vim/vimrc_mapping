@@ -68,12 +68,12 @@ nnoremap <silent><leader>sc :GrammarousCheck<cr>
 
 "" FZF (Fuzzy Finder)
 nnoremap <silent><leader>sf :up<cr>:Files<cr>
-nnoremap <silent><leader>sgf :up<cr>:GFiles<cr>
-nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
-nnoremap <silent><leader>sgc :up<cr>:Commits<cr>
+nnoremap <silent><leader>sg :up<cr>:GFiles<cr>
+" nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
+nnoremap <silent><leader>sc :up<cr>:Commits<cr>
 nnoremap <silent><leader>sb :up<cr>:Buffers<cr>
 nnoremap <silent><leader>sco :up<cr>:Colors<cr>
-nnoremap <silent><leader>sg :up<cr>:Ag
+" nnoremap <silent><leader>sg :up<cr>:Ag
 nnoremap <silent><leader>sl :up<cr>:Lines<cr>
 nnoremap <silent><leader>sbl :up<cr>:BLines<cr>
 nnoremap <silent><leader>st :up<cr>:Tags<cr>
