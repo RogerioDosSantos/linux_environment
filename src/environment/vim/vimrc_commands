@@ -4,6 +4,33 @@
 "" Marvim Exec - Exec Marvim macro given the macro file
 command! -nargs=1 MarvimExec call Marvim_file_run(<f-args>)
 
+" Grep
+function! s:escape(path)
+  return substitute(a:path, ' ', '\\ ', 'g')
+endfunction
+
+function! GrepHandler(line)
+  let parts = split(a:line, ':')
+  let [fn, lno] = parts[0 : 1]
+  execute 'e '. s:escape(fn)
+  execute lno
+  normal! zz
+endfunction
+
+"Git 
+function! SetGitDir()
+    " Change working dir to the current file
+    cd %:p:h
+    " Set 'gitdir' to be the folder containing .git
+    let gitdir=system("git rev-parse --show-toplevel")
+    " See if the command output starts with 'fatal' (if it does, not in a git repo)
+    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+    " If it empty, there was no error. Let's cd
+    if empty(isnotgitdir)
+        cd `=gitdir`
+    endif
+endfunction
+
 " FZF
 
 "" Code Collection - Read the code collection file into the current buffer
@@ -27,3 +54,9 @@ command! -bang FZFMarvimExec call fzf#run(fzf#wrap({
             \ 'options' : '-m --prompt "Run Marvin> "'
             \ }))
 
+"" Grep - Execute Grep
+command! -nargs=+ FZFGrep call fzf#run(fzf#wrap({
+            \ 'source': 'grep -srnw --exclude-dir={build,node_modules,.git} --include=* --exclude={*.min.js,tags} "<args>"',
+            \ 'sink'  : function('GrepHandler'),
+            \ 'options' : '-m --prompt "Grep <args> > "'
+            \ }))
