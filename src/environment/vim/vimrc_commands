@@ -56,7 +56,7 @@ command! -bang FZFMarvimExec call fzf#run(fzf#wrap({
 
 "" Grep - Execute Grep
 command! -nargs=+ FZFGrep call fzf#run(fzf#wrap({
-            \ 'source': 'grep -srnw --exclude-dir={build,node_modules,.git} --include=* --exclude={*.min.js,tags} "<args>"',
+            \ 'source': 'grep -srnw -InH --exclude-dir={build,node_modules,.git} --include=* --exclude={*.min.js,tags} "<args>"',
             \ 'sink'  : function('GrepHandler'),
             \ 'options' : '-m --prompt "Grep <args> > "'
             \ }))
