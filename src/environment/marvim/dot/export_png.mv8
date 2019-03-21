@@ -1,0 +1,1 @@
+:w:let @n=expand('%:t'):!cat ./n | dot -Tpng > ./n€kb€kb€kbpng:redraw!

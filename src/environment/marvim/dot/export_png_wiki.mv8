@@ -1,0 +1,1 @@
+:w:let @n=expand('%:t'):!cat ./n | dot -Tpng > ../stage/nkbkbkbpng:redraw!
