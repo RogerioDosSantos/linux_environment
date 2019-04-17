@@ -92,7 +92,8 @@ nnoremap <silent><leader>rcc :up<cr>:FZFGetCodeCollection<cr>
 
 "" Grep
 " nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md,docker,sh} -rnwi . -e \"text\"")
-nnoremap <leader>gg :call SetGitDir()<CR>:FZFGrep <C-R><C-W><CR>
+nnoremap <leader>gg :up<CR>:call SetGitDir()<CR>:FZFGrep <C-R><C-W><CR>
+nnoremap <leader>ggl :up<CR>:call SetGitDir()<CR>:grep! <C-R><C-W><CR>:cw<CR>
 nnoremap <leader>g0 :call SetGitDir()<CR>:FZFGrep <C-R><C-W>
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b' <CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
@@ -135,6 +136,8 @@ nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/v
 nnoremap <leader>oi :up<cr>:e ~/indusoft/README.md<cr> 
 nnoremap <leader>oid :up<cr>:e ~/work/PRODUCT/DEV/README.md<cr> 
 nnoremap <leader>oia :up<cr>:e ~/iws_apps/README.md<cr> 
+"" Open Edge
+nnoremap <leader>oe :up<cr>:e ~/work/iotedge/README.md<cr> 
 "" Open Roger 
 nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
 "" Open Leel 
