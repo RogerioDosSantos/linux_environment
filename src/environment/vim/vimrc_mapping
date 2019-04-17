@@ -93,10 +93,7 @@ nnoremap <silent><leader>rcc :up<cr>:FZFGetCodeCollection<cr>
 "" Grep
 " nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md,docker,sh} -rnwi . -e \"text\"")
 nnoremap <leader>gg :up<CR>:call SetGitDir()<CR>:FZFGrep <C-R><C-W><CR>
-<<<<<<< HEAD
 nnoremap <leader>ggl :up<CR>:call SetGitDir()<CR>:grep! <C-R><C-W><CR>:cw<CR>
-=======
->>>>>>> 7c8f734815d8b27a1c851e0c18e335a174501ca6
 nnoremap <leader>g0 :call SetGitDir()<CR>:FZFGrep <C-R><C-W>
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b' <CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
