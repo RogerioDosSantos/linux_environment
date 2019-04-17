@@ -1,0 +1,1 @@
+:e€kbw:!€kblet @n=expand('%:t'):!m4 ./n | gvpr -c "N[$.degree==0]{delete(root, $)}" | dot -Tsvg > ./n€kb€kb€kbsvg:redra€kbw€kbaw!
