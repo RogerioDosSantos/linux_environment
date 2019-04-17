@@ -20,5 +20,8 @@
   username = roger.santos.main@gmail.com
 [credential "http://swtfsiws.dev.wonderware.com:8080"]
   username = roger.santos
+[credential "https://aveva-vsts.visualstudio.com"]
+  username = roger.santos
+  helper = store --file /home/roger/.aveva_vsts_credentials
 [credential]
 	helper = cache
