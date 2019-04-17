@@ -93,7 +93,10 @@ nnoremap <silent><leader>rcc :up<cr>:FZFGetCodeCollection<cr>
 "" Grep
 " nnoremap <leader>g0 :cexpr system("grep --include=\*.{cpp,h,rc,resx,cs,js,ini,md,docker,sh} -rnwi . -e \"text\"")
 nnoremap <leader>gg :up<CR>:call SetGitDir()<CR>:FZFGrep <C-R><C-W><CR>
+<<<<<<< HEAD
 nnoremap <leader>ggl :up<CR>:call SetGitDir()<CR>:grep! <C-R><C-W><CR>:cw<CR>
+=======
+>>>>>>> 7c8f734815d8b27a1c851e0c18e335a174501ca6
 nnoremap <leader>g0 :call SetGitDir()<CR>:FZFGrep <C-R><C-W>
 nnoremap <leader>g1 :grep! '\b<C-R><C-W>\b' <CR>:cw<CR>
 vnoremap <leader>g1 y:grep! '<C-R>"'<CR>:cw<CR>
@@ -151,6 +154,8 @@ nnoremap <leader>oh :up<cr>:e %:r.h<cr>
 nnoremap <leader>ohi :up<cr>:e ../include/%:r.h<cr>
 nnoremap <leader>oc :up<cr>:e %:r.cpp<cr>
 nnoremap <leader>ocs :up<cr>:e ../source/%:r.cpp<cr>
+"" Set current directory to file dir
+nnoremap <leader>cd :cd %:p:h<cr>
 "" List buffers
 nnoremap <leader>bbb :buffers
 nnoremap <silent><leader>bbn :bnext<cr> " Go to the next buffer
@@ -256,6 +261,8 @@ nnoremap <leader>od :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('prod:exp
 "" Copy File Content to Clipboard
 nnoremap <leader>cc :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('file::copy_current_file_content_to_clipboard'))<cr> 
 """ Docker Compose
-nnoremap <leader>cu :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
-nnoremap <leader>cd :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
+nnoremap <leader>du :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
+nnoremap <leader>dd :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
+
+""
 
