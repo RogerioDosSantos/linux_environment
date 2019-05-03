@@ -10,16 +10,22 @@
 	default = matching
 [credential "https://github.com"]
   username = roger.santos.main@gmail.com
+  helper = store --file /home/roger/.roger_github_credentials
 [credential "https://gitlab.com"]
   username = roger.santos
+  helper = store --file /home/roger/.roger_gitlab_credentials
 [credential "http://tfs15swapp01.dev.wonderware.com:8080"]
   username = roger.santos
+  helper = store --file /home/roger/.aveva_indusoft_credentials
 [credential "http://swtfsiws:8080"]
   username = roger.santos
+  helper = store --file /home/roger/.aveva_indusoft_credentials
 [credential "https://leelsystems.visualstudio.com"]
   username = roger.santos.main@gmail.com
+  helper = store --file /home/roger/.leel_vsts_credentials
 [credential "http://swtfsiws.dev.wonderware.com:8080"]
   username = roger.santos
+  helper = store --file /home/roger/.aveva_indusoft_credentials
 [credential "https://aveva-vsts.visualstudio.com"]
   username = roger.santos
   helper = store --file /home/roger/.aveva_vsts_credentials
