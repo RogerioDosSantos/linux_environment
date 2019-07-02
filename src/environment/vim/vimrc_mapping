@@ -138,6 +138,7 @@ nnoremap <leader>oid :up<cr>:e ~/work/PRODUCT/DEV/README.md<cr>
 nnoremap <leader>oia :up<cr>:e ~/iws_apps/README.md<cr> 
 "" Open Edge
 nnoremap <leader>oe :up<cr>:e ~/work/iotedge/README.md<cr> 
+nnoremap <leader>oew :up<cr>:e ~/work/iotedge/wiki/README.md<cr> 
 "" Open Roger 
 nnoremap <leader>or :up<cr>:e ~/roger/README.md<cr> 
 "" Open Leel 
