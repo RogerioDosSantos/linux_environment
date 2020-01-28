@@ -17,6 +17,9 @@
 [credential "http://tfs15swapp01.dev.wonderware.com:8080"]
   username = roger.santos
   helper = store --file /home/roger/.aveva_indusoft_credentials
+[credential "http://swtfs17.dev.wonderware.com:8080"]
+  username = roger.santos
+  helper = store --file /home/roger/.aveva_indusoft_credentials
 [credential "http://swtfsiws:8080"]
   username = roger.santos
   helper = store --file /home/roger/.aveva_indusoft_credentials
