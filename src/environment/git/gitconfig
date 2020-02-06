@@ -32,6 +32,9 @@
 [credential "https://aveva-vsts.visualstudio.com"]
   username = roger.santos
   helper = store --file /home/roger/.aveva_vsts_credentials
+[credential "https://AVEVA-VSTS@dev.azure.com"]
+  username = roger.santos
+  helper = store --file /home/roger/.aveva_vsts_credentials
 [credential "https://rogersantosmain@dev.azure.com"]
   username = roger.santos.main@gmail.com
   helper = store --file /home/roger/.aveva_vsts_credentials
