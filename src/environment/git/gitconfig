@@ -38,6 +38,9 @@
 [credential "https://rogersantosmain@dev.azure.com"]
   username = roger.santos.main@gmail.com
   helper = store --file /home/roger/.aveva_vsts_credentials
+[credential "https://leelsoftware@dev.azure.com"]
+  username = roger.santos.main@gmail.com
+  helper = store --file /home/roger/.leel_software_vsts_credentials
 [credential]
 	helper = cache
 [filter "lfs"]
