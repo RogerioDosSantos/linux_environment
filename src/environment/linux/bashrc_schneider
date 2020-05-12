@@ -130,19 +130,20 @@ unset DOCKER_TLS_VERIFY
 
 # configure Schneider Proxy
 # Schneider Proxy Configuration
-http_proxy=http://gateway.zscaler.net:9480
-# http_proxy=
+# http_proxy=http://gateway.zscaler.net:9480
+http_proxy=
 export http_proxy
-https_proxy=http://gateway.zscaler.net:9480
-# https_proxy=
+# https_proxy=http://gateway.zscaler.net:9480
+https_proxy=
 export https_proxy
-ftp_proxy=http://gateway.zscaler.net:9480
-# ftp_proxy=
+# ftp_proxy=http://gateway.zscaler.net:9480
+ftp_proxy=
 export ftp_proxy
-socks_proxy=http://gateway.zscaler.net:9480
-# socks_proxy=
+# socks_proxy=http://gateway.zscaler.net:9480
+socks_proxy=
 export socks_proxy
-no_proxy=127.0.0.1,192.168.99.100,10.229.206.{1..255},swtfsiws,dev.wonderware.com,localhost
+# no_proxy=127.0.0.1,192.168.99.100,10.229.206.{1..255},swtfsiws,dev.wonderware.com,localhost
+no_proxy=
 export no_proxy
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
