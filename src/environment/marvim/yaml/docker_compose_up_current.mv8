@@ -1,1 +1,1 @@
-{Â€kd0wyiw``:let @p=expand('%:p'):newidevops -we docker-compose.exe -f :r !devops -wp p0Â€kuJi"$a" up "0d$:q!:!":redraw!^M^[^[^[
+€kd{€kd0wyiw``€ku:let @p=expand('%:p'):newidevops -we docker-compose.exe -f :r !devops -wp p€kuJi"$a" up -d "0d$:q!:!":redraw!
