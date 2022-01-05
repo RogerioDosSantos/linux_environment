@@ -167,18 +167,18 @@ nnoremap <silent><leader>bbd :bdelete<cr> " Delete current Buffer
 " ***************************************************************
 
 "" Fugitive (Mapping Keys)
-nnoremap <silent><leader>gs :Gstatus<cr> " Git Status
-nnoremap <silent><leader>gd :Gdiff<cr> " Git Diff (Non commit items vs Non added items)
-nnoremap <silent><leader>gdh :Gdiff origin/HEAD<cr> " Git Diff origin / HEAD (Commit items vs Non Commit items)
-nnoremap <silent><leader>gdm :Gdiff origin/master<cr> " Git Diff origin / master (Commit items vs Server)
-nnoremap <silent><leader>gc :Gcommit<cr> " Git Commit
-nnoremap <silent><leader>gp :Gpush<cr> " Git Push
-nnoremap <silent><leader>gpu :Gpull<cr> " Git Pull
-nnoremap <silent><leader>gb :Gblame<cr> " Git Brame (Verify the history of the file)
-nnoremap <silent><leader>gr :Gread<cr> " Git checkout <file name> (You can execute undo before saving)
-nnoremap <silent><leader>glo :Glog -10<cr>:copen<cr> " Load the 10 last log of a files into the buffer and display it
-nnoremap <silent><leader>gla :Glog<cr>:copen<cr> " Load the all log of a files into the buffer and display it
-nnoremap <silent><leader>gle :Gedit<cr> " Return to the current file being edited.
+nnoremap <silent><leader>gs :Git<cr> " Git Status
+nnoremap <silent><leader>gd :Git diff<cr> " Git Diff (Non commit items vs Non added items)
+nnoremap <silent><leader>gdh :Git diff origin/HEAD<cr> " Git Diff origin / HEAD (Commit items vs Non Commit items)
+nnoremap <silent><leader>gdm :Git diff origin/master<cr> " Git Diff origin / master (Commit items vs Server)
+nnoremap <silent><leader>gc :Git commit<cr> " Git Commit
+nnoremap <silent><leader>gp :Git push<cr> " Git Push
+nnoremap <silent><leader>gpu :Git pull<cr> " Git Pull
+nnoremap <silent><leader>gb :Git blame<cr> " Git Brame (Verify the history of the file)
+nnoremap <silent><leader>gr :Git read<cr> " Git checkout <file name> (You can execute undo before saving)
+nnoremap <silent><leader>glo :Git log -10<cr>:copen<cr> " Load the 10 last log of a files into the buffer and display it
+nnoremap <silent><leader>gla :Git log<cr>:copen<cr> " Load the all log of a files into the buffer and display it
+nnoremap <silent><leader>gle :Git edit<cr> " Return to the current file being edited.
 nnoremap <silent><leader>gpc :r !git log -1 --pretty=\%B<cr> " Paste the last commit
 nnoremap <silent><leader>gpc2 :r !git log -2 --pretty=\%B<cr> " Paste the second last commit
 nnoremap <silent><leader>gpc3 :r !git log -3 --pretty=\%B<cr> " Paste the third last commit
