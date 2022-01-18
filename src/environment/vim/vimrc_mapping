@@ -67,24 +67,24 @@ nnoremap <silent><leader>sc :GrammarousCheck<cr>
 " ***************************************************************
 
 "" FZF (Fuzzy Finder)
-nnoremap <silent><leader>sf :up<cr>:Files<cr>:cd %:h<cr>
-nnoremap <silent><leader>sg :up<cr>:GFiles<cr>:cd %:h<cr>
+nnoremap <silent><leader>sf :Files<cr>
+nnoremap <silent><leader>sg :GFiles<cr>
 " nnoremap <silent><leader>sgs :up<cr>:GFiles?<cr>
-nnoremap <silent><leader>sc :up<cr>:Commits<cr>:cd %:h<cr>
-nnoremap <silent><leader>sb :up<cr>:Buffers<cr>:cd %:h<cr>
-nnoremap <silent><leader>sco :up<cr>:Colors<cr>:cd %:h<cr>
+nnoremap <silent><leader>sc :Commits<cr>
+nnoremap <silent><leader>sb :Buffers<cr>
+nnoremap <silent><leader>sco :Colors<cr>
 " nnoremap <silent><leader>sg :up<cr>:Ag
-nnoremap <silent><leader>sl :up<cr>:Lines<cr>:cd %:h<cr>
-nnoremap <silent><leader>sbl :up<cr>:BLines<cr>:cd %:h<cr>
-nnoremap <silent><leader>st :up<cr>:Tags<cr>:cd %:h<cr>
-nnoremap <silent><leader>sbt :up<cr>:BTags<cr>:cd %:h<cr>
-nnoremap <silent><leader>sm :up<cr>:Marks<cr>:cd %:h<cr>
-nnoremap <silent><leader>sw :up<cr>:Windows<cr>:cd %:h<cr>
-nnoremap <silent><leader>slo :up<cr>:Locate
-nnoremap <silent><leader>sh :up<cr>:History<cr>:cd %:h<cr>
-nnoremap <silent><leader>shc :up<cr>:History:<cr>:cd %:h<cr>
-nnoremap <silent><leader>shs :up<cr>:History/<cr>:cd %:h<cr>
-nnoremap <silent><leader>ss :up<cr>:Snippets<cr>:cd %:h<cr>
+nnoremap <silent><leader>sl :Lines<cr>
+nnoremap <silent><leader>sbl :BLines<cr>
+nnoremap <silent><leader>st :Tags<cr>
+nnoremap <silent><leader>sbt :BTags<cr>
+nnoremap <silent><leader>sm :Marks<cr>
+nnoremap <silent><leader>sw :Windows<cr>
+nnoremap <silent><leader>slo :Locate
+nnoremap <silent><leader>sh :History<cr>
+nnoremap <silent><leader>shc :History:cd %:h<cr>
+nnoremap <silent><leader>shs :History/<cr>
+nnoremap <silent><leader>ss :Snippets<cr>
 
 "" FZF (Commands)
 nnoremap <silent><leader>rm :up<cr>:FZFMarvimExec<cr>
