@@ -41,6 +41,9 @@
 [credential "https://leelsoftware@dev.azure.com"]
   username = roger.santos.main@gmail.com
   helper = store --file /home/roger/.leel_software_vsts_credentials
+[credential "https://work-microsoft@dev.azure.com"]
+  username = roger.santos.main@gmail.com
+  helper = store --file /home/roger/.work_microsoft_azure_devops_git_credentials
 [credential]
 	helper = cache
 [filter "lfs"]
