@@ -268,5 +268,9 @@ nnoremap <leader>cc :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('file::co
 nnoremap <leader>du :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
 nnoremap <leader>dd :up<cr>:call Marvim_file_run(Marvim_ns_to_filename('yaml:docker_compose_stop'))<cr> 
 
+"Slash and Backslash
+nnoremap <silent><leader>/ :let tmp=@/<Bar>s:\\:/:ge<Bar>let @/=tmp<Bar>noh<CR> "Slash to Backslash
+nnoremap <silent><leader><Bslash> :let tmp=@/<Bar>s:/:\\:ge<Bar>let @/=tmp<Bar>noh<CR> " Backslash to slash
+
 ""
 
