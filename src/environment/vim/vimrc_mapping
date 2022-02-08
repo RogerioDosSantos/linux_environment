@@ -133,10 +133,10 @@ nnoremap <leader>ot :up<cr>:e ~/roger/temp/.temp<cr>
 "" Open Vim config File
 nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/vim/vimrc<cr> 
 "" Open Microsoft
-nnoremap <leader>om :up<cr>:e ~/projects/microsoft/README.md<cr> 
-nnoremap <leader>omw :up<cr>:e ~/projects/microsoft/wiki/index.md<cr> 
-nnoremap <leader>omb :up<cr>:e ~/projects/microsoft/wiki/big_picture_all.md<cr> 
-nnoremap <leader>omp :up<cr>:e ~/projects/microsoft/projects/README.md<cr> 
+nnoremap <leader>om :up<cr>:e /mnt/onedrive/microsoft/README.md<cr> 
+nnoremap <leader>omw :up<cr>:e /mnt/onedrive/microsoft/wiki/index.md<cr> 
+nnoremap <leader>omb :up<cr>:e /mnt/onedrive/microsoft/wiki/big_picture_all.md<cr> 
+nnoremap <leader>omp :up<cr>:e /mnt/onedrive/microsoft/projects/README.md<cr> 
 "" Open Edge
 nnoremap <leader>oe :up<cr>:e ~/work/iotedge/README.md<cr> 
 nnoremap <leader>oew :up<cr>:e ~/work/iotedge/wiki/README.md<cr> 
