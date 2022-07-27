@@ -135,8 +135,10 @@ nnoremap <leader>ov :up<cr>:e ~/roger/devops/linux_environment/src/environment/v
 "" Open Microsoft
 nnoremap <leader>om :up<cr>:e /mnt/onedrive/microsoft/README.md<cr> 
 nnoremap <leader>omw :up<cr>:e /mnt/onedrive/microsoft/wiki/index.md<cr> 
-nnoremap <leader>omb :up<cr>:e /mnt/onedrive/microsoft/wiki/big_picture_all.md<cr> 
 nnoremap <leader>omp :up<cr>:e /mnt/onedrive/microsoft/projects/README.md<cr> 
+nnoremap <leader>omg :up<cr>:e /mnt/d/work/git/README.md<cr> 
+nnoremap <leader>omb :up<cr>:e /mnt/d/work/git/buildout_automation/README.md<cr> 
+nnoremap <leader>ombw :up<cr>:e /mnt/d/work/git/OfficeOnlineServiceWiki/documentation/Wikis/WacShared/WACBusiness/Buildouts/toc.yml<cr> 
 "" Open Edge
 nnoremap <leader>oe :up<cr>:e ~/work/iotedge/README.md<cr> 
 nnoremap <leader>oew :up<cr>:e ~/work/iotedge/wiki/README.md<cr> 
